@@ -415,18 +415,17 @@
       
         
           
-            <p>1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。</p>
-<p>2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。</p>
-<p>3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的内存空间。此句中，SS是Segment Memory Model的缩写，表示栈段，在Windows（使用段内存模型）下需要指出。EBP是指向栈的寄存器，所以加上SS寄存器。DWORD PTR与SS等字符串可以在OD设置中隐藏。</p>
-<p>4.调用一个函数之前，先开辟出内存空间，在将参数压入栈，最后在执行函数之前，将返回地址压入栈。执行完毕之后将删除函数栈帧并返回至PUSH的返回地址。</p>
-<p>5.注意参数入栈的顺序与C语言中参数顺序恰好相反（参数的逆向存储）。</p>
-<p>6.调用约定（Calling Convention）：被调函数执行完后，由函数的调用者负责清理存储在栈中的参数，这种方式称为cdecl方式。由被调用者负责清理保存在栈中的参数，称为stdcall方式。</p>
-<p>7.ESP为栈顶指针，EBP为栈帧指针。程序运行过程中，ESP是随时变化的，访问内存中的局部变量和参数等如果以此为基址会十分困难。所以程序开始时会PUSH EBP,MOV EBP,ESP.将ESP的值保存在EBP中并且维持在函数内部，这样无论ESP如何变化，以EBP为基准都能准确地访问到局部变量与参数。执行完这两条命令，就可以说栈帧已经生成了。</p>
-<p>8.XOR命令用来进行异或运算，Exclusive OR bit，其特点为两个相同的值进行异或运算的结果为0.XOR命令的执行速度比 MOV EAX,0 要快，常用于寄存器初始化操作。</p>
-<p>9.编译器中的”优化“（optimization）选项开启后，编译出来的简单函数将不会生成栈帧。</p>
-<p>10.牢记：栈是用来存放参数，变量，地址等数据的，不是用来存放代码的。</p>
-
-          
+          1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。
+2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。
+3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/19/Stack Frame/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -563,9 +562,16 @@
       
         
           
-            <p>Earthquake and Blog</p>
+          Earthquake and Blog
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/17/Genesis/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
