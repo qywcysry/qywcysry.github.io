@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Hy0uka</title>
   
-  <subtitle>CTF Reverse Pwn Bin IOT</subtitle>
+  <subtitle>CTF Reverse Pwn Binary IOT</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
