@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-07-11T15:49:05.030Z</updated>
+  <updated>2019-07-12T15:39:26.363Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>汇编</title>
+    <link href="http://qywcysry.github.io/2019/07/12/%E6%B1%87%E7%BC%96/"/>
+    <id>http://qywcysry.github.io/2019/07/12/汇编/</id>
+    <published>2019-07-12T15:33:31.000Z</published>
+    <updated>2019-07-12T15:39:26.363Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;下学期开课，复习一下。&lt;/p&gt;
+&lt;p&gt;1.指令与数据在内存中的都是以同样的二进制流存放的，区别之处在于是从哪根总线（数据总线/控制总线）传入。&lt;br&gt;2.地址总线宽度决定CPU的
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Summer Hoilday&#39;s Plan</title>
