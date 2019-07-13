@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Pwn function,">
+  <meta name="keywords" content="essay,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。 2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。 3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的内存空间。此句中，SS是Segment Memory Model的缩写，表示栈段，在Windows（">
-<meta name="keywords" content="Pwn function">
+<meta name="description" content="在微信公众号”赛先生”上看到的一篇文章，采访对象为吴军，原腾讯副总裁，Google中日韩搜索算法开发者。对这个人挺感兴趣的，兴许后面会把他写的书都看一遍。 以下为摘录： [TOC] 个人成长的关键在于做减法和走出舒适区  吴军善于利用时间，做事高效，繁忙的工作之外，先后创作了《数学之美》、《浪潮之巅》、《文明之光》、《见识》等书。他兴趣广泛，喜欢摄影、音乐、园艺等，而不同机构的工作经验，多年游历欧">
+<meta name="keywords" content="essay">
 <meta property="og:type" content="article">
-<meta property="og:title" content="栈帧（stack frame）">
-<meta property="og:url" content="http://qywcysry.github.io/2019/06/19/Stack Frame/index.html">
+<meta property="og:title" content="2019&#x2F;7&#x2F;13">
+<meta property="og:url" content="http://qywcysry.github.io/2019/07/13/2019-7-13/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。 2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。 3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的内存空间。此句中，SS是Segment Memory Model的缩写，表示栈段，在Windows（">
+<meta property="og:description" content="在微信公众号”赛先生”上看到的一篇文章，采访对象为吴军，原腾讯副总裁，Google中日韩搜索算法开发者。对这个人挺感兴趣的，兴许后面会把他写的书都看一遍。 以下为摘录： [TOC] 个人成长的关键在于做减法和走出舒适区  吴军善于利用时间，做事高效，繁忙的工作之外，先后创作了《数学之美》、《浪潮之巅》、《文明之光》、《见识》等书。他兴趣广泛，喜欢摄影、音乐、园艺等，而不同机构的工作经验，多年游历欧">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-20T12:46:31.029Z">
+<meta property="og:updated_time" content="2019-07-13T12:42:40.845Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="栈帧（stack frame）">
-<meta name="twitter:description" content="1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。 2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。 3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的内存空间。此句中，SS是Segment Memory Model的缩写，表示栈段，在Windows（">
+<meta name="twitter:title" content="2019&#x2F;7&#x2F;13">
+<meta name="twitter:description" content="在微信公众号”赛先生”上看到的一篇文章，采访对象为吴军，原腾讯副总裁，Google中日韩搜索算法开发者。对这个人挺感兴趣的，兴许后面会把他写的书都看一遍。 以下为摘录： [TOC] 个人成长的关键在于做减法和走出舒适区  吴军善于利用时间，做事高效，繁忙的工作之外，先后创作了《数学之美》、《浪潮之巅》、《文明之光》、《见识》等书。他兴趣广泛，喜欢摄影、音乐、园艺等，而不同机构的工作经验，多年游历欧">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/2019/06/19/Stack Frame/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/07/13/2019-7-13/">
 
 
 
 
 
-  <title>栈帧（stack frame） | Hy0uka</title>
+  <title>2019/7/13 | Hy0uka</title>
   
 
 
@@ -291,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/06/19/Stack Frame/">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/07/13/2019-7-13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hy0uka">
@@ -308,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">栈帧（stack frame）</h1>
+          <h1 class="post-title" itemprop="name headline">2019/7/13</h1>
         
 
         <div class="post-meta">
@@ -320,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-19T03:03:07+08:00">
-                2019-06-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-13T20:22:17+08:00">
+                2019-07-13
               </time>
             
 
@@ -336,34 +336,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-06-20T20:46:31+08:00">
-                2019-06-20
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-13T20:42:40+08:00">
+                2019-07-13
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Pwn/" itemprop="url" rel="index">
-                    <span itemprop="name">Pwn</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -373,8 +351,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/19/Stack Frame/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/19/Stack Frame/" itemprop="commentCount"></span>
+                <a href="/2019/07/13/2019-7-13/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/13/2019-7-13/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -407,16 +385,44 @@
       
 
       
-        <p>1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。</p>
-<p>2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。</p>
-<p>3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的内存空间。此句中，SS是Segment Memory Model的缩写，表示栈段，在Windows（使用段内存模型）下需要指出。EBP是指向栈的寄存器，所以加上SS寄存器。DWORD PTR与SS等字符串可以在OD设置中隐藏。</p>
-<p>4.调用一个函数之前，先开辟出内存空间，在将参数压入栈，最后在执行函数之前，将返回地址压入栈。执行完毕之后将删除函数栈帧并返回至PUSH的返回地址。</p>
-<p>5.注意参数入栈的顺序与C语言中参数顺序恰好相反（参数的逆向存储）。</p>
-<p>6.调用约定（Calling Convention）：被调函数执行完后，由函数的调用者负责清理存储在栈中的参数，这种方式称为cdecl方式。由被调用者负责清理保存在栈中的参数，称为stdcall方式。</p>
-<p>7.ESP为栈顶指针，EBP为栈帧指针。程序运行过程中，ESP是随时变化的，访问内存中的局部变量和参数等如果以此为基址会十分困难。所以程序开始时会PUSH EBP,MOV EBP,ESP.将ESP的值保存在EBP中并且维持在函数内部，这样无论ESP如何变化，以EBP为基准都能准确地访问到局部变量与参数。执行完这两条命令，就可以说栈帧已经生成了。</p>
-<p>8.XOR命令用来进行异或运算，Exclusive OR bit，其特点为两个相同的值进行异或运算的结果为0.XOR命令的执行速度比 MOV EAX,0 要快，常用于寄存器初始化操作。</p>
-<p>9.编译器中的”优化“（optimization）选项开启后，编译出来的简单函数将不会生成栈帧。</p>
-<p>10.牢记：栈是用来存放参数，变量，地址等数据的，不是用来存放代码的。</p>
+        <p>在微信公众号”赛先生”上看到的一篇文章，采访对象为吴军，原腾讯副总裁，Google中日韩搜索算法开发者。对这个人挺感兴趣的，兴许后面会把他写的书都看一遍。</p>
+<p>以下为摘录：</p>
+<p>[TOC]</p>
+<p><strong>个人成长的关键在于做减法和走出舒适区</strong></p>
+<hr>
+<p>吴军善于利用时间，做事高效，繁忙的工作之外，先后创作了《数学之美》、《浪潮之巅》、《文明之光》、《见识》等书。他兴趣广泛，喜欢摄影、音乐、园艺等，而不同机构的工作经验，多年游历欧美的经历又使得他对事物有着独特的思考和看法。</p>
+<p>在最新出版的《全球科技通史》里，吴军描绘了远古到现代几万年间科技发展的景象，以科技的视角重新审视人类走过的历史，并试图洞察我们所处的位置，看见可能的未来。</p>
+<hr>
+<p><strong>Q：**</strong>人类科技力量真正爆发是在工业革命之后，工业革命离不开政治制度的变革、宗教的改革、以及金融制度的创新，这些因素在人类社会中的作用在书中似乎被有意忽略了？**</p>
+<p><strong>A：**</strong>这些因素不是有意地忽略了，而是被很多人高估了。那些所谓政治方面的影响，如果没有某个政治制度，就不会有这个科学成就，这种说法其实没有多少统计数据来证明。人类科学的发展有几个高峰，古希腊是一个高峰，伊斯兰文明是一个高峰，科学启蒙以后是另外一个高峰，每次的政治制度都不一样，造成科技高峰的政治制度是不一样的。很多时候有的人讲，因为我的政治制度促使了科学技术地发展，这只是自己往自己脸上贴金。**</p>
+<p>我们举个例子，在英国伦敦不远的地方有一个城市叫巴斯，那里有古罗马很奢华的一个浴场。在工业革命之前，英国最上流，最有钱的人在那儿度假生活。通过那儿的博物馆可以了解当时英国最上流的生活，你会发现他们比今天中国中产阶级的生活可差远了。比如，他们没有机会每天洗热水澡，他们的头上会长虱子，女主人就用特别细的，金属钢针式的一个梳子刮头发。他们喝下午茶的茶叶都是要锁在柜子里的，因为那个茶叶实在太少太金贵，生怕女佣人给偷了。当时也没有冰箱，食物腐烂都不用讲了，而这是当时英国最好的家庭。你会发现2000多年来，上流社会的生活没有什么差别和改进。英国的政治制度从各个小城邦的封建制，到君主专制，再到君主立宪的议会制，换了一茬又一茬，宗教和法律也是一样。这些东西换了一茬又一茬，并没有用。一旦真正工业革命开始以后，一切就都不一样了。</p>
+<hr>
+<p><strong>Q：**</strong>每一次工业革命受益者往往是那些掌握核心技术的人，面对当下所谓的智能革命，大多数人的机会在哪里？**</p>
+<p><strong>A：</strong>我们要明确一个前提，<strong>世界永远不是公平的，人类发展到现在从来没有发生过这种情况，也不要指望将来能这样，就是有人受益多一点，有人受益少一点，这是一个必然。</strong>掌握核心技术的人，最早投资的人，肯定是受益的，这个可能也就占人口的1%或者2%。剩下来可能里头的少一半人，他们率先或者使用技术，把原有的一个产业变成一个新产业，他们就能够受益，这部分人会很多，所以我在这本书里面讲了好多工业革命的范式。就是你要把现有产业通过率先使用新技术变成一个新产业，然后从中获益。我举了很多例子，比如说，瓷器大王韦奇伍德，他不懂蒸汽机，他也不研究蒸汽机，但他使用蒸汽机，他把传统的瓷器制造业变成了一个新的产业。</p>
+<hr>
+<p><strong>Q：**</strong>书中讲科技几乎是世界上唯一能够获得叠加性进步的力量，个人应该如何利用这种叠加性获得自我的成长？**</p>
+<p><strong>A：</strong>我想从两个方面来谈这个问题。<strong>一个是做减法，人想做的事情很多，而你能做的事情是有限的，判断这件事情该不该做，不是盯着眼下这一点利益，而是说我做了这件事情以后，对我以后做更大的事情有没有帮助？</strong></p>
+<p>假如说你是个程序员，有一个同学找上你，给你2万块钱，你帮我开发一个小程序吧，你觉得，这2万块钱花我一点时间可以有一个额外的收入，你就去做了。但你做这个事情可能会有一个损失，你单位里面本职的事情可能会受到影响，这2万块钱你是挣了，接下来这个事情对你整个职业生涯的发展是没有帮助的，或者说没有太大的帮助，这种事其实不值得做。我有时候老说，你如何在北京或者深圳买得起一套房子，就是你得有办法让你的收入将来能够两倍、四倍、八倍这样往上增长，否则你收入的增长总是赶不上房价的增长。所以你老是今天帮张三做一个2万块钱的小程序，明天帮李四去修一台计算机，那你一辈子都是在<strong>低水平的重复</strong>。</p>
+<p><strong>第二个就是人要走出一个舒适区，你能够慢慢挑战做一些更大的事，</strong>比如说编程序，这个程序你慢慢写的比较熟了，好像原来觉得很辛苦，现在每天早九晚五上下班应付起来没问题，那你整个人的进步还是线性的，你多工作一天多赚一天的钱。这时候你应该挑战一下自己，这里头有没有别人没有解决的问题，我能够解决一下，有没有什么新的东西，我学会了以后可以把这个事情做得更好，或者说我过去关注的只是某一个系统的一部分，我能不能关注一下整个系统，挑战一下自己的能力，走出舒适区，这样的话你会越做越大。</p>
+<hr>
+<p><strong>Q：**</strong>在面临重要人生十字路口时，应该如何去抉择？<strong>**哪些因素是应该关注和考虑的呢？</strong></p>
+<p><strong>A：</strong>每个人的情况不一样，所以不好给一个确定的答案。但是对于刚毕业的人我常讲一条就是你不要看一开始的工资是否多了20%，而是你有没有一个学习和成长的机会。正在工作中的人，每个人的情况不一样，标准也不一样。但是有两个原则，<strong>第一个是你这次选择以后，5年以后会不会变得更好。另一个需要考虑的就是这个选择是不是一个跟风的一个选择，坦率地来讲，所有跟风的选择你都没有什么机会，因为太拥挤了，你是否找到了一个特别适合自己的专长，能够发挥自己的专长，这非常重要，而不是简单地跟风。例如人工智能一热，很多人就考虑我是不是该去当程序员，或许不一定，你在别的领域发挥作用或许更有意义。</strong></p>
+<hr>
+<p><strong>Q：**</strong>你是如何在繁忙的工作当中横跨这么多领域的？<strong>**在时间管理上面有没有什么独到的心得？</strong></p>
+<p><strong>A：**</strong>从战略上讲，时间管理上的心得就是你要少做事，人不在于你1月1号开始了多少件事儿，而在于12月31号你完成了多少件事。从战术上来讲，我写书的时间恰恰用的是我碎片化的时间，我随身带着笔记本。很多人用碎片时间看微信，我这都是用整时间来处理的，微信和手机这种东西并不是说让你利用碎片时间，而是把你所有的整时间，都变成了碎片时间。所以我一般是每天固定几个时候处理一下微信的内容，不会随时看，这样能够提高效率。**</p>
+<p>至于为什么会有这么多地关注，这是一个自然演变的结果，最早做技术，后来你要考虑产品有没有市场，就开始研究商业，商业研究多了，《浪潮之巅》这些书就是这么写出来的。对文明，对科技这些东西我是一直感兴趣，《文明之光》实际上是我看到世界上各个不同时期，各个不同地点的文明后发出的一种由衷的感叹。写历史类的书你总要表达出一种史观，有人说我这个是反英雄主义史观的，不管是什么标签，你总要传达一个意思，那么科技通史其实也是一种史观，就是科技在人类历史上的一个重要地位。这是我想表达出来的一个意思。</p>
+<hr>
+<p><strong>Q：**</strong>在写作过程当中，你应用了大量的历史学方法，学习历史的意义是什么呢？**</p>
+<p><strong>A：</strong>我有时候老讲一个观点，就是说学历史有两个误区，一个就是把它当成听故事，这也不是说不好，但是这个远远不够。第二个误区就是通过对历史一些很简单的总结，好像就觉得能够指导未来的一个什么事情，这其实也很难办到。因为历史很难跟以前完全一模一样地重复一遍，以前的一个结论是在一个非常有限的信息得出一个合理的解释而已，所以我们有些人简单地从历史当中总结经验教训，这个也是不可取的。</p>
+<p><strong>但是历史整个发展的脉络，对于我们了解未来是有帮助的。比如说，在任何一次工业革命中，新技术如何和原有产业结合诞生新技术，我们应该怎么做，你就能够获得机会。科学方法使我们能够获得一个叠加性的进步。<u>我们每一个人做事都应该讲究一个科学的方法，这些东西你是可以学到的。</u>这就是为什么要讲历史的主要原因，讲历史不是为了讲过去的故事，而是为了对我们今后的发展有启迪。</strong></p>
+<hr>
+<p><strong>Q：**</strong>在这本书的《后记》中，你提到了看待历史的大历史方法。<strong>**你为什么专门强调了这一点？</strong></p>
+<p><strong>A：</strong>这是我最后对书的一个概括，虽然这个书里面我讲了好多细节，但是实际上我想告诉大家细节不重要，这个历史的轮廓最重要，甚至我讲的这些发明发现，再过若干年可能会有新的考古和研究证据，但是整个历史的发展趋势是确定的。我想给大家的是一个轮廓，而不是某一个具体的细节。</p>
+<p><strong>大历史观研究一件事的时候，他会把这件事放在一个很大的时空中来看，在一个很长的时间维度，很大的空间维度上能够看到这样一件事情的一个作用。比如说，黄仁宇写的《万历十五年》，他把那个时间点的明帝国，放在整个中国很长的一个历史维度中来看，明朝为什么走向了一条不归路。放在一个空间维度来看，当时全球贸易已经起来了，明帝国位于什么样的一个位置。</strong></p>
+<p>历史是一个方法，你也可以采用这个方法来看待这些事，比如说，你可以把5G放在一个很长的时间上来看，从1G〜5G它在沿着哪个方向发展，那你就可能知道5G未来的发展方向是怎么样的，你可以把5G放到一个通讯的角度上，放在全世界信息交流这样一个空间的维度上，去研究5G扮演着一个什么样的角色。所以历史研究很重要的不是给你一个结论，而是给你一个方法。</p>
+<hr>
+<p><strong>Q：**</strong>当今世界保守势力抬头、中美贸易摩擦都让全球化的进程受到了挑战。<strong><strong>从大历史观的角度来看，世界是否处在了一个变革的十字路口？</strong></strong>对世界的未来走向，你有什么看法？**</p>
+<p><strong>A：</strong>这就谈到了大历史，因为大历史的时间维度常常是比较大的，<strong>如果在整个人类科技发展的长河来看，这一两年发生的事，有一点之前轨迹不同的小变化，这个真的算不上一个事，大家有时候过度担心了。一百年在历史的长河中上算不上长，这一百年里发生的重要事件有很多， 1949年建国，后来中美建交，冷战结束，中国入关，哪件事都比当下这点事大，大不知道多少倍。你今天回过头来看那些事，好像都是很久远的事情了，没有什么印象了。中国就是在这样不知不觉中持续发展过来的，人类文明的走向也不会因为当下这点事发生什么变化。</strong></p>
 
       
     </div>
@@ -446,7 +452,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Pwn-function/" rel="tag"># Pwn function</a>
+            <a href="/tags/essay/" rel="tag"># essay</a>
           
         </div>
       
@@ -459,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/17/Genesis/" rel="next" title="Genesis">
-                <i class="fa fa-chevron-left"></i> Genesis
+              <a href="/2019/07/12/汇编/" rel="next" title="汇编">
+                <i class="fa fa-chevron-left"></i> 汇编
               </a>
             
           </div>
@@ -468,10 +474,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/20/CTF-Wiki/" rel="prev" title="CTF-Wiki Stackflow and ROP">
-                CTF-Wiki Stackflow and ROP <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
