@@ -202,11 +202,11 @@
   </entry>
   
   <entry>
-    <title>CTF-Wiki Stackflow and ROP</title>
+    <title>CTF-Wiki Stack Overflow and ROP</title>
     <link href="http://qywcysry.github.io/2019/06/20/CTF-Wiki/"/>
     <id>http://qywcysry.github.io/2019/06/20/CTF-Wiki/</id>
     <published>2019-06-19T16:06:21.000Z</published>
-    <updated>2019-06-20T12:45:14.615Z</updated>
+    <updated>2019-08-30T08:15:26.591Z</updated>
     
     <summary type="html">
     
@@ -226,7 +226,7 @@
       <category term="Pwn" scheme="http://qywcysry.github.io/categories/Pwn/"/>
     
     
-      <category term="CTF Pwn stackflow ROP" scheme="http://qywcysry.github.io/tags/CTF-Pwn-stackflow-ROP/"/>
+      <category term="CTF Pwn stackoverflow ROP" scheme="http://qywcysry.github.io/tags/CTF-Pwn-stackoverflow-ROP/"/>
     
   </entry>
   
