@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="essay,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="Welcome to my blog, enter password to read this private essay.">
+<meta name="description" content="反调试：插入代码，让程序意识到自己在被调试时，执行代码阻止调试器的分析，延长调试的时间。通过改变正常的执行路径或者修改自身程序让自己崩溃，从而增加调试的时间和复杂度。 0X00:IDA中的反反调试F5之后IDA报错，红色显示：”sp-analysis failed”(IDA有栈跟踪的功能，它在函数内部遇到ret(retn)指令时会做判断：栈指针的值在函数的开头/结尾是否一致，如果不一致就会在函数的">
+<meta name="keywords" content="essay">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Brisk">
-<meta property="og:url" content="http://qywcysry.github.io/2019/08/21/Brisk/index.html">
+<meta property="og:title" content="反静态调试">
+<meta property="og:url" content="http://qywcysry.github.io/2019/07/21/反静态调试/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="Welcome to my blog, enter password to read this private essay.">
+<meta property="og:description" content="反调试：插入代码，让程序意识到自己在被调试时，执行代码阻止调试器的分析，延长调试的时间。通过改变正常的执行路径或者修改自身程序让自己崩溃，从而增加调试的时间和复杂度。 0X00:IDA中的反反调试F5之后IDA报错，红色显示：”sp-analysis failed”(IDA有栈跟踪的功能，它在函数内部遇到ret(retn)指令时会做判断：栈指针的值在函数的开头/结尾是否一致，如果不一致就会在函数的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-25T16:09:15.897Z">
+<meta property="og:updated_time" content="2019-08-30T08:13:08.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brisk">
-<meta name="twitter:description" content="Welcome to my blog, enter password to read this private essay.">
+<meta name="twitter:title" content="反静态调试">
+<meta name="twitter:description" content="反调试：插入代码，让程序意识到自己在被调试时，执行代码阻止调试器的分析，延长调试的时间。通过改变正常的执行路径或者修改自身程序让自己崩溃，从而增加调试的时间和复杂度。 0X00:IDA中的反反调试F5之后IDA报错，红色显示：”sp-analysis failed”(IDA有栈跟踪的功能，它在函数内部遇到ret(retn)指令时会做判断：栈指针的值在函数的开头/结尾是否一致，如果不一致就会在函数的">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/2019/08/21/Brisk/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/07/21/反静态调试/">
 
 
 
 
 
-  <title>Brisk | Hy0uka</title>
+  <title>反静态调试 | Hy0uka</title>
   
 
 
@@ -290,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/08/21/Brisk/">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/07/21/反静态调试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hy0uka">
@@ -307,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Brisk</h1>
+          <h1 class="post-title" itemprop="name headline">反静态调试</h1>
         
 
         <div class="post-meta">
@@ -319,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T17:00:25+08:00">
-                2019-08-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-21T15:48:40+08:00">
+                2019-07-21
               </time>
             
 
@@ -335,8 +336,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-08-26T00:09:15+08:00">
-                2019-08-26
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-30T16:13:08+08:00">
+                2019-08-30
               </time>
             
           </span>
@@ -350,8 +351,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/21/Brisk/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/21/Brisk/" itemprop="commentCount"></span>
+                <a href="/2019/07/21/反静态调试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/21/反静态调试/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,7 +385,23 @@
       
 
       
-        <script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Welcome to my blog, enter password to read this private essay.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX19ApyQQXWwu9AF5haFIT6rierGBpvBekmTWt4G1SsxWK3UE2A+3KwVeWBcwNUu76ED9M2ZTdbTySbukR6kg3kVzsNZSkhXequAv1h5eBxlUXvG5wOrMvdapUpiop5QID8ty52vVWoGQ1thmjEDlvLXhaI5z1FjFcJxIArlkFydu3dqkQDS26shn8mN0Wgj3HYsi6HXlFLX5o/BI7E+WasakXG4dElq9UC/Wp3MxizRb4b/502//hHIC </div>
+        <p>反调试：插入代码，让程序意识到自己在被调试时，执行代码阻止调试器的分析，延长调试的时间。通过改变正常的执行路径或者修改自身程序让自己崩溃，从而增加调试的时间和复杂度。</p>
+<h4 id="0X00-IDA中的反反调试"><a href="#0X00-IDA中的反反调试" class="headerlink" title="0X00:IDA中的反反调试"></a>0X00:IDA中的反反调试</h4><p>F5之后IDA报错，红色显示：”sp-analysis failed”(IDA有栈跟踪的功能，它在函数内部遇到ret(retn)指令时会做判断：栈指针的值在函数的开头/结尾是否一致，如果不一致就会在函数的结尾标注”sp-analysis failed”。),说明栈指针未平衡。通过”Options-General-Disassembly-“Stack pointer”显示出栈指针。之后Alt+K进行修改，将Call之前的栈指针减去0X04就得到正确的数值。</p>
+<h4 id="0X01-花指令"><a href="#0X01-花指令" class="headerlink" title="0X01:花指令"></a>0X01:花指令</h4><p>插入花指令或者垃圾代码可以保护自己的代码</p>
+<p><strong>asm的作用：用于调用内联汇编程序，并且可在 C 或 C++ 语句合法时出现，</strong> asm后跟一个程序集指令、一组括在大括号中的指令或者至少一对空大括号。<br>emit指令的作用：</p>
+<ol>
+<li>编译器不认识的指令，拆成机器码来写。</li>
+<li>插入垃圾字节来反跟踪，又称花指令。</li>
+</ol>
+<p>__ams</p>
+<p>{</p>
+<p>​        lea eax,lab1;</p>
+<p>​        jmp eax;</p>
+<p>​                _emit 0x90;</p>
+<p>}</p>
+<p>lab1:</p>
+<p>​        printf(“func1\n”);</p>
+
       
     </div>
 
@@ -411,6 +428,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/essay/" rel="tag"># essay</a>
+          
+        </div>
+      
 
       
       
@@ -420,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/21/反静态调试/" rel="next" title="反静态调试">
-                <i class="fa fa-chevron-left"></i> 反静态调试
+              <a href="/2019/07/18/Python-s-error/" rel="next" title="Python's error">
+                <i class="fa fa-chevron-left"></i> Python's error
               </a>
             
           </div>
@@ -429,6 +452,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/21/Brisk/" rel="prev" title="Brisk">
+                Brisk <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -590,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#encrypt-message"><span class="nav-number">1.</span> <span class="nav-text">Welcome to my blog, enter password to read this private essay.</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#0X00-IDA中的反反调试"><span class="nav-number">1.</span> <span class="nav-text">0X00:IDA中的反反调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0X01-花指令"><span class="nav-number">2.</span> <span class="nav-text">0X01:花指令</span></a></li></ol></div>
             
 
           </div>

@@ -33,6 +33,31 @@
   </entry>
   
   <entry>
+    <title>反静态调试</title>
+    <link href="http://qywcysry.github.io/2019/07/21/%E5%8F%8D%E9%9D%99%E6%80%81%E8%B0%83%E8%AF%95/"/>
+    <id>http://qywcysry.github.io/2019/07/21/反静态调试/</id>
+    <published>2019-07-21T07:48:40.000Z</published>
+    <updated>2019-08-30T08:13:08.552Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;反调试：插入代码，让程序意识到自己在被调试时，执行代码阻止调试器的分析，延长调试的时间。通过改变正常的执行路径或者修改自身程序让自己崩溃，从而增加调试的时间和复杂度。&lt;/p&gt;
+&lt;h4 id=&quot;0X00-IDA中的反反调试&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="http://qywcysry.github.io/tags/essay/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python&#39;s error</title>
     <link href="http://qywcysry.github.io/2019/07/18/Python-s-error/"/>
     <id>http://qywcysry.github.io/2019/07/18/Python-s-error/</id>
