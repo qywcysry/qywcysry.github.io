@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="essay,">
 
 
 
@@ -81,17 +81,21 @@
 
 
 
-<meta name="description" content="Earthquake and Blog">
+<meta name="description" content="Linux 可执行文件格式 ELF （Executable Linkable Format）文件的三种类型： 可重定位文件（Relocatable file）  包含了代码和数据，可以和其他目标文件链接生成一个可执行文件或共享目标文件。 elfDemo.o   可执行文件（Executable File）  包含了可以直接执行的文件。 elfDemo_static.out   共享目标文件（Sha">
+<meta name="keywords" content="essay">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Genesis">
-<meta property="og:url" content="http://qywcysry.github.io/2019/06/17/Genesis/index.html">
+<meta property="og:title" content="Linux ELF">
+<meta property="og:url" content="http://qywcysry.github.io/2019/08/21/Linux-ELF/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="Earthquake and Blog">
+<meta property="og:description" content="Linux 可执行文件格式 ELF （Executable Linkable Format）文件的三种类型： 可重定位文件（Relocatable file）  包含了代码和数据，可以和其他目标文件链接生成一个可执行文件或共享目标文件。 elfDemo.o   可执行文件（Executable File）  包含了可以直接执行的文件。 elfDemo_static.out   共享目标文件（Sha">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-18T18:56:50.489Z">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/1.5.3_elfdemo.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/1.5.3_format.png">
+<meta property="og:updated_time" content="2019-08-30T08:38:46.479Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Genesis">
-<meta name="twitter:description" content="Earthquake and Blog">
+<meta name="twitter:title" content="Linux ELF">
+<meta name="twitter:description" content="Linux 可执行文件格式 ELF （Executable Linkable Format）文件的三种类型： 可重定位文件（Relocatable file）  包含了代码和数据，可以和其他目标文件链接生成一个可执行文件或共享目标文件。 elfDemo.o   可执行文件（Executable File）  包含了可以直接执行的文件。 elfDemo_static.out   共享目标文件（Sha">
+<meta name="twitter:image" content="http://pww3zcd8q.bkt.clouddn.com/1.5.3_elfdemo.png">
 
 
 
@@ -121,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/2019/06/17/Genesis/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/08/21/Linux-ELF/">
 
 
 
 
 
-  <title>Genesis | Hy0uka</title>
+  <title>Linux ELF | Hy0uka</title>
   
 
 
@@ -290,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/06/17/Genesis/">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/08/21/Linux-ELF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hy0uka">
@@ -307,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Genesis</h1>
+          <h1 class="post-title" itemprop="name headline">Linux ELF</h1>
         
 
         <div class="post-meta">
@@ -319,8 +323,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-17T22:10:28+08:00">
-                2019-06-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T16:23:42+08:00">
+                2019-08-21
               </time>
             
 
@@ -335,8 +339,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-06-19T02:56:50+08:00">
-                2019-06-19
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-30T16:38:46+08:00">
+                2019-08-30
               </time>
             
           </span>
@@ -350,8 +354,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/17/Genesis/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/17/Genesis/" itemprop="commentCount"></span>
+                <a href="/2019/08/21/Linux-ELF/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/21/Linux-ELF/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,7 +388,37 @@
       
 
       
-        <p>Earthquake and Blog</p>
+        <h4 id="Linux-可执行文件格式-ELF-（Executable-Linkable-Format）文件的三种类型："><a href="#Linux-可执行文件格式-ELF-（Executable-Linkable-Format）文件的三种类型：" class="headerlink" title="Linux 可执行文件格式 ELF （Executable Linkable Format）文件的三种类型："></a>Linux 可执行文件格式 ELF （Executable Linkable Format）文件的三种类型：</h4><ul>
+<li><p>可重定位文件（Relocatable file）</p>
+<ul>
+<li>包含了代码和数据，可以和其他目标文件链接生成一个可执行文件或共享目标文件。</li>
+<li>elfDemo.o</li>
+</ul>
+</li>
+<li><p>可执行文件（Executable File）</p>
+<ul>
+<li>包含了可以直接执行的文件。</li>
+<li>elfDemo_static.out</li>
+</ul>
+</li>
+<li><p>共享目标文件（Shared Object File）</p>
+<ul>
+<li>包含了用于链接的代码和数据，分两种情况。一种是链接器将其与其他的可重定位文件和共享目标文件链接起来，生产新的目标文件。另一种是动态链接器将多个共享目标文件与可执行文件结合，作为进程映像的一部分。</li>
+<li>elfDemo.out</li>
+<li><code>libc-2.25.so</code></li>
+</ul>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/1.5.3_elfdemo.png" alt="如图"></p>
+</li>
+</ul>
+<p>可以看到，在这个简化的 ELF 文件中，开头是一个“文件头”，之后分别是代码段、数据段和.bss段。程序源代码编译后，执行语句变成机器指令，保存在<code>.text</code>段；已初始化的全局变量和局部静态变量都保存在<code>.data</code>段；未初始化的全局变量和局部静态变量则放在<code>.bss</code>段。</p>
+<p>把程序指令和程序数据分开存放有许多好处，从安全的角度讲，当程序被加载后，数据和指令分别被映射到两个虚拟区域。由于数据区域对于进程来说是可读写的，而指令区域对于进程来说是只读的，所以这两个虚存区域的权限可以被分别设置成可读写和只读，可以防止程序的指令被改写和利用。</p>
+<h2 id="ELF-文件结构"><a href="#ELF-文件结构" class="headerlink" title="ELF 文件结构"></a>ELF 文件结构</h2><p><img src="http://pww3zcd8q.bkt.clouddn.com/1.5.3_format.png" alt></p>
+<ul>
+<li><strong>ELF 文件头（ELF Header）</strong> 在目标文件格式的最前面，包含了描述整个文件的基本属性。</li>
+<li><strong>程序头表（Program Header Table）</strong> 是可选的，它告诉系统怎样创建一个进程映像。可执行文件必须有程序头表，而重定位文件不需要。</li>
+<li><strong>段（Section）</strong> 包含了链接视图中大量的目标文件信息。</li>
+<li><strong>段表（Section Header Table）</strong> 包含了描述文件中所有段的信息。</li>
+</ul>
 
       
     </div>
@@ -412,6 +446,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/essay/" rel="tag"># essay</a>
+          
+        </div>
+      
 
       
       
@@ -421,14 +461,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/21/反静态调试/" rel="next" title="反静态调试">
+                <i class="fa fa-chevron-left"></i> 反静态调试
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/19/Stack Frame/" rel="prev" title="栈帧（stack frame）">
-                栈帧（stack frame） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/21/Brisk/" rel="prev" title="Brisk">
+                Brisk <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -484,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -572,6 +625,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux-可执行文件格式-ELF-（Executable-Linkable-Format）文件的三种类型："><span class="nav-number">1.</span> <span class="nav-text">Linux 可执行文件格式 ELF （Executable Linkable Format）文件的三种类型：</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#ELF-文件结构"><span class="nav-number"></span> <span class="nav-text">ELF 文件结构</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -33,6 +33,30 @@
   </entry>
   
   <entry>
+    <title>Linux ELF</title>
+    <link href="http://qywcysry.github.io/2019/08/21/Linux-ELF/"/>
+    <id>http://qywcysry.github.io/2019/08/21/Linux-ELF/</id>
+    <published>2019-08-21T08:23:42.000Z</published>
+    <updated>2019-08-30T08:38:46.479Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;Linux-可执行文件格式-ELF-（Executable-Linkable-Format）文件的三种类型：&quot;&gt;&lt;a href=&quot;#Linux-可执行文件格式-ELF-（Executable-Linkable-Format）文件的三种类型：&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="essay" scheme="http://qywcysry.github.io/tags/essay/"/>
+    
+  </entry>
+  
+  <entry>
     <title>反静态调试</title>
     <link href="http://qywcysry.github.io/2019/07/21/%E5%8F%8D%E9%9D%99%E6%80%81%E8%B0%83%E8%AF%95/"/>
     <id>http://qywcysry.github.io/2019/07/21/反静态调试/</id>
