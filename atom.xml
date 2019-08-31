@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-08-25T16:09:15.897Z</updated>
+  <updated>2019-08-30T14:34:31.634Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Summary of how to use tools</title>
+    <link href="http://qywcysry.github.io/2019/08/30/Summary-of-how-to-use-tools/"/>
+    <id>http://qywcysry.github.io/2019/08/30/Summary-of-how-to-use-tools/</id>
+    <published>2019-08-30T14:34:31.000Z</published>
+    <updated>2019-08-30T14:34:31.634Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Brisk</title>
@@ -61,7 +75,7 @@
     <link href="http://qywcysry.github.io/2019/07/21/%E5%8F%8D%E9%9D%99%E6%80%81%E8%B0%83%E8%AF%95/"/>
     <id>http://qywcysry.github.io/2019/07/21/反静态调试/</id>
     <published>2019-07-21T07:48:40.000Z</published>
-    <updated>2019-08-30T08:13:08.552Z</updated>
+    <updated>2019-08-30T13:34:10.310Z</updated>
     
     <summary type="html">
     
@@ -271,6 +285,29 @@
     
     
       <category term="plan" scheme="http://qywcysry.github.io/tags/plan/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android</title>
+    <link href="http://qywcysry.github.io/2019/07/01/Android/"/>
+    <id>http://qywcysry.github.io/2019/07/01/Android/</id>
+    <published>2019-07-01T06:28:27.000Z</published>
+    <updated>2019-08-31T06:30:21.388Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Android：我的第一行代码&lt;/p&gt;
+&lt;h3 id=&quot;0X00：Android系统架构&quot;&gt;&lt;a href=&quot;#0X00：Android系统架构&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
     
   </entry>
   

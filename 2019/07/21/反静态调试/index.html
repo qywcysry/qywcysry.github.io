@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="反调试：插入代码，让程序意识到自己在被调试时，执行代码阻止调试器的分析，延长调试的时间。通过改变正常的执行路径或者修改自身程序让自己崩溃，从而增加调试的时间和复杂度。 0X00:IDA中的反反调试F5之后IDA报错，红色显示：”sp-analysis failed”(IDA有栈跟踪的功能，它在函数内部遇到ret(retn)指令时会做判断：栈指针的值在函数的开头/结尾是否一致，如果不一致就会在函数的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-30T08:13:08.552Z">
+<meta property="og:updated_time" content="2019-08-30T13:34:10.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反静态调试">
 <meta name="twitter:description" content="反调试：插入代码，让程序意识到自己在被调试时，执行代码阻止调试器的分析，延长调试的时间。通过改变正常的执行路径或者修改自身程序让自己崩溃，从而增加调试的时间和复杂度。 0X00:IDA中的反反调试F5之后IDA报错，红色显示：”sp-analysis failed”(IDA有栈跟踪的功能，它在函数内部遇到ret(retn)指令时会做判断：栈指针的值在函数的开头/结尾是否一致，如果不一致就会在函数的">
@@ -389,6 +389,15 @@
 <p>}</p>
 <p>lab1:</p>
 <p>​        printf(“func1\n”);</p>
+<h4 id="0X02："><a href="#0X02：" class="headerlink" title="0X02："></a>0X02：</h4><p>某些函数在使用 f5 进行反编译时，会提示错误 “sp-analysis failed”，导致无法正确反编译。原因可能是在代码执行中的 pop、push 操作不匹配，导致解析的时候 esp 发生错误。</p>
+<p>解决办法步骤如下：</p>
+<ol>
+<li>用 Option-&gt;General-&gt;Disassembly, 将选项 Stack pointer 打钩</li>
+<li>仔细观察每条 call sub_xxxxxx 前后的堆栈指针是否平衡</li>
+<li>有时还要看被调用的 sub_xxxxxx 内部的堆栈情况，主要是看入栈的参数与 ret xx 是否匹配</li>
+<li>注意观察 jmp 指令前后的堆栈是否有变化</li>
+<li>有时用 Edit-&gt;Functions-&gt;Edit function…,然后点击 OK 刷一下函数定义</li>
+</ol>
 
       
     </div>
@@ -525,7 +534,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -605,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#0X00-IDA中的反反调试"><span class="nav-number">1.</span> <span class="nav-text">0X00:IDA中的反反调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0X01-花指令"><span class="nav-number">2.</span> <span class="nav-text">0X01:花指令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#0X00-IDA中的反反调试"><span class="nav-number">1.</span> <span class="nav-text">0X00:IDA中的反反调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0X01-花指令"><span class="nav-number">2.</span> <span class="nav-text">0X01:花指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0X02："><span class="nav-number">3.</span> <span class="nav-text">0X02：</span></a></li></ol></div>
             
 
           </div>

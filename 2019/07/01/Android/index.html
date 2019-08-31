@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Pwn function,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -81,18 +81,17 @@
 
 
 
-<meta name="description" content="1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。 2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。 3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的内存空间。此句中，SS是Segment Memory Model的缩写，表示栈段，在Windows（">
-<meta name="keywords" content="Pwn function">
+<meta name="description" content="Android：我的第一行代码 0X00：Android系统架构Android大致可以分成四层架构：Linux内核层，系统运行库层，应用框架层和应用层。 Linux内核层：Android基于Linux内核，这一层为Android设备的各种硬件提供底层驱动。 系统运行库层：通过C/C++库为Android系统提供 应用框架层：主要提供构建应用程序时用到的API 应用层：安装在手机上的应用属于这一层">
 <meta property="og:type" content="article">
-<meta property="og:title" content="栈帧（stack frame）">
-<meta property="og:url" content="http://qywcysry.github.io/2019/06/19/Stack Frame/index.html">
+<meta property="og:title" content="Android">
+<meta property="og:url" content="http://qywcysry.github.io/2019/07/01/Android/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。 2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。 3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的内存空间。此句中，SS是Segment Memory Model的缩写，表示栈段，在Windows（">
+<meta property="og:description" content="Android：我的第一行代码 0X00：Android系统架构Android大致可以分成四层架构：Linux内核层，系统运行库层，应用框架层和应用层。 Linux内核层：Android基于Linux内核，这一层为Android设备的各种硬件提供底层驱动。 系统运行库层：通过C/C++库为Android系统提供 应用框架层：主要提供构建应用程序时用到的API 应用层：安装在手机上的应用属于这一层">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-20T12:46:31.029Z">
+<meta property="og:updated_time" content="2019-08-31T06:30:21.388Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="栈帧（stack frame）">
-<meta name="twitter:description" content="1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。 2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。 3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的内存空间。此句中，SS是Segment Memory Model的缩写，表示栈段，在Windows（">
+<meta name="twitter:title" content="Android">
+<meta name="twitter:description" content="Android：我的第一行代码 0X00：Android系统架构Android大致可以分成四层架构：Linux内核层，系统运行库层，应用框架层和应用层。 Linux内核层：Android基于Linux内核，这一层为Android设备的各种硬件提供底层驱动。 系统运行库层：通过C/C++库为Android系统提供 应用框架层：主要提供构建应用程序时用到的API 应用层：安装在手机上的应用属于这一层">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/2019/06/19/Stack Frame/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/07/01/Android/">
 
 
 
 
 
-  <title>栈帧（stack frame） | Hy0uka</title>
+  <title>Android | Hy0uka</title>
   
 
 
@@ -291,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/06/19/Stack Frame/">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/07/01/Android/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hy0uka">
@@ -308,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">栈帧（stack frame）</h1>
+          <h1 class="post-title" itemprop="name headline">Android</h1>
         
 
         <div class="post-meta">
@@ -320,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-19T03:03:07+08:00">
-                2019-06-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-01T14:28:27+08:00">
+                2019-07-01
               </time>
             
 
@@ -331,28 +330,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Pwn/" itemprop="url" rel="index">
-                    <span itemprop="name">Pwn</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -361,8 +338,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/19/Stack Frame/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/19/Stack Frame/" itemprop="commentCount"></span>
+                <a href="/2019/07/01/Android/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/01/Android/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -395,16 +372,15 @@
       
 
       
-        <p>1.栈帧的作用：在程序中用于声明变量，调用函数。是利用EBP（栈帧指针）寄存器访问栈内局部变量，参数，函数返回地址等的手段。</p>
-<p>2.在储存局部变量的值之前，都会执行SUB指令，为局部变量开辟空间。</p>
-<p>3.汇编中的DWORD PTR SS:[EBP-4]理解为指针，意为地址EBP-4处有一个4字节大小 的内存空间。此句中，SS是Segment Memory Model的缩写，表示栈段，在Windows（使用段内存模型）下需要指出。EBP是指向栈的寄存器，所以加上SS寄存器。DWORD PTR与SS等字符串可以在OD设置中隐藏。</p>
-<p>4.调用一个函数之前，先开辟出内存空间，在将参数压入栈，最后在执行函数之前，将返回地址压入栈。执行完毕之后将删除函数栈帧并返回至PUSH的返回地址。</p>
-<p>5.注意参数入栈的顺序与C语言中参数顺序恰好相反（参数的逆向存储）。</p>
-<p>6.调用约定（Calling Convention）：被调函数执行完后，由函数的调用者负责清理存储在栈中的参数，这种方式称为cdecl方式。由被调用者负责清理保存在栈中的参数，称为stdcall方式。</p>
-<p>7.ESP为栈顶指针，EBP为栈帧指针。程序运行过程中，ESP是随时变化的，访问内存中的局部变量和参数等如果以此为基址会十分困难。所以程序开始时会PUSH EBP,MOV EBP,ESP.将ESP的值保存在EBP中并且维持在函数内部，这样无论ESP如何变化，以EBP为基准都能准确地访问到局部变量与参数。执行完这两条命令，就可以说栈帧已经生成了。</p>
-<p>8.XOR命令用来进行异或运算，Exclusive OR bit，其特点为两个相同的值进行异或运算的结果为0.XOR命令的执行速度比 MOV EAX,0 要快，常用于寄存器初始化操作。</p>
-<p>9.编译器中的”优化“（optimization）选项开启后，编译出来的简单函数将不会生成栈帧。</p>
-<p>10.牢记：栈是用来存放参数，变量，地址等数据的，不是用来存放代码的。</p>
+        <p>Android：我的第一行代码</p>
+<h3 id="0X00：Android系统架构"><a href="#0X00：Android系统架构" class="headerlink" title="0X00：Android系统架构"></a>0X00：Android系统架构</h3><p>Android大致可以分成四层架构：Linux内核层，系统运行库层，应用框架层和应用层。</p>
+<h5 id="Linux内核层："><a href="#Linux内核层：" class="headerlink" title="Linux内核层："></a>Linux内核层：</h5><p>Android基于Linux内核，这一层为Android设备的各种硬件提供底层驱动。</p>
+<h5 id="系统运行库层："><a href="#系统运行库层：" class="headerlink" title="系统运行库层："></a>系统运行库层：</h5><p>通过C/C++库为Android系统提供</p>
+<h5 id="应用框架层："><a href="#应用框架层：" class="headerlink" title="应用框架层："></a>应用框架层：</h5><p>主要提供构建应用程序时用到的API</p>
+<h5 id="应用层："><a href="#应用层：" class="headerlink" title="应用层："></a>应用层：</h5><p>安装在手机上的应用属于这一层</p>
+<h3 id="0X01-Android系统的四大组件"><a href="#0X01-Android系统的四大组件" class="headerlink" title="0X01:Android系统的四大组件"></a>0X01:Android系统的四大组件</h3><p>活动(activity),服务(Service),广播接收器(Broadcast Receiver)和内容提供器(Content Provider).</p>
+<p>活动是所有Android应用程序的门面，用户能够看到的都在活动中。服务一直在后台运行，即使应用退出也可以运行。广播接收器允许应用接收来自电话/短信等各处的广播消息，也可以从此向外发出广播消息。内容提供器实现应用程序之间的共享数据。</p>
+<p>自带的一些组件：SQLite数据库(支持SQL语法，可以通过Android封装好的API进行操作。)其他的多媒体服务:音乐，视频，录音，地理位置定位等可以通过代码进行控制。</p>
 
       
     </div>
@@ -432,12 +408,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Pwn-function/" rel="tag"># Pwn function</a>
-          
-        </div>
-      
 
       
       
@@ -447,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/17/Genesis/" rel="next" title="Genesis">
-                <i class="fa fa-chevron-left"></i> Genesis
+              <a href="/2019/06/20/CTF-Wiki/" rel="next" title="CTF-Wiki Stack Overflow and ROP">
+                <i class="fa fa-chevron-left"></i> CTF-Wiki Stack Overflow and ROP
               </a>
             
           </div>
@@ -457,8 +427,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/20/CTF-Wiki/" rel="prev" title="CTF-Wiki Stack Overflow and ROP">
-                CTF-Wiki Stack Overflow and ROP <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/11/Summer Hoilday Plan/" rel="prev" title="Summer Hoilday's Plan">
+                Summer Hoilday's Plan <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -514,8 +484,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -602,6 +581,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0X00：Android系统架构"><span class="nav-number">1.</span> <span class="nav-text">0X00：Android系统架构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux内核层："><span class="nav-number">1.0.1.</span> <span class="nav-text">Linux内核层：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统运行库层："><span class="nav-number">1.0.2.</span> <span class="nav-text">系统运行库层：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用框架层："><span class="nav-number">1.0.3.</span> <span class="nav-text">应用框架层：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用层："><span class="nav-number">1.0.4.</span> <span class="nav-text">应用层：</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#0X01-Android系统的四大组件"><span class="nav-number">2.</span> <span class="nav-text">0X01:Android系统的四大组件</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
