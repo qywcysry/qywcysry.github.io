@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-08-30T14:34:31.634Z</updated>
+  <updated>2019-08-31T14:14:02.114Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于Android逆向入门</title>
+    <link href="http://qywcysry.github.io/2019/08/31/%E5%85%B3%E4%BA%8EAndroid%E9%80%86%E5%90%91%E5%85%A5%E9%97%A8/"/>
+    <id>http://qywcysry.github.io/2019/08/31/关于Android逆向入门/</id>
+    <published>2019-08-31T12:19:38.000Z</published>
+    <updated>2019-08-31T14:14:02.114Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;关于Android逆向解题过程的总结&lt;/p&gt;
+&lt;h3 id=&quot;0X00-功能测试&quot;&gt;&lt;a href=&quot;#0X00-功能测试&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Summary of how to use tools</title>
