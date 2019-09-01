@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="报错1:Exception:Traceback (most recent call last):  File “/usr/lib/python2.7/dist-packages/pip/basecommand.py”, line 209, in main    status = self.run(options, args)  File “/usr/lib/python2.7/dist-pack">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-01T12:22:42.358Z">
+<meta property="og:updated_time" content="2019-09-01T15:58:27.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python&#39;s error">
 <meta name="twitter:description" content="报错1:Exception:Traceback (most recent call last):  File “/usr/lib/python2.7/dist-packages/pip/basecommand.py”, line 209, in main    status = self.run(options, args)  File “/usr/lib/python2.7/dist-pack">
@@ -392,6 +392,15 @@
 <p>b.若有pyc文件，对比py文件的修改时间是否一致，若一致，直接使用pyc文件，若不一致，对py文件进行解释，并将结果覆盖本地的pyc文件</p>
 <p>c.若未找到pyc文件，对py文件进行解释，并将结果回写到本地的pyc文件中</p>
 <p>重名出现的问题</p>
+<h4 id="报错4-python前注释"><a href="#报错4-python前注释" class="headerlink" title="报错4:python前注释"></a>报错4:python前注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding:utf-8 -*-</span><br></pre></td></tr></table></figure>
+
+<h4 id="报错5："><a href="#报错5：" class="headerlink" title="报错5："></a>报错5：</h4><p>IndentationError: unexpected indent</p>
+<p>此处有一个意料之外的缩进</p>
+<p>IndentationError:expected an indented block</p>
+<p>此处需要一个缩进</p>
+<p>注意空格与Tab不能混用</p>
+<h4 id="报错6："><a href="#报错6：" class="headerlink" title="报错6："></a>报错6：</h4><p>SyntaxError: unexpected EOF while parsing</p>
+<p>未验证函数参数是否有效，传入了空的参数。</p>
 
       
     </div>
@@ -608,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错1"><span class="nav-number">1.</span> <span class="nav-text">报错1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法"><span class="nav-number">2.</span> <span class="nav-text">解决办法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报错2"><span class="nav-number">3.</span> <span class="nav-text">报错2:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错1"><span class="nav-number">1.</span> <span class="nav-text">报错1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法"><span class="nav-number">2.</span> <span class="nav-text">解决办法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报错2"><span class="nav-number">3.</span> <span class="nav-text">报错2:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报错4-python前注释"><span class="nav-number">4.</span> <span class="nav-text">报错4:python前注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报错5："><span class="nav-number">5.</span> <span class="nav-text">报错5：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报错6："><span class="nav-number">6.</span> <span class="nav-text">报错6：</span></a></li></ol></div>
             
 
           </div>
