@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="报错1:Exception:Traceback (most recent call last):  File “/usr/lib/python2.7/dist-packages/pip/basecommand.py”, line 209, in main    status = self.run(options, args)  File “/usr/lib/python2.7/dist-pack">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-18T13:15:14.799Z">
+<meta property="og:updated_time" content="2019-09-01T12:22:42.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python&#39;s error">
 <meta name="twitter:description" content="报错1:Exception:Traceback (most recent call last):  File “/usr/lib/python2.7/dist-packages/pip/basecommand.py”, line 209, in main    status = self.run(options, args)  File “/usr/lib/python2.7/dist-pack">
@@ -379,6 +379,19 @@
 <p><strong>easy_install pip</strong> </p>
 <p><strong>pip install –upgrade pip</strong></p>
 <p>(此处执行原本要进行的命令)</p>
+<h4 id="报错2"><a href="#报错2" class="headerlink" title="报错2:"></a>报错2:</h4><p>AttributeError: ‘module’ object has no attribute ‘b64encode’</p>
+<p>import base64出现的报错</p>
+<p>原因：.pyc文件出现的问题</p>
+<p>解决办法：将base64.py重命名，并删除pyc文件。</p>
+<p>Python运行时，会先查找该程序所在路径，是否有相关的模块，有则直接引用。正好该目录下有一个base64.py文件，而这个文件非官方的base64库。</p>
+<p><strong>1.什么是pyc文件？</strong></p>
+<p>pyc文件是python编译后的字节码文件。Python的程序中，是把原始程序代码放在.py文件里，而Python会在执行.py文件的时候。将.py形式的程序编译成中间式文件（byte-compiled）的.pyc文件，这么做的目的就是为了加快下次执行文件的速度。</p>
+<p><strong>2.Python运行过程</strong></p>
+<p>Python是一种解释型语言，每次执行都需要进行一次翻译。执行 python *.py 后，将会启动 Python 的解释器，将 *.py 编译成一个字节码对象 PyCodeObject，存放在内存，当这个模块的 Python 代码执行完之后就会将编译结果保存到 *.pyc文件中，下一次就不需要编译，直接加载到内存中。</p>
+<p>a.模块在被导入时会先检查本地目录下是否有pyc文件</p>
+<p>b.若有pyc文件，对比py文件的修改时间是否一致，若一致，直接使用pyc文件，若不一致，对py文件进行解释，并将结果覆盖本地的pyc文件</p>
+<p>c.若未找到pyc文件，对py文件进行解释，并将结果回写到本地的pyc文件中</p>
+<p>重名出现的问题</p>
 
       
     </div>
@@ -595,7 +608,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错1"><span class="nav-number">1.</span> <span class="nav-text">报错1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法"><span class="nav-number">2.</span> <span class="nav-text">解决办法:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错1"><span class="nav-number">1.</span> <span class="nav-text">报错1:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法"><span class="nav-number">2.</span> <span class="nav-text">解决办法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报错2"><span class="nav-number">3.</span> <span class="nav-text">报错2:</span></a></li></ol></div>
             
 
           </div>
