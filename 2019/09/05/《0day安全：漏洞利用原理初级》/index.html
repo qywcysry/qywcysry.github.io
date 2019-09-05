@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="0day安全,">
 
 
 
@@ -81,14 +81,18 @@
 
 
 
+<meta name="description" content="PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，存放着编译产生的二">
+<meta name="keywords" content="0day安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《0day安全：漏洞利用原理初级》">
 <meta property="og:url" content="http://qywcysry.github.io/2019/09/05/《0day安全：漏洞利用原理初级》/index.html">
 <meta property="og:site_name" content="Hy0uka">
+<meta property="og:description" content="PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，存放着编译产生的二">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-05T15:42:58.149Z">
+<meta property="og:updated_time" content="2019-09-05T16:00:53.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《0day安全：漏洞利用原理初级》">
+<meta name="twitter:description" content="PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，存放着编译产生的二">
 
 
 
@@ -369,7 +373,14 @@
       
 
       
-        
+        <h3 id="PE文件概述："><a href="#PE文件概述：" class="headerlink" title="PE文件概述："></a>PE文件概述：</h3><p>PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。</p>
+<p>PE文件格式把可执行文件分割成多个数据节(section)</p>
+<p>.text，由编译器产生，存放着编译产生的二进制机器代码，反汇编和调试的对象。</p>
+<p>.data,初始化的数据块，宏定义，全局变量，静态变量。</p>
+<p>.idata,所执行的动态链接库等外来函数与文件的信息。</p>
+<p>.rsrc,存放程序的资源，如图标，菜单等。</p>
+<h3 id="虚拟内存："><a href="#虚拟内存：" class="headerlink" title="虚拟内存："></a>虚拟内存：</h3><p>Windows的物理内存比较复杂，Windows内核Ring0级别才能看到。通常在用户模式下，用调试器看到的内存都是虚拟内存。每个进程都被分配了4GB的内存空间，实际上能够用到的内存空间没有那么多。内存管理器分配给了进程一片假地址/虚拟地址，只有当需要进行实际的内存操作时，内存管理器才会把虚拟地址与物理地址联系起来。</p>
+
       
     </div>
 
@@ -395,6 +406,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/0day安全/" rel="tag"># 0day安全</a>
+          
+        </div>
       
 
       
@@ -468,8 +485,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -508,7 +534,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -556,6 +582,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PE文件概述："><span class="nav-number">1.</span> <span class="nav-text">PE文件概述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟内存："><span class="nav-number">2.</span> <span class="nav-text">虚拟内存：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
