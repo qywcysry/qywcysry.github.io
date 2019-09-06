@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，存放着编译产生的二">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-05T16:00:53.494Z">
+<meta property="og:updated_time" content="2019-09-06T02:27:24.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《0day安全：漏洞利用原理初级》">
 <meta name="twitter:description" content="PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，存放着编译产生的二">
@@ -380,6 +380,21 @@
 <p>.idata,所执行的动态链接库等外来函数与文件的信息。</p>
 <p>.rsrc,存放程序的资源，如图标，菜单等。</p>
 <h3 id="虚拟内存："><a href="#虚拟内存：" class="headerlink" title="虚拟内存："></a>虚拟内存：</h3><p>Windows的物理内存比较复杂，Windows内核Ring0级别才能看到。通常在用户模式下，用调试器看到的内存都是虚拟内存。每个进程都被分配了4GB的内存空间，实际上能够用到的内存空间没有那么多。内存管理器分配给了进程一片假地址/虚拟地址，只有当需要进行实际的内存操作时，内存管理器才会把虚拟地址与物理地址联系起来。</p>
+<p>一个512MB的虚拟内存，能够映射出几个进程4GB的虚拟内存，关键在于这几个进程实际用到的内存之和小于512MB.</p>
+<h3 id="PE文件与虚拟内存之间的映射："><a href="#PE文件与虚拟内存之间的映射：" class="headerlink" title="PE文件与虚拟内存之间的映射："></a>PE文件与虚拟内存之间的映射：</h3><p>1.静态反汇编工具显示的某条文件的指令是相对于磁盘文件而言的，即文件偏移。我们还可能想知道虚拟内存地址VA。</p>
+<p>2.动态调试时看到的某条指令是虚拟内存地址，经常需要回到PE文件找到这条指令的机器码。</p>
+<p>四个概念：<u>注意是在内存中还是在PE文件中</u></p>
+<p>1.文件偏移地址(File Offset)<u>静态</u></p>
+<p>数据在PE文件中的地址叫做文件偏移地址，是文件在磁盘上存放时，相对于文件开头的偏移。</p>
+<p>2.装载基址(Image Base<u>)动态</u></p>
+<p>PE装入内存中时的基地址，默认情况下装载基址为0X00400000，DLL文件的装载基址是0X10000000.</p>
+<p>3.虚拟内存地址(Virtual Address)<u>动态</u></p>
+<p>PE文件中的指令被装入内存之后的地址。</p>
+<p>4.相对虚拟地址(Relative Virtual Adress)<u>动态</u></p>
+<p>相对虚拟地址是内存地址相对于映射基址的偏移量。</p>
+<p>所以有<strong>VA=Image Base+RVA</strong></p>
+<p>默认情况下将<strong>PE文件的0字节映射到虚拟内存的0x00400000</strong>，这个地址就是装载基址。</p>
+<p>文件偏移是相对于文件开始处0字节的偏移，RVA是相对于装载基址0x00400000的偏移。    </p>
 
       
     </div>
@@ -422,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/05/GiGit的大小写问题/" rel="next" title="GiGit的大小写问题">
-                <i class="fa fa-chevron-left"></i> GiGit的大小写问题
+              <a href="/2019/09/05/Git的大小写问题/" rel="next" title="Git的大小写问题">
+                <i class="fa fa-chevron-left"></i> Git的大小写问题
               </a>
             
           </div>
@@ -431,6 +446,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/06/数据库原理及其应用/" rel="prev" title="数据库原理及其应用课程笔记">
+                数据库原理及其应用课程笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -512,7 +531,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -534,7 +553,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -592,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PE文件概述："><span class="nav-number">1.</span> <span class="nav-text">PE文件概述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟内存："><span class="nav-number">2.</span> <span class="nav-text">虚拟内存：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PE文件概述："><span class="nav-number">1.</span> <span class="nav-text">PE文件概述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟内存："><span class="nav-number">2.</span> <span class="nav-text">虚拟内存：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PE文件与虚拟内存之间的映射："><span class="nav-number">3.</span> <span class="nav-text">PE文件与虚拟内存之间的映射：</span></a></li></ol></div>
             
 
           </div>
