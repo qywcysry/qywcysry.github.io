@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="essay,">
+  <meta name="keywords" content="pwn,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="如果高中数学给我们用Z3就好了 0X00:IntroductionZ3求解器给我们提供了一个非常便利求解方式，我们只需要定义未知量（x,y等），然后为这些未知量添加约束方式即可求解。 0X01:基本用法x = Int(‘x’)        y = Int(‘y’)        solve(x &amp;gt; 2, y &amp;lt; 10, x + 2*y == 7) 首先要定义要求解的几个参数，然后用变">
-<meta name="keywords" content="essay">
+<meta name="description" content="Shellcode:缓冲区溢出攻击中植入进程的代码 Exploit:计算函数返回地址距离缓冲区的偏移并覆盖，选择指令的地址，最终制作出一个由攻击效果，承载着shellcode的输入字符串位Exploit。 exploit一般以一段代码的形式出现，用于生成攻击性的网络数据包或者其他输入，其核心是淹没返回地址，劫持进程的控制权，之后跳转去执行shellcode。与shellcode一定的通用性不同，e">
+<meta name="keywords" content="pwn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Z3约束求解器">
-<meta property="og:url" content="http://qywcysry.github.io/2019/07/14/Z3约束求解器/index.html">
+<meta property="og:title" content="开发shellcode的艺术">
+<meta property="og:url" content="http://qywcysry.github.io/2019/09/08/开发shellcode的艺术/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="如果高中数学给我们用Z3就好了 0X00:IntroductionZ3求解器给我们提供了一个非常便利求解方式，我们只需要定义未知量（x,y等），然后为这些未知量添加约束方式即可求解。 0X01:基本用法x = Int(‘x’)        y = Int(‘y’)        solve(x &amp;gt; 2, y &amp;lt; 10, x + 2*y == 7) 首先要定义要求解的几个参数，然后用变">
+<meta property="og:description" content="Shellcode:缓冲区溢出攻击中植入进程的代码 Exploit:计算函数返回地址距离缓冲区的偏移并覆盖，选择指令的地址，最终制作出一个由攻击效果，承载着shellcode的输入字符串位Exploit。 exploit一般以一段代码的形式出现，用于生成攻击性的网络数据包或者其他输入，其核心是淹没返回地址，劫持进程的控制权，之后跳转去执行shellcode。与shellcode一定的通用性不同，e">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-30T13:31:45.218Z">
+<meta property="og:updated_time" content="2019-09-08T09:31:42.575Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Z3约束求解器">
-<meta name="twitter:description" content="如果高中数学给我们用Z3就好了 0X00:IntroductionZ3求解器给我们提供了一个非常便利求解方式，我们只需要定义未知量（x,y等），然后为这些未知量添加约束方式即可求解。 0X01:基本用法x = Int(‘x’)        y = Int(‘y’)        solve(x &amp;gt; 2, y &amp;lt; 10, x + 2*y == 7) 首先要定义要求解的几个参数，然后用变">
+<meta name="twitter:title" content="开发shellcode的艺术">
+<meta name="twitter:description" content="Shellcode:缓冲区溢出攻击中植入进程的代码 Exploit:计算函数返回地址距离缓冲区的偏移并覆盖，选择指令的地址，最终制作出一个由攻击效果，承载着shellcode的输入字符串位Exploit。 exploit一般以一段代码的形式出现，用于生成攻击性的网络数据包或者其他输入，其核心是淹没返回地址，劫持进程的控制权，之后跳转去执行shellcode。与shellcode一定的通用性不同，e">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/2019/07/14/Z3约束求解器/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/09/08/开发shellcode的艺术/">
 
 
 
 
 
-  <title>Z3约束求解器 | Hy0uka</title>
+  <title>开发shellcode的艺术 | Hy0uka</title>
   
 
 
@@ -291,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/07/14/Z3约束求解器/">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/09/08/开发shellcode的艺术/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hy0uka">
@@ -308,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Z3约束求解器</h1>
+          <h1 class="post-title" itemprop="name headline">开发shellcode的艺术</h1>
         
 
         <div class="post-meta">
@@ -320,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-14T21:15:08+08:00">
-                2019-07-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-08T17:05:12+08:00">
+                2019-09-08
               </time>
             
 
@@ -339,8 +339,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/14/Z3约束求解器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/14/Z3约束求解器/" itemprop="commentCount"></span>
+                <a href="/2019/09/08/开发shellcode的艺术/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/08/开发shellcode的艺术/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,11 +373,14 @@
       
 
       
-        <p>如果高中数学给我们用Z3就好了</p>
-<h4 id="0X00-Introduction"><a href="#0X00-Introduction" class="headerlink" title="0X00:Introduction"></a>0X00:Introduction</h4><p>Z3求解器给我们提供了一个非常便利求解方式，我们只需要定义未知量（x,y等），然后为这些未知量添加约束方式即可求解。</p>
-<h4 id="0X01-基本用法"><a href="#0X01-基本用法" class="headerlink" title="0X01:基本用法"></a>0X01:基本用法</h4><p>x = Int(‘x’)<br>        y = Int(‘y’)<br>        solve(x &gt; 2, y &lt; 10, x + 2*y == 7)</p>
-<p>首先要定义要求解的几个参数，然后用变量把核心的方程搭建出来，之后就会自动求解，最后打印出来就行。</p>
-<p>基本的框架如此，具体的代码还是要多在实际中写。虽然CTF逆向比赛中重点考察的是逆向的能力，采用求解器的方式来求解并不能锻炼到自己的逆向逻辑，自己肝才是大佬。</p>
+        <p>Shellcode:缓冲区溢出攻击中植入进程的代码</p>
+<p>Exploit:计算函数返回地址距离缓冲区的偏移并覆盖，选择指令的地址，最终制作出一个由攻击效果，承载着shellcode的输入字符串位Exploit。</p>
+<p>exploit一般以一段代码的形式出现，用于生成攻击性的网络数据包或者其他输入，其核心是淹没返回地址，劫持进程的控制权，之后跳转去执行shellcode。与shellcode一定的通用性不同，exploit一般是针对特定漏洞的。</p>
+<p>Metasploit通用漏洞测试平台：规范化exploit和shellcode之间的接口，把漏洞利用的过程封装成易用的模块，实现了代码重复利用和模块化，结构化的思想。在这个平台中：</p>
+<ol>
+<li>所有的exploit都使用漏洞名称来命名，里面包含有这个漏洞的函数返回地址，所使用的跳转指令等关键信息。</li>
+<li>将常用的shellcode(例如用于绑定端口反向连接，执行任意命令)封装成一个个通用的模块，与任意漏洞的Exploit进行组合。</li>
+</ol>
 
       
     </div>
@@ -407,7 +410,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/essay/" rel="tag"># essay</a>
+            <a href="/tags/pwn/" rel="tag"># pwn</a>
           
         </div>
       
@@ -420,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/14/angr/" rel="next" title="angr">
-                <i class="fa fa-chevron-left"></i> angr
+              <a href="/2019/09/08/计算机中数的存储/" rel="next" title="计算机中数的存储">
+                <i class="fa fa-chevron-left"></i> 计算机中数的存储
               </a>
             
           </div>
@@ -429,10 +432,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/18/饶毅：赛先生在中国还是客人么？——“赛先生”创刊致词/" rel="prev" title="饶毅：赛先生在中国还是客人么？——“赛先生”创刊致词">
-                饶毅：赛先生在中国还是客人么？——“赛先生”创刊致词 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -487,17 +486,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -588,22 +578,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#0X00-Introduction"><span class="nav-number">1.</span> <span class="nav-text">0X00:Introduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0X01-基本用法"><span class="nav-number">2.</span> <span class="nav-text">0X01:基本用法</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

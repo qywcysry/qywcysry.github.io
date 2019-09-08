@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-09-08T07:11:56.361Z</updated>
+  <updated>2019-09-08T09:31:42.575Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开发shellcode的艺术</title>
+    <link href="http://qywcysry.github.io/2019/09/08/%E5%BC%80%E5%8F%91shellcode%E7%9A%84%E8%89%BA%E6%9C%AF/"/>
+    <id>http://qywcysry.github.io/2019/09/08/开发shellcode的艺术/</id>
+    <published>2019-09-08T09:05:12.000Z</published>
+    <updated>2019-09-08T09:31:42.575Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Shellcode:缓冲区溢出攻击中植入进程的代码&lt;/p&gt;
+&lt;p&gt;Exploit:计算函数返回地址距离缓冲区的偏移并覆盖，选择指令的地址，最终制作出一个由攻击效果，承载着shellcode的输入字符串位Exploit。&lt;/p&gt;
+&lt;p&gt;exploit一般以一段代码的形式出现，
+        
+      
+    
+    </summary>
+    
+    
+      <category term="pwn" scheme="http://qywcysry.github.io/tags/pwn/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机中数的存储</title>
@@ -476,28 +502,6 @@
     
     
       <category term="Pwn function" scheme="http://qywcysry.github.io/tags/Pwn-function/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Genesis</title>
-    <link href="http://qywcysry.github.io/2019/06/17/Genesis/"/>
-    <id>http://qywcysry.github.io/2019/06/17/Genesis/</id>
-    <published>2019-06-17T14:10:28.370Z</published>
-    <updated>2019-06-18T18:56:50.489Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Earthquake and
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
