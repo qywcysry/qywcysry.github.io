@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="0X00:基础知识PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-08T04:25:41.028Z">
+<meta property="og:updated_time" content="2019-09-08T04:47:24.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《0day安全：漏洞利用原理初级》">
 <meta name="twitter:description" content="0X00:基础知识PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，">
@@ -446,6 +446,7 @@
 <li><strong>返回地址和EBP并不是同一概念与功能。CALL指令之后，先将返回地址压入栈中再PUSH EBP(旧栈帧，功能在于初始化，后面的MOV指令对其中的值进行更新)，EBP对函数返回并无任何贡献。</strong></li>
 <li><strong>MOV EBP,ESP指令并不会对已经存放在栈中的EBP的值进行改变，是对寄存器EBP的值进行改变。注意当前栈帧保存的EBP值永远是前栈帧的EBP。</strong></li>
 <li>关于栈帧的划分，在不同书中有不同的约定。本书中坚持栈帧底部存放前栈帧EBP,栈帧顶部存放返回地址。</li>
+<li>在观察内存的时候应该注意”内存数据”与”数值数据”的区别。在调试环境中，内存由低到高分布，就像Win32系统在内存中由低位向高位存储一个四字节的双字(Dump窗口的十六进制两位)，但是在作为”数值数据”应用的时候，是由高位字节向低位字节进行解释的。所以在调试环境中，内存数据中的双字与我们通常使用的数值数据是以双字为单位逆序过的。出于阅读方便，OD已经自动在栈中进行了反转，在栈窗口所看到的数据是数值数据而非内存数据。所以在栈内看数据时，从左向右对于左边的地址偏移依次为3，2，1，0.</li>
 </ol>
 
       
@@ -583,7 +584,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -605,7 +606,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
