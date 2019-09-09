@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="0day安全,">
 
 
 
@@ -81,29 +81,18 @@
 
 
 
-<meta name="description" content="关于Android逆向解题过程的总结 0X00:功能测试首先将APK文件拖入模拟器中，测试其功能，根据弹出的字符串，寻找解题的突破口。 0X01:主活动首先通过Androidmanifest.xml的找到Mainactivity，再对其中的代码进行逆向分析。 0X02:特殊情况隐藏mainactivity 0X03:几种工具的优势能够显示出被调用过的函数 0X04:具体题目攻防世界APP1： 首先">
+<meta name="description" content="堆与栈的区别：  堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完">
+<meta name="keywords" content="0day安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Android逆向入门">
-<meta property="og:url" content="http://qywcysry.github.io/2019/08/31/关于Android逆向入门/index.html">
+<meta property="og:title" content="堆溢出利用">
+<meta property="og:url" content="http://qywcysry.github.io/2019/09/08/堆溢出利用/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="关于Android逆向解题过程的总结 0X00:功能测试首先将APK文件拖入模拟器中，测试其功能，根据弹出的字符串，寻找解题的突破口。 0X01:主活动首先通过Androidmanifest.xml的找到Mainactivity，再对其中的代码进行逆向分析。 0X02:特殊情况隐藏mainactivity 0X03:几种工具的优势能够显示出被调用过的函数 0X04:具体题目攻防世界APP1： 首先">
+<meta property="og:description" content="堆与栈的区别：  堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.0.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.1.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.3.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.4.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.0.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.1.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.2.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.3.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.4.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.5.png">
-<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.6.png">
-<meta property="og:updated_time" content="2019-08-31T14:14:02.114Z">
+<meta property="og:updated_time" content="2019-09-08T14:36:36.315Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Android逆向入门">
-<meta name="twitter:description" content="关于Android逆向解题过程的总结 0X00:功能测试首先将APK文件拖入模拟器中，测试其功能，根据弹出的字符串，寻找解题的突破口。 0X01:主活动首先通过Androidmanifest.xml的找到Mainactivity，再对其中的代码进行逆向分析。 0X02:特殊情况隐藏mainactivity 0X03:几种工具的优势能够显示出被调用过的函数 0X04:具体题目攻防世界APP1： 首先">
-<meta name="twitter:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.0.png">
+<meta name="twitter:title" content="堆溢出利用">
+<meta name="twitter:description" content="堆与栈的区别：  堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完">
 
 
 
@@ -133,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/2019/08/31/关于Android逆向入门/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/09/08/堆溢出利用/">
 
 
 
 
 
-  <title>关于Android逆向入门 | Hy0uka</title>
+  <title>堆溢出利用 | Hy0uka</title>
   
 
 
@@ -302,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/08/31/关于Android逆向入门/">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/09/08/堆溢出利用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hy0uka">
@@ -319,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于Android逆向入门</h1>
+          <h1 class="post-title" itemprop="name headline">堆溢出利用</h1>
         
 
         <div class="post-meta">
@@ -331,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-31T20:19:38+08:00">
-                2019-08-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-08T22:04:07+08:00">
+                2019-09-08
               </time>
             
 
@@ -350,8 +339,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/31/关于Android逆向入门/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/31/关于Android逆向入门/" itemprop="commentCount"></span>
+                <a href="/2019/09/08/堆溢出利用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/08/堆溢出利用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,44 +373,15 @@
       
 
       
-        <p>关于Android逆向解题过程的总结</p>
-<h3 id="0X00-功能测试"><a href="#0X00-功能测试" class="headerlink" title="0X00:功能测试"></a>0X00:功能测试</h3><p>首先将APK文件拖入模拟器中，测试其功能，根据弹出的字符串，寻找解题的突破口。</p>
-<h3 id="0X01-主活动"><a href="#0X01-主活动" class="headerlink" title="0X01:主活动"></a>0X01:主活动</h3><p>首先通过Androidmanifest.xml的找到Mainactivity，再对其中的代码进行逆向分析。</p>
-<h3 id="0X02-特殊情况"><a href="#0X02-特殊情况" class="headerlink" title="0X02:特殊情况"></a>0X02:特殊情况</h3><p>隐藏mainactivity</p>
-<h3 id="0X03-几种工具的优势"><a href="#0X03-几种工具的优势" class="headerlink" title="0X03:几种工具的优势"></a>0X03:几种工具的优势</h3><p>能够显示出被调用过的函数</p>
-<h3 id="0X04-具体题目"><a href="#0X04-具体题目" class="headerlink" title="0X04:具体题目"></a>0X04:具体题目</h3><p>攻防世界APP1：</p>
-<p>首先用jadx打开，寻找到其中的Androidmanifest.xml，通过intent-filter找到主活动。</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app1.0.png" alt></p>
-<p>对Java代码进行分析</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app1.1.png" alt></p>
-<p>找到关键代码</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app1.3.png" alt></p>
-<p>通过Buildconfig找可能有用的信息，如该题中的versionName和versionCode，分别为X&lt;cP[?PHNB&lt;P?aj和15.</p>
-<p>charAt(i)函数，输出字符串中的第i个数字。可知这句代码的意思是：将输入字符串的第1~i个字符分别和versionCode与versionName异或之后的结果进行相等比较。如果不相等的话，输出”再接再厉，加油！”</p>
-<p>于是Python脚本如下：</p>
-<p>s=”X&lt;cP[?PHNB&lt;P?aj”</p>
-<p>flag=” “</p>
-<p>for i in s:</p>
-<p>​        flag+=chr(ord(i)^15)//将s中的字符逐个转化为数字，与15进行异或后，再以字符形式输出。</p>
-<p>​        print(flag)</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app1.4.png" alt></p>
-<p>攻防世界App2：</p>
-<p>观察程序功能</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.0.png" alt></p>
-<p>jadx打开</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.1.png" alt></p>
-<p>由第一个活动传到了第二个活动,观察到：</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.2.png" alt></p>
-<p>进入这个class</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.3.png" alt></p>
-<p>可见是native层的调用</p>
-<p>于是改apk后缀为zip对.so进行分析，找到其中的lib，任意对其中一项分析。</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.4.png" alt></p>
-<p>可见是AES</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.5.png" alt></p>
-<p>thisisateatkey==</p>
-<p>作为密钥解密得：</p>
-<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.6.png" alt></p>
+        <p>堆与栈的区别：</p>
+<ol>
+<li>堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。</li>
+<li>堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。</li>
+<li>一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。</li>
+<li>使用完毕后需要把堆指针传递给堆释放函数回收这片内存，否则会造成内存泄露，典型的堆释放函数如free，delete。</li>
+</ol>
+<p>现代操作系统的堆数据结构一般包括堆块与堆表两类：</p>
+<p>堆块：出于性能的考虑，堆区的内存按大小组织成块，以块为单位进行标识，而不是以传统的字节进行标识。一个堆块包括两个部分：块首与块身。块首是一个堆块头部的几个字节，用来标识这个堆块自身的信息，如大小，是否闲置等。</p>
 
       
     </div>
@@ -449,6 +409,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/0day安全/" rel="tag"># 0day安全</a>
+          
+        </div>
+      
 
       
       
@@ -458,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/21/Brisk/" rel="next" title="Brisk">
-                <i class="fa fa-chevron-left"></i> Brisk
+              <a href="/2019/09/08/用Metasploit开发Exploit/" rel="next" title="用Metasploit开发Exploit">
+                <i class="fa fa-chevron-left"></i> 用Metasploit开发Exploit
               </a>
             
           </div>
@@ -468,8 +434,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/05/Git的大小写问题/" rel="prev" title="Git的大小写问题">
-                Git的大小写问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/09/Assembly-Language-for-X86-Processors/" rel="prev" title="Assembly Language for X86 Processors">
+                Assembly Language for X86 Processors <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -525,17 +491,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -552,7 +509,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -574,7 +531,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -626,22 +583,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0X00-功能测试"><span class="nav-number">1.</span> <span class="nav-text">0X00:功能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X01-主活动"><span class="nav-number">2.</span> <span class="nav-text">0X01:主活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X02-特殊情况"><span class="nav-number">3.</span> <span class="nav-text">0X02:特殊情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X03-几种工具的优势"><span class="nav-number">4.</span> <span class="nav-text">0X03:几种工具的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X04-具体题目"><span class="nav-number">5.</span> <span class="nav-text">0X04:具体题目</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

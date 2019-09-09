@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="pwn,">
+  <meta name="keywords" content="0day安全,">
 
 
 
@@ -82,14 +82,14 @@
 
 
 <meta name="description" content="Shellcode:缓冲区溢出攻击中植入进程的代码 Exploit:计算函数返回地址距离缓冲区的偏移并覆盖，选择指令的地址，最终制作出一个由攻击效果，承载着shellcode的输入字符串位Exploit。 exploit一般以一段代码的形式出现，用于生成攻击性的网络数据包或者其他输入，其核心是淹没返回地址，劫持进程的控制权，之后跳转去执行shellcode。与shellcode一定的通用性不同，e">
-<meta name="keywords" content="pwn">
+<meta name="keywords" content="0day安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发shellcode的艺术">
 <meta property="og:url" content="http://qywcysry.github.io/2019/09/08/开发shellcode的艺术/index.html">
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="Shellcode:缓冲区溢出攻击中植入进程的代码 Exploit:计算函数返回地址距离缓冲区的偏移并覆盖，选择指令的地址，最终制作出一个由攻击效果，承载着shellcode的输入字符串位Exploit。 exploit一般以一段代码的形式出现，用于生成攻击性的网络数据包或者其他输入，其核心是淹没返回地址，劫持进程的控制权，之后跳转去执行shellcode。与shellcode一定的通用性不同，e">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-08T09:31:42.575Z">
+<meta property="og:updated_time" content="2019-09-08T14:07:09.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发shellcode的艺术">
 <meta name="twitter:description" content="Shellcode:缓冲区溢出攻击中植入进程的代码 Exploit:计算函数返回地址距离缓冲区的偏移并覆盖，选择指令的地址，最终制作出一个由攻击效果，承载着shellcode的输入字符串位Exploit。 exploit一般以一段代码的形式出现，用于生成攻击性的网络数据包或者其他输入，其核心是淹没返回地址，劫持进程的控制权，之后跳转去执行shellcode。与shellcode一定的通用性不同，e">
@@ -378,10 +378,34 @@
 <p>exploit一般以一段代码的形式出现，用于生成攻击性的网络数据包或者其他输入，其核心是淹没返回地址，劫持进程的控制权，之后跳转去执行shellcode。与shellcode一定的通用性不同，exploit一般是针对特定漏洞的。</p>
 <p>Metasploit通用漏洞测试平台：规范化exploit和shellcode之间的接口，把漏洞利用的过程封装成易用的模块，实现了代码重复利用和模块化，结构化的思想。在这个平台中：</p>
 <ol>
-<li>所有的exploit都使用漏洞名称来命名，里面包含有这个漏洞的函数返回地址，所使用的跳转指令等关键信息。</li>
-<li>将常用的shellcode(例如用于绑定端口反向连接，执行任意命令)封装成一个个通用的模块，与任意漏洞的Exploit进行组合。</li>
+<li><p>所有的exploit都使用漏洞名称来命名，里面包含有这个漏洞的函数返回地址，所使用的跳转指令等关键信息。</p>
+</li>
+<li><p>将常用的shellcode(例如用于绑定端口反向连接，执行任意命令)封装成一个个通用的模块，与任意漏洞的Exploit进行组合。</p>
+<p><strong>今天电脑不是一般地卡，第二章该调试的操作都还没练习过，这对于学习来说是非常危险的，第三章shellcode开发也得静下心研究。</strong></p>
+</li>
 </ol>
-
+<h3 id="0X00-定位shellcode"><a href="#0X00-定位shellcode" class="headerlink" title="0X00:定位shellcode"></a>0X00:定位shellcode</h3><ol>
+<li>栈帧移位与jmp esp</li>
+<li>获取跳板地址</li>
+<li>使用跳板定位exploit</li>
+</ol>
+<h3 id="0X01-缓冲区的组织"><a href="#0X01-缓冲区的组织" class="headerlink" title="0X01:缓冲区的组织"></a>0X01:缓冲区的组织</h3><ol>
+<li>缓冲区的组成</li>
+<li>抬高栈顶保护shellcode</li>
+<li>使用其他跳转指令</li>
+<li>不使用跳转指令</li>
+<li>函数返回地址移位</li>
+</ol>
+<h3 id="0X02-开发通用的shellcode"><a href="#0X02-开发通用的shellcode" class="headerlink" title="0X02:开发通用的shellcode"></a>0X02:开发通用的shellcode</h3><ol>
+<li>定位API的原理</li>
+<li>shellcode的加载与调试</li>
+<li>动态定位API地址的shellcode</li>
+</ol>
+<h3 id="0X03：shellcode编码技术"><a href="#0X03：shellcode编码技术" class="headerlink" title="0X03：shellcode编码技术"></a>0X03：shellcode编码技术</h3><ol>
+<li>为什么要对shellcode编码</li>
+<li>会变形的shellcode</li>
+</ol>
+<h3 id="0X04-简化shellcode"><a href="#0X04-简化shellcode" class="headerlink" title="0X04:简化shellcode"></a>0X04:简化shellcode</h3>
       
     </div>
 
@@ -410,7 +434,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/pwn/" rel="tag"># pwn</a>
+            <a href="/tags/0day安全/" rel="tag"># 0day安全</a>
           
         </div>
       
@@ -432,6 +456,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/08/用Metasploit开发Exploit/" rel="prev" title="用Metasploit开发Exploit">
+                用Metasploit开发Exploit <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -486,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -504,7 +541,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -526,7 +563,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -578,6 +615,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0X00-定位shellcode"><span class="nav-number">1.</span> <span class="nav-text">0X00:定位shellcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X01-缓冲区的组织"><span class="nav-number">2.</span> <span class="nav-text">0X01:缓冲区的组织</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X02-开发通用的shellcode"><span class="nav-number">3.</span> <span class="nav-text">0X02:开发通用的shellcode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X03：shellcode编码技术"><span class="nav-number">4.</span> <span class="nav-text">0X03：shellcode编码技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X04-简化shellcode"><span class="nav-number">5.</span> <span class="nav-text">0X04:简化shellcode</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

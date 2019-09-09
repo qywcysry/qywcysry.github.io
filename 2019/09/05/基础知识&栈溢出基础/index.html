@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="0day安全,">
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hy0uka">
-<meta property="og:url" content="http://qywcysry.github.io/archive/2019/08/index.html">
+<meta name="description" content="0X00:基础知识PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，">
+<meta name="keywords" content="0day安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《0day安全：漏洞利用原理初级》">
+<meta property="og:url" content="http://qywcysry.github.io/2019/09/05/基础知识&栈溢出基础/index.html">
 <meta property="og:site_name" content="Hy0uka">
+<meta property="og:description" content="0X00:基础知识PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-08T04:47:24.679Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hy0uka">
+<meta name="twitter:title" content="《0day安全：漏洞利用原理初级》">
+<meta name="twitter:description" content="0X00:基础知识PE文件概述：PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。 PE文件格式把可执行文件分割成多个数据节(section) .text，由编译器产生，">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/archive/2019/08/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/09/05/基础知识&栈溢出基础/">
 
 
 
 
 
-  <title>Archive | Hy0uka</title>
+  <title>《0day安全：漏洞利用原理初级》 | Hy0uka</title>
   
 
 
@@ -146,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,142 +277,252 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/09/05/基础知识&栈溢出基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hy0uka">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hy0uka">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">《0day安全：漏洞利用原理初级》</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-05T23:42:58+08:00">
+                2019-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 24 posts in total. Keep on posting.
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/05/基础知识&栈溢出基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/基础知识&栈溢出基础/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/31/Android逆向入门/" itemprop="url">
-              
-                <span itemprop="name">关于Android逆向入门</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-31T20:19:38+08:00" content="2019-08-31">
-          08-31
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/21/Brisk/" itemprop="url">
-              
-                <span itemprop="name">Brisk</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-21T17:00:25+08:00" content="2019-08-21">
-          08-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/08/21/Linux-ELF/" itemprop="url">
-              
-                <span itemprop="name">Linux ELF</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-21T16:23:42+08:00" content="2019-08-21">
-          08-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h1 id="0X00-基础知识"><a href="#0X00-基础知识" class="headerlink" title="0X00:基础知识"></a>0X00:基础知识</h1><h3 id="PE文件概述："><a href="#PE文件概述：" class="headerlink" title="PE文件概述："></a>PE文件概述：</h3><p>PE是Win32平台下的可执行文件遵守的数据格式，常见可执行文件如.exe/.dll都属于PE文件，PE文件格式规定了二进制的机器代码和字符串，菜单，图标等其他信息在可执行文件中如何组织。程序被执行时，系统会按照PE文件格式的约定去准确地定位各种资源，并将其加载入内存的不同区域。</p>
+<p>PE文件格式把可执行文件分割成多个数据节(section)</p>
+<p>.text，由编译器产生，存放着编译产生的二进制机器代码，反汇编和调试的对象。</p>
+<p>.data,初始化的数据块，宏定义，全局变量，静态变量。</p>
+<p>.idata,所执行的动态链接库等外来函数与文件的信息。</p>
+<p>.rsrc,存放程序的资源，如图标，菜单等。</p>
+<h3 id="虚拟内存："><a href="#虚拟内存：" class="headerlink" title="虚拟内存："></a>虚拟内存：</h3><p>Windows的物理内存比较复杂，Windows内核Ring0级别才能看到。通常在用户模式下，用调试器看到的内存都是虚拟内存。每个进程都被分配了4GB的内存空间，实际上能够用到的内存空间没有那么多。内存管理器分配给了进程一片假地址/虚拟地址，只有当需要进行实际的内存操作时，内存管理器才会把虚拟地址与物理地址联系起来。</p>
+<p>一个512MB的虚拟内存，能够映射出几个进程4GB的虚拟内存，关键在于这几个进程实际用到的内存之和小于512MB.</p>
+<h3 id="PE文件与虚拟内存之间的映射："><a href="#PE文件与虚拟内存之间的映射：" class="headerlink" title="PE文件与虚拟内存之间的映射："></a>PE文件与虚拟内存之间的映射：</h3><p>1.静态反汇编工具显示的某条文件的指令是相对于磁盘文件而言的，即文件偏移。我们还可能想知道虚拟内存地址VA。</p>
+<p>2.动态调试时看到的某条指令是虚拟内存地址，经常需要回到PE文件找到这条指令的机器码。</p>
+<p>四个概念：<u>注意是在内存中还是在PE文件中</u></p>
+<p>1.文件偏移地址(File Offset)<u>静态</u></p>
+<p>数据在PE文件中的地址叫做文件偏移地址，是文件在磁盘上存放时，相对于文件开头的偏移。</p>
+<p>2.装载基址(Image Base<u>)动态</u></p>
+<p>PE装入内存中时的基地址，默认情况下装载基址为0X00400000，DLL文件的装载基址是0X10000000.</p>
+<p>3.虚拟内存地址(Virtual Address)<u>动态</u></p>
+<p>PE文件中的指令被装入内存之后的地址。</p>
+<p>4.相对虚拟地址(Relative Virtual Adress)<u>动态</u></p>
+<p>相对虚拟地址是内存地址相对于映射基址的偏移量。</p>
+<p>所以有<strong>VA=Image Base+RVA</strong></p>
+<p>默认情况下将<strong>PE文件的0字节映射到虚拟内存的0x00400000</strong>，这个地址就是<strong>装载基址</strong>。</p>
+<p><strong>文件偏移是相对于文件开始处0字节的偏移，RVA是相对于装载基址0x00400000的偏移</strong>。    </p>
+<p>操作系统在装载PE文件时基本上保持PE文件中的各种数据结构，所以文件偏移地址和RVA相对虚拟地址有很大的一致性。不完全一致是因为文件数据的存放单位和内存数据的存放单位不同。</p>
+<p><strong>PE文件中的数据</strong>在未装载入内存之前，按照磁盘数据存放，以0X200字节为单位。当一个数据节(section)不足0X200时，不足的部分将被0X00填充。所以PE数据节的大小永远是0X200的整数倍。</p>
+<p><strong>PE文件中的数据</strong>被装载入内存之后，按照内存数据的标准以0X1000为单位进行存放，所以内存中的数据节大小永远是0X1000的整数倍。</p>
+<p>由于数据在PE文件和内存中的存储单位不同，所以文件偏移和RVA只是”有很大的一致性”。由于上述差异，<strong>进行文件偏移到虚拟内存地址之间的转换要看所转换的地址属于第几个节内(在数据节的前面还是后面)</strong>。</p>
+<p>文件偏移地址=虚拟内存地址VA-装载基址(Image Base)-节偏移=RVA-节偏移。</p>
+<h1 id="0X01-栈溢出原理与实战"><a href="#0X01-栈溢出原理与实战" class="headerlink" title="0X01:栈溢出原理与实战"></a>0X01:栈溢出原理与实战</h1><h3 id="内存四区-注意是内存不是PE文件-："><a href="#内存四区-注意是内存不是PE文件-：" class="headerlink" title="内存四区(注意是内存不是PE文件)："></a>内存四区(注意是内存不是PE文件)：</h3><ol>
+<li>代码区：存储被装入执行的二进制机器代码，CPU从这个区域取指令执行。</li>
+<li>数据区：存储全局变量等。</li>
+<li>堆区：进程在堆区动态地请求一定大小的内存，并在用完之后free。动态地分配和回收是堆区的特点。</li>
+<li>栈区：用于动态地存储函数之间的调用关系。</li>
+</ol>
+<p><strong>系统栈是对内存中所有栈的统称，栈帧是指一个函数开辟出的栈空间。严格来说，栈帧底部和栈底部不是同一概念。</strong>所以在对EBP进行说明时：它指向当前位于系统栈最上边一个栈帧的底部，而不是系统栈的底部。ESP所指的栈帧底部与系统栈底部是同一位置。</p>
+<p>在函数栈帧中，包含：</p>
+<ol>
+<li>局部变量：为函数局部变量开辟的内存空间。</li>
+<li>栈帧状态值：保存前栈帧的顶部和底部(实际上只保存底部，<u>前栈帧的顶部可以通过堆栈平衡计算得到</u>？。)，用于在本栈帧被弹出后恢复上一个栈帧。</li>
+<li>函数返回地址：保存当前函数调用前的<u>EIP信息</u>(不准确？)就是函数调用前的指令位置，即函数调用前的指令位置，这样函数返回时能够恢复到函数被调用前的代码区中继续执行指令。</li>
+</ol>
+<p><strong>函数的栈帧大小并不确定，与其对应的局部变量的多少有关。在调试过程中也能发现，在函数运行的过程中，其栈帧大小也在不断变化。</strong></p>
+<p>函数调用的过程包含以下几个步骤：</p>
+<ol>
+<li><p>参数入栈：将参数从右向左依次压入系统栈中。</p>
+</li>
+<li><p>返回地址入栈：将当前代码区调用指令的下一条指令压入栈中，待函数返回时pop出返回地址为EIP指向继续执行。</p>
+</li>
+<li><p>代码区跳转：处理器从当前代码区跳转到被调用函数的入口处。</p>
+</li>
+<li><p>栈帧调整：</p>
+<p>PUSH EBP(保存当前栈帧状态值，备后面回复本栈帧时使用)</p>
+<p>MOV EBP,ESP(将当前栈帧切换到新栈帧，更新栈帧底部)</p>
+<p>SUB ESP,XXX(给新栈帧分配空间,抬高栈顶)</p>
+</li>
+<li><p>函数的返回过程包含如下几个步骤：</p>
+</li>
+<li><p>保存返回值：通常将函数的返回值保存在寄存器EAX中</p>
+</li>
+<li><p>弹出当前栈帧，恢复上一个栈帧，具体如下：</p>
+</li>
+</ol>
+<ul>
+<li>在堆栈平衡的基础上，给ESP加上栈帧的大小，降低栈顶，回收当前的栈空间。</li>
+<li>将当前栈帧底部保存的前栈帧EBP值弹入EBP寄存器，恢复上一个栈帧。</li>
+<li>将函数返回地址弹给EIP寄存器。</li>
+</ul>
+<p>4.最后一步——跳转：按照函数返回地址跳回母函数中继续执行。</p>
+<p><strong>注意CALL指令和RETN指令的实际操作</strong></p>
+<p>我的误区：</p>
+<ol>
+<li><strong>返回地址和EBP并不是同一概念与功能。CALL指令之后，先将返回地址压入栈中再PUSH EBP(旧栈帧，功能在于初始化，后面的MOV指令对其中的值进行更新)，EBP对函数返回并无任何贡献。</strong></li>
+<li><strong>MOV EBP,ESP指令并不会对已经存放在栈中的EBP的值进行改变，是对寄存器EBP的值进行改变。注意当前栈帧保存的EBP值永远是前栈帧的EBP。</strong></li>
+<li>关于栈帧的划分，在不同书中有不同的约定。本书中坚持栈帧底部存放前栈帧EBP,栈帧顶部存放返回地址。</li>
+<li>在观察内存的时候应该注意”内存数据”与”数值数据”的区别。在调试环境中，内存由低到高分布，就像Win32系统在内存中由低位向高位存储一个四字节的双字(Dump窗口的十六进制两位)，但是在作为”数值数据”应用的时候，是由高位字节向低位字节进行解释的。所以在调试环境中，内存数据中的双字与我们通常使用的数值数据是以双字为单位逆序过的。出于阅读方便，OD已经自动在栈中进行了反转，在栈窗口所看到的数据是数值数据而非内存数据。所以在栈内看数据时，从左向右对于左边的地址偏移依次为3，2，1，0.</li>
+</ol>
+
+      
     </div>
+
+        <div>
+            
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------This is my bottom line------</div>
+    
+</div>
+            
+        </div>
+    
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/0day安全/" rel="tag"># 0day安全</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/05/Git的大小写问题/" rel="next" title="Git的大小写问题">
+                <i class="fa fa-chevron-left"></i> Git的大小写问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/06/数据库原理及其应用/" rel="prev" title="数据库原理及其应用课程笔记">
+                数据库原理及其应用课程笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -415,6 +530,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -435,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -527,6 +658,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0X00-基础知识"><span class="nav-number">1.</span> <span class="nav-text">0X00:基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PE文件概述："><span class="nav-number">1.0.1.</span> <span class="nav-text">PE文件概述：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟内存："><span class="nav-number">1.0.2.</span> <span class="nav-text">虚拟内存：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PE文件与虚拟内存之间的映射："><span class="nav-number">1.0.3.</span> <span class="nav-text">PE文件与虚拟内存之间的映射：</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#0X01-栈溢出原理与实战"><span class="nav-number">2.</span> <span class="nav-text">0X01:栈溢出原理与实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存四区-注意是内存不是PE文件-："><span class="nav-number">2.0.1.</span> <span class="nav-text">内存四区(注意是内存不是PE文件)：</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -676,6 +823,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

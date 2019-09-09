@@ -81,13 +81,29 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hy0uka">
-<meta property="og:url" content="http://qywcysry.github.io/tags/pwn/index.html">
+<meta name="description" content="关于Android逆向解题过程的总结 0X00:功能测试首先将APK文件拖入模拟器中，测试其功能，根据弹出的字符串，寻找解题的突破口。 0X01:主活动首先通过Androidmanifest.xml的找到Mainactivity，再对其中的代码进行逆向分析。 0X02:特殊情况隐藏mainactivity 0X03:几种工具的优势能够显示出被调用过的函数 0X04:具体题目攻防世界APP1： 首先">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Android逆向入门">
+<meta property="og:url" content="http://qywcysry.github.io/2019/08/31/Android逆向入门/index.html">
 <meta property="og:site_name" content="Hy0uka">
+<meta property="og:description" content="关于Android逆向解题过程的总结 0X00:功能测试首先将APK文件拖入模拟器中，测试其功能，根据弹出的字符串，寻找解题的突破口。 0X01:主活动首先通过Androidmanifest.xml的找到Mainactivity，再对其中的代码进行逆向分析。 0X02:特殊情况隐藏mainactivity 0X03:几种工具的优势能够显示出被调用过的函数 0X04:具体题目攻防世界APP1： 首先">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.0.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.1.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.3.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.4.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.0.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.1.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.2.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.3.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.4.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.5.png">
+<meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/app2.6.png">
+<meta property="og:updated_time" content="2019-08-31T14:14:02.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hy0uka">
+<meta name="twitter:title" content="关于Android逆向入门">
+<meta name="twitter:description" content="关于Android逆向解题过程的总结 0X00:功能测试首先将APK文件拖入模拟器中，测试其功能，根据弹出的字符串，寻找解题的突破口。 0X01:主活动首先通过Androidmanifest.xml的找到Mainactivity，再对其中的代码进行逆向分析。 0X02:特殊情况隐藏mainactivity 0X03:几种工具的优势能够显示出被调用过的函数 0X04:具体题目攻防世界APP1： 首先">
+<meta name="twitter:image" content="http://pww3zcd8q.bkt.clouddn.com/app1.0.png">
 
 
 
@@ -117,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/tags/pwn/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/08/31/Android逆向入门/">
 
 
 
 
 
-  <title>Tag: pwn | Hy0uka</title>
+  <title>关于Android逆向入门 | Hy0uka</title>
   
 
 
@@ -146,7 +162,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,52 +288,209 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>pwn<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/08/31/Android逆向入门/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hy0uka">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hy0uka">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/09/08/开发shellcode的艺术/" itemprop="url">
-              
-                <span itemprop="name">开发shellcode的艺术</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">关于Android逆向入门</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-08T17:05:12+08:00" content="2019-09-08">
-          09-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-31T20:19:38+08:00">
+                2019-08-31
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/31/Android逆向入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/31/Android逆向入门/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于Android逆向解题过程的总结</p>
+<h3 id="0X00-功能测试"><a href="#0X00-功能测试" class="headerlink" title="0X00:功能测试"></a>0X00:功能测试</h3><p>首先将APK文件拖入模拟器中，测试其功能，根据弹出的字符串，寻找解题的突破口。</p>
+<h3 id="0X01-主活动"><a href="#0X01-主活动" class="headerlink" title="0X01:主活动"></a>0X01:主活动</h3><p>首先通过Androidmanifest.xml的找到Mainactivity，再对其中的代码进行逆向分析。</p>
+<h3 id="0X02-特殊情况"><a href="#0X02-特殊情况" class="headerlink" title="0X02:特殊情况"></a>0X02:特殊情况</h3><p>隐藏mainactivity</p>
+<h3 id="0X03-几种工具的优势"><a href="#0X03-几种工具的优势" class="headerlink" title="0X03:几种工具的优势"></a>0X03:几种工具的优势</h3><p>能够显示出被调用过的函数</p>
+<h3 id="0X04-具体题目"><a href="#0X04-具体题目" class="headerlink" title="0X04:具体题目"></a>0X04:具体题目</h3><p>攻防世界APP1：</p>
+<p>首先用jadx打开，寻找到其中的Androidmanifest.xml，通过intent-filter找到主活动。</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app1.0.png" alt></p>
+<p>对Java代码进行分析</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app1.1.png" alt></p>
+<p>找到关键代码</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app1.3.png" alt></p>
+<p>通过Buildconfig找可能有用的信息，如该题中的versionName和versionCode，分别为X&lt;cP[?PHNB&lt;P?aj和15.</p>
+<p>charAt(i)函数，输出字符串中的第i个数字。可知这句代码的意思是：将输入字符串的第1~i个字符分别和versionCode与versionName异或之后的结果进行相等比较。如果不相等的话，输出”再接再厉，加油！”</p>
+<p>于是Python脚本如下：</p>
+<p>s=”X&lt;cP[?PHNB&lt;P?aj”</p>
+<p>flag=” “</p>
+<p>for i in s:</p>
+<p>​        flag+=chr(ord(i)^15)//将s中的字符逐个转化为数字，与15进行异或后，再以字符形式输出。</p>
+<p>​        print(flag)</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app1.4.png" alt></p>
+<p>攻防世界App2：</p>
+<p>观察程序功能</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.0.png" alt></p>
+<p>jadx打开</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.1.png" alt></p>
+<p>由第一个活动传到了第二个活动,观察到：</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.2.png" alt></p>
+<p>进入这个class</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.3.png" alt></p>
+<p>可见是native层的调用</p>
+<p>于是改apk后缀为zip对.so进行分析，找到其中的lib，任意对其中一项分析。</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.4.png" alt></p>
+<p>可见是AES</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.5.png" alt></p>
+<p>thisisateatkey==</p>
+<p>作为密钥解密得：</p>
+<p><img src="http://pww3zcd8q.bkt.clouddn.com/app2.6.png" alt></p>
 
       
     </div>
 
+        <div>
+            
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------This is my bottom line------</div>
+    
+</div>
+            
+        </div>
+    
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/21/Brisk/" rel="next" title="Brisk">
+                <i class="fa fa-chevron-left"></i> Brisk
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/05/Git的大小写问题/" rel="prev" title="Git的大小写问题">
+                Git的大小写问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -325,6 +498,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -345,8 +525,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -363,7 +552,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -385,7 +574,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -437,6 +626,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0X00-功能测试"><span class="nav-number">1.</span> <span class="nav-text">0X00:功能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X01-主活动"><span class="nav-number">2.</span> <span class="nav-text">0X01:主活动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X02-特殊情况"><span class="nav-number">3.</span> <span class="nav-text">0X02:特殊情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X03-几种工具的优势"><span class="nav-number">4.</span> <span class="nav-text">0X03:几种工具的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0X04-具体题目"><span class="nav-number">5.</span> <span class="nav-text">0X04:具体题目</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -586,6 +791,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

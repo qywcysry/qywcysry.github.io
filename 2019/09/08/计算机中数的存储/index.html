@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="一直对计算机中数的存储方式一知半解，make a summary today。 source：为什么-1在计算机中的存储是0XFFFFFFFF? 0X00:原码，反码，补码原码表示法规定：用符号位和数值位两部分表示一个带符号数，设字长为n位，最高位为符号位，正数的符号位用0表示，负数的符号位用1表示。其余n-1位数值部分用二进制形式表示。在原码中，零有两种表示形式，00000000为+0，1000">
+<meta name="description" content="一直对计算机中数的存储方式一知半解，make a summary today。 source：为什么-1在计算机中的存储是0XFFFFFFFF? 负整数用补码(Two’s-complement)表示的数学原理是:一个整数的补码是其加法逆元（如果将一个数与其加法逆元相加，其结果为0）。 0X00:原码，反码，补码原码表示法规定：用符号位和数值位两部分表示一个带符号数，设字长为n位，最高位为符号位，正">
 <meta name="keywords" content="底层">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机中数的存储">
 <meta property="og:url" content="http://qywcysry.github.io/2019/09/08/计算机中数的存储/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="一直对计算机中数的存储方式一知半解，make a summary today。 source：为什么-1在计算机中的存储是0XFFFFFFFF? 0X00:原码，反码，补码原码表示法规定：用符号位和数值位两部分表示一个带符号数，设字长为n位，最高位为符号位，正数的符号位用0表示，负数的符号位用1表示。其余n-1位数值部分用二进制形式表示。在原码中，零有两种表示形式，00000000为+0，1000">
+<meta property="og:description" content="一直对计算机中数的存储方式一知半解，make a summary today。 source：为什么-1在计算机中的存储是0XFFFFFFFF? 负整数用补码(Two’s-complement)表示的数学原理是:一个整数的补码是其加法逆元（如果将一个数与其加法逆元相加，其结果为0）。 0X00:原码，反码，补码原码表示法规定：用符号位和数值位两部分表示一个带符号数，设字长为n位，最高位为符号位，正">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://pww3zcd8q.bkt.clouddn.com/TIM%E5%9B%BE%E7%89%8720190908151015.jpg">
-<meta property="og:updated_time" content="2019-09-08T07:11:56.361Z">
+<meta property="og:updated_time" content="2019-09-09T01:39:44.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机中数的存储">
-<meta name="twitter:description" content="一直对计算机中数的存储方式一知半解，make a summary today。 source：为什么-1在计算机中的存储是0XFFFFFFFF? 0X00:原码，反码，补码原码表示法规定：用符号位和数值位两部分表示一个带符号数，设字长为n位，最高位为符号位，正数的符号位用0表示，负数的符号位用1表示。其余n-1位数值部分用二进制形式表示。在原码中，零有两种表示形式，00000000为+0，1000">
+<meta name="twitter:description" content="一直对计算机中数的存储方式一知半解，make a summary today。 source：为什么-1在计算机中的存储是0XFFFFFFFF? 负整数用补码(Two’s-complement)表示的数学原理是:一个整数的补码是其加法逆元（如果将一个数与其加法逆元相加，其结果为0）。 0X00:原码，反码，补码原码表示法规定：用符号位和数值位两部分表示一个带符号数，设字长为n位，最高位为符号位，正">
 <meta name="twitter:image" content="http://pww3zcd8q.bkt.clouddn.com/TIM%E5%9B%BE%E7%89%8720190908151015.jpg">
 
 
@@ -377,14 +377,27 @@
       
         <p>一直对计算机中数的存储方式一知半解，make a summary today。</p>
 <p>source：为什么-1在计算机中的存储是0XFFFFFFFF?</p>
+<p>负整数用补码(Two’s-complement)表示的数学原理是:一个整数的补码是其加法逆元（如果将一个数与其加法逆元相加，其结果为0）。</p>
 <h3 id="0X00-原码，反码，补码"><a href="#0X00-原码，反码，补码" class="headerlink" title="0X00:原码，反码，补码"></a>0X00:原码，反码，补码</h3><p>原码表示法规定：用符号位和数值位两部分表示一个带符号数，设字长为n位，最高位为符号位，正数的符号位用0表示，负数的符号位用1表示。其余n-1位数值部分用二进制形式表示。在原码中，零有两种表示形式，00000000为+0，10000000为-0.</p>
 <p>原码所能表示的数的范围与二进制的位数(即机器字长)有关，由8位二进制数表示到由16位二进制数表示，能够表示的范围会增大。</p>
 <p>反码表示法规定：正数的反码与原码相同，负数的反码是对该数的原码除符号位外各位取反。</p>
-<p>补码表示法规定：正数的补码与原码相同，负数的补码是对该数的原码除符号位外各位取反后最末位+1.</p>
+<p>补码表示法规定：正数的补码与原码相同，负数的补码是对该数的原码除符号位外各位取反后最末位+1.<strong>十六进制数的补码，就是将一个十六进制整数按位取反并+1.简单的方法就是用15减去该数字，最后再+1.</strong></p>
 <p>零的补码是唯一的：00000000</p>
 <p>补码所能表示的数的范围与二进制的位数(即机器字长)有关，由8位二进制数表示到由16位二进制数表示，能够表示的范围会增大。</p>
 <p>任何一个数的补码的补码即是其原码本身。</p>
 <p><img src="http://pww3zcd8q.bkt.clouddn.com/TIM%E5%9B%BE%E7%89%8720190908151015.jpg" alt></p>
+<h3 id="几种进制（有符号-无符号之间的转换）"><a href="#几种进制（有符号-无符号之间的转换）" class="headerlink" title="几种进制（有符号/无符号之间的转换）"></a>几种进制（有符号/无符号之间的转换）</h3><h5 id="有符号二进制整数到十进制的转换"><a href="#有符号二进制整数到十进制的转换" class="headerlink" title="有符号二进制整数到十进制的转换"></a>有符号二进制整数到十进制的转换</h5><p>如果最高位是1，则该数是补码，再次对其求补，得到其正数值。然后把这个数看成一个无符号二进制数，并求它的十进制值。</p>
+<p>如果最高位是0，就将其视为无符号二进制整数，并转换为十进制数。</p>
+<p>（先辨别了是否是负数）</p>
+<h5 id="有符号十进制数到二进制的转换"><a href="#有符号十进制数到二进制的转换" class="headerlink" title="有符号十进制数到二进制的转换"></a>有符号十进制数到二进制的转换</h5><p>把十进制整数的绝对值转换成二进制数</p>
+<p>如果初始十进制数是负数，则在第一步的基础上求其补码。</p>
+<p>（先把二进制数表示出来（与数字无关），再判断是否是负数）</p>
+<h5 id="有符号十进制数到十六进制的转换"><a href="#有符号十进制数到十六进制的转换" class="headerlink" title="有符号十进制数到十六进制的转换"></a>有符号十进制数到十六进制的转换</h5><p>把十进制整数的绝对值转换成十六进制数</p>
+<p>如果初始十进制数是负数，则在第一步的基础上求其补码。</p>
+<h5 id="有符号十六进制数到十进制的转换"><a href="#有符号十六进制数到十进制的转换" class="headerlink" title="有符号十六进制数到十进制的转换"></a>有符号十六进制数到十进制的转换</h5><p>如果十六进制整数是负数，求其补码，否则保持不变。</p>
+<p>把第一步得到的数转换成十进制。如果初始值是负数，则在十进制数前面加上负号。</p>
+<p><u>通过检查十六进制数的最高有效位，就可以知道该十六进制数是正数还是负数。如果最高位&gt;=8,则该数是负数。如果最高位&lt;=7，则该数是正数。</u></p>
+<p><u>普遍规律：根据符号是否对数字产生影响，若产生影响(负数十六进制/二进制），求其补码。进制转换后再根据初始正负加符号。若不产生影响，（正数十六进制/二进制，任意十进制），直接进制转换，再看初始正负。</u></p>
 
       
     </div>
@@ -521,7 +534,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -543,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -605,7 +618,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0X00-原码，反码，补码"><span class="nav-number">1.</span> <span class="nav-text">0X00:原码，反码，补码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0X00-原码，反码，补码"><span class="nav-number">1.</span> <span class="nav-text">0X00:原码，反码，补码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几种进制（有符号-无符号之间的转换）"><span class="nav-number">2.</span> <span class="nav-text">几种进制（有符号/无符号之间的转换）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#有符号二进制整数到十进制的转换"><span class="nav-number">2.0.1.</span> <span class="nav-text">有符号二进制整数到十进制的转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有符号十进制数到二进制的转换"><span class="nav-number">2.0.2.</span> <span class="nav-text">有符号十进制数到二进制的转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有符号十进制数到十六进制的转换"><span class="nav-number">2.0.3.</span> <span class="nav-text">有符号十进制数到十六进制的转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有符号十六进制数到十进制的转换"><span class="nav-number">2.0.4.</span> <span class="nav-text">有符号十六进制数到十进制的转换</span></a></li></ol></li></ol></div>
             
 
           </div>
