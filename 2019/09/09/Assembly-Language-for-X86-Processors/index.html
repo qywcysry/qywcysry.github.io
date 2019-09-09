@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="Virtual MachineJava编程语言就是以虚拟机概念为基础的，Java编译器把用Java语言编写的程序翻译成Java字节码(Java byte code)。后者是一种低级语言，能够在Java虚拟机JVM上快速执行。 虚拟机概念：一种说明计算机硬件与软件关系的有效办法。虚拟机：一个软件程序，用来模拟一些其他的物理或虚拟计算机的功能。 计算机通常可以执行其用原生机器语言编写的程序，这种语言中">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-09T01:14:18.279Z">
+<meta property="og:updated_time" content="2019-09-09T04:30:38.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Assembly Language for X86 Processors">
 <meta name="twitter:description" content="Virtual MachineJava编程语言就是以虚拟机概念为基础的，Java编译器把用Java语言编写的程序翻译成Java字节码(Java byte code)。后者是一种低级语言，能够在Java虚拟机JVM上快速执行。 虚拟机概念：一种说明计算机硬件与软件关系的有效办法。虚拟机：一个软件程序，用来模拟一些其他的物理或虚拟计算机的功能。 计算机通常可以执行其用原生机器语言编写的程序，这种语言中">
@@ -387,6 +387,14 @@
 <h3 id="数据表示"><a href="#数据表示" class="headerlink" title="数据表示"></a>数据表示</h3><p>计算机总是按8的倍数来组织二进制数字，有必要时在前面加上0.</p>
 <p>二进制整数：</p>
 <p>计算机以电子电荷集合的形式在内存中保存指令和数据。用数字来表示这些内容就需要系统能够适应开关/真假。<strong>位</strong>从右向左，从零开始顺序增量编号。左边的称为最高有效位MSB，右边的称为最低有效位LSB。零也被看做正数。书写较大的二进制数时，可以在每4位或每8位加上一个点号，增强数字的可读性。</p>
+<h3 id="程序模板"><a href="#程序模板" class="headerlink" title="程序模板"></a>程序模板</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">；程序模板(Template.asm)</span><br><span class="line"></span><br><span class="line">.386</span><br><span class="line"></span><br><span class="line">.model flat,stdcall</span><br><span class="line"></span><br><span class="line">.stack 4096</span><br><span class="line"></span><br><span class="line">ExitProcess PROTO,dwExitCode:DWORD</span><br><span class="line">；检查程序是否执行成功，返回状态码。</span><br><span class="line"></span><br><span class="line">.data</span><br><span class="line"></span><br><span class="line">​		;此处声明变量</span><br><span class="line"></span><br><span class="line">.code</span><br><span class="line"></span><br><span class="line">main PROC</span><br><span class="line"></span><br><span class="line">​		;此处编写代码</span><br><span class="line"></span><br><span class="line">​		INVOKE ExitProcess，0</span><br><span class="line"></span><br><span class="line">main ENDP</span><br><span class="line"></span><br><span class="line">END main</span><br></pre></td></tr></table></figure>
+
+<p>.data数据段</p>
+<p>.code代码段</p>
+<p>.stack堆栈段</p>
+<h3 id="常量定义"><a href="#常量定义" class="headerlink" title="常量定义"></a>常量定义</h3><p>以字母开头的十六进制数必须加个前置0，以防汇编器将其解释为标识符。</p>
+<p>字符串常量(string literal)是用单引号或者双引号包含的一个字符</p>
+<p>，<strong>包括空格</strong></p>
 
       
     </div>
@@ -438,6 +446,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/09/形形色色的内存攻击技术/" rel="prev" title="形形色色的内存攻击技术">
+                形形色色的内存攻击技术 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -519,7 +531,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -603,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-Machine"><span class="nav-number">1.</span> <span class="nav-text">Virtual Machine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表示"><span class="nav-number">2.</span> <span class="nav-text">数据表示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-Machine"><span class="nav-number">1.</span> <span class="nav-text">Virtual Machine</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表示"><span class="nav-number">2.</span> <span class="nav-text">数据表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序模板"><span class="nav-number">3.</span> <span class="nav-text">程序模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量定义"><span class="nav-number">4.</span> <span class="nav-text">常量定义</span></a></li></ol></div>
             
 
           </div>

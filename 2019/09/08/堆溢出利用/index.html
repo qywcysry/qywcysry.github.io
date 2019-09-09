@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="堆与栈的区别：  堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-08T14:36:36.315Z">
+<meta property="og:updated_time" content="2019-09-09T08:44:57.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆溢出利用">
 <meta name="twitter:description" content="堆与栈的区别：  堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完">
@@ -381,7 +381,18 @@
 <li>使用完毕后需要把堆指针传递给堆释放函数回收这片内存，否则会造成内存泄露，典型的堆释放函数如free，delete。</li>
 </ol>
 <p>现代操作系统的堆数据结构一般包括堆块与堆表两类：</p>
-<p>堆块：出于性能的考虑，堆区的内存按大小组织成块，以块为单位进行标识，而不是以传统的字节进行标识。一个堆块包括两个部分：块首与块身。块首是一个堆块头部的几个字节，用来标识这个堆块自身的信息，如大小，是否闲置等。</p>
+<ol>
+<li>堆块：出于性能的考虑，堆区的内存按大小组织成块，以块为单位进行标识，而不是以传统的字节进行标识。一个堆块包括两个部分：块首与块身。块首是一个堆块头部的几个字节，用来标识这个堆块自身的信息，如大小，是否闲置等。块身是紧跟随在块首后的部分，也是最终非陪给用户使用的数据区。</li>
+<li>堆表，堆表一般位于堆区的起始位置，用于索引堆区中所有堆块的重要信息，包括堆块的位置，大小，是否被占用等等。（堆表的数据结构决定了整个堆区的组织方式，是快速检索空闲块，保证堆分配效率的关键。堆表的设计会采用二叉树等高级数据结构用于优化查找效率。</li>
+</ol>
+<p>在Windows中，占用态的堆块被使用它的程序索引，而堆表只索引空闲的堆块。其中<strong>最重要的堆表</strong>有两种：</p>
+<p><strong>空闲双向链表Freelist</strong>/<strong>快速单向链表Lookaside</strong></p>
+<h4 id="空闲双向链表"><a href="#空闲双向链表" class="headerlink" title="空闲双向链表"></a>空闲双向链表</h4><p><strong>空闲堆块的块首</strong>包含一对重要的指针，这对指针用于将空闲堆块组织成双向链表。按照堆块大小不同，空表总共被分为128条(即指针数组中的每个元素包含一条双向链表)。</p>
+<p>堆区一开始的堆表区中有一个128项的指针数组，被称为空表索引(Freelist Array),该数组的每一项包含两个指针，用于标识一条空表。</p>
+<p>空表索引的第二项free[1]标识了堆中所有大小为16字节的空闲堆块，free[2]标识了堆中所有大小为24字节的空闲堆块，依次类推有：<strong>空闲堆块大小=索引项*8(字节)</strong>。</p>
+<p>把空闲堆块按照大小不同链入不同的链表，可以方便堆管理系统高效检索指定大小的空闲堆块。空表索引的第一项(free[0]所标识的空表)比较特殊，这条双向链表标识了所有大于等于1024字节的堆块。</p>
+<h4 id="快速单向链表"><a href="#快速单向链表" class="headerlink" title="快速单向链表"></a>快速单向链表</h4><p>块表是Windows用来加速堆块分配而采用的一种堆表，块表之所以快，是因为这类单向链表中从来不会发生堆块合并(其中的空闲块块首被设置为占用态，以防止堆块合并)。</p>
+<p>快表也有128条，组织结构与空表类似，但是其中的堆块按照单链表组织。块表总是被初始化为空，并且每条快表最多有四个节点，所以很快就会被填满。</p>
 
       
     </div>
@@ -491,8 +502,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -509,7 +529,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -583,6 +603,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#空闲双向链表"><span class="nav-number">1.</span> <span class="nav-text">空闲双向链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速单向链表"><span class="nav-number">2.</span> <span class="nav-text">快速单向链表</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

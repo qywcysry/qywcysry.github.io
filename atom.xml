@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-09-09T01:14:18.279Z</updated>
+  <updated>2019-09-09T08:54:22.869Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -17,11 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>形形色色的内存攻击技术</title>
+    <link href="http://qywcysry.github.io/2019/09/09/%E5%BD%A2%E5%BD%A2%E8%89%B2%E8%89%B2%E7%9A%84%E5%86%85%E5%AD%98%E6%94%BB%E5%87%BB%E6%8A%80%E6%9C%AF/"/>
+    <id>http://qywcysry.github.io/2019/09/09/形形色色的内存攻击技术/</id>
+    <published>2019-09-09T08:54:22.000Z</published>
+    <updated>2019-09-09T08:54:22.869Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Assembly Language for X86 Processors</title>
     <link href="http://qywcysry.github.io/2019/09/09/Assembly-Language-for-X86-Processors/"/>
     <id>http://qywcysry.github.io/2019/09/09/Assembly-Language-for-X86-Processors/</id>
     <published>2019-09-09T00:37:37.000Z</published>
-    <updated>2019-09-09T01:14:18.279Z</updated>
+    <updated>2019-09-09T04:30:38.929Z</updated>
     
     <summary type="html">
     
@@ -45,7 +59,7 @@
     <link href="http://qywcysry.github.io/2019/09/08/%E5%A0%86%E6%BA%A2%E5%87%BA%E5%88%A9%E7%94%A8/"/>
     <id>http://qywcysry.github.io/2019/09/08/堆溢出利用/</id>
     <published>2019-09-08T14:04:07.000Z</published>
-    <updated>2019-09-08T14:36:36.315Z</updated>
+    <updated>2019-09-09T08:44:57.125Z</updated>
     
     <summary type="html">
     
@@ -161,11 +175,11 @@
   </entry>
   
   <entry>
-    <title>《0day安全：漏洞利用原理初级》</title>
-    <link href="http://qywcysry.github.io/2019/09/05/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86&amp;%E6%A0%88%E6%BA%A2%E5%87%BA%E5%9F%BA%E7%A1%80/"/>
-    <id>http://qywcysry.github.io/2019/09/05/基础知识&amp;栈溢出基础/</id>
+    <title>基础知识&amp;栈溢出原理与实践</title>
+    <link href="http://qywcysry.github.io/2019/09/05/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86&amp;%E6%A0%88%E6%BA%A2%E5%87%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
+    <id>http://qywcysry.github.io/2019/09/05/基础知识&amp;栈溢出原理与实践/</id>
     <published>2019-09-05T15:42:58.000Z</published>
-    <updated>2019-09-08T04:47:24.679Z</updated>
+    <updated>2019-09-09T08:52:56.982Z</updated>
     
     <summary type="html">
     
@@ -469,24 +483,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Summer Hoilday&#39;s Plan</title>
-    <link href="http://qywcysry.github.io/2019/07/11/Summer%20Hoilday%20Plan/"/>
-    <id>http://qywcysry.github.io/2019/07/11/Summer Hoilday Plan/</id>
-    <published>2019-07-11T15:25:25.000Z</published>
-    <updated>2019-08-25T15:33:30.821Z</updated>
-    
-    <summary type="html">
-    
-      Welcome to my blog, enter password to read this private essay.
-    
-    </summary>
-    
-    
-      <category term="plan" scheme="http://qywcysry.github.io/tags/plan/"/>
     
   </entry>
   
