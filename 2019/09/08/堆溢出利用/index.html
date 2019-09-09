@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="堆与栈的区别：  堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完">
+<meta name="description" content="堆与栈的区别： 堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完毕">
 <meta name="keywords" content="0day安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="堆溢出利用">
 <meta property="og:url" content="http://qywcysry.github.io/2019/09/08/堆溢出利用/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="堆与栈的区别：  堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完">
+<meta property="og:description" content="堆与栈的区别： 堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完毕">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-09T08:44:57.125Z">
+<meta property="og:updated_time" content="2019-09-09T12:06:16.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆溢出利用">
-<meta name="twitter:description" content="堆与栈的区别：  堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完">
+<meta name="twitter:description" content="堆与栈的区别： 堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完毕">
 
 
 
@@ -373,15 +373,13 @@
       
 
       
-        <p>堆与栈的区别：</p>
-<ol>
+        <h5 id="堆与栈的区别："><a href="#堆与栈的区别：" class="headerlink" title="堆与栈的区别："></a>堆与栈的区别：</h5><ol>
 <li>堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。</li>
 <li>堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。</li>
 <li>一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。</li>
 <li>使用完毕后需要把堆指针传递给堆释放函数回收这片内存，否则会造成内存泄露，典型的堆释放函数如free，delete。</li>
 </ol>
-<p>现代操作系统的堆数据结构一般包括堆块与堆表两类：</p>
-<ol>
+<h5 id="现代操作系统的堆数据结构一般包括堆块与堆表两类："><a href="#现代操作系统的堆数据结构一般包括堆块与堆表两类：" class="headerlink" title="现代操作系统的堆数据结构一般包括堆块与堆表两类："></a>现代操作系统的堆数据结构一般包括堆块与堆表两类：</h5><ol>
 <li>堆块：出于性能的考虑，堆区的内存按大小组织成块，以块为单位进行标识，而不是以传统的字节进行标识。一个堆块包括两个部分：块首与块身。块首是一个堆块头部的几个字节，用来标识这个堆块自身的信息，如大小，是否闲置等。块身是紧跟随在块首后的部分，也是最终非陪给用户使用的数据区。</li>
 <li>堆表，堆表一般位于堆区的起始位置，用于索引堆区中所有堆块的重要信息，包括堆块的位置，大小，是否被占用等等。（堆表的数据结构决定了整个堆区的组织方式，是快速检索空闲块，保证堆分配效率的关键。堆表的设计会采用二叉树等高级数据结构用于优化查找效率。</li>
 </ol>
@@ -393,6 +391,18 @@
 <p>把空闲堆块按照大小不同链入不同的链表，可以方便堆管理系统高效检索指定大小的空闲堆块。空表索引的第一项(free[0]所标识的空表)比较特殊，这条双向链表标识了所有大于等于1024字节的堆块。</p>
 <h4 id="快速单向链表"><a href="#快速单向链表" class="headerlink" title="快速单向链表"></a>快速单向链表</h4><p>块表是Windows用来加速堆块分配而采用的一种堆表，块表之所以快，是因为这类单向链表中从来不会发生堆块合并(其中的空闲块块首被设置为占用态，以防止堆块合并)。</p>
 <p>快表也有128条，组织结构与空表类似，但是其中的堆块按照单链表组织。块表总是被初始化为空，并且每条快表最多有四个节点，所以很快就会被填满。</p>
+<h4 id="堆块分配-堆块释放-堆块合并（Coaleace"><a href="#堆块分配-堆块释放-堆块合并（Coaleace" class="headerlink" title="堆块分配/堆块释放/堆块合并（Coaleace)"></a>堆块分配/堆块释放/堆块合并（Coaleace)</h4><p>分配与释放是在程序提交与执行的，合并是由堆管理系统自动完成的。</p>
+<h5 id="堆块分配"><a href="#堆块分配" class="headerlink" title="堆块分配"></a>堆块分配</h5><p>堆块分配可以分成三类：块表分配，普通空表分配和零号空表分配。</p>
+<ol>
+<li>快表分配比较简单，包括寻找到<strong>大小匹配</strong>的空闲堆块(只有精准匹配时才会使用快表分配，故不存在对块的分割操作)，将其状态修改为占用态，将它从堆表中卸下，最后返回一个指向堆块块身的指针给程序使用。</li>
+<li><u>普通空表分配时，首先寻找最优的空闲块进行分配，再寻找次优的空闲块进行分配，一直寻找到最小能够满足要求的空闲块</u>。？？？？最优到底指的是以什么为标准。</li>
+<li>零号空表中，按照大小升序链接大小不同的空闲块，故在分配内存的时候会反向查找最后一个(即链表中最大的一个堆块)，看能否满足要求。如果满足要求，则确定能够成功分配。再从第一个堆块开始从小到大正向搜索最小能够满足条件的堆块(零号空表升序排列的原因)。</li>
+</ol>
+<p>当无法找到匹配的最优堆块时(大小完全精准符合)，一个稍大一些的堆会用于分配。这种次优分配发生时，会先从大块中按照请求的大小精准地割出一块进行分配，然后剩下的部分重新分配块首，链入空表，再次可以被索引到。</p>
+<p>此处没有考虑堆缓存(heap cache)，低碎片堆(LFH)与虚分配。</p>
+<h5 id="堆块释放"><a href="#堆块释放" class="headerlink" title="堆块释放"></a>堆块释放</h5><p>堆块释放的操作包括将堆块状态改为空闲，链入相应的堆表。所有释放块都链入堆表的末尾，分配的时候也从堆表末尾拿。特殊强调：快表最多有4项。</p>
+<h5 id="堆块合并"><a href="#堆块合并" class="headerlink" title="堆块合并"></a>堆块合并</h5><p>经过反复的申请与释放操作，内存中的堆区可能会产生很多内存碎片。为了合理有效地利用内存，堆系统还能够进行堆块合并操作：当堆管理系统发现两个堆块相邻的时候，就会进行堆块合并操作。</p>
+<p>堆块合并包括将两个块从空闲链表中卸下，合并堆块，调整合并后大块的块首信息，将新块重新链入空闲链表。</p>
 
       
     </div>
@@ -613,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#空闲双向链表"><span class="nav-number">1.</span> <span class="nav-text">空闲双向链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速单向链表"><span class="nav-number">2.</span> <span class="nav-text">快速单向链表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆与栈的区别："><span class="nav-number">1.</span> <span class="nav-text">堆与栈的区别：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#现代操作系统的堆数据结构一般包括堆块与堆表两类："><span class="nav-number">2.</span> <span class="nav-text">现代操作系统的堆数据结构一般包括堆块与堆表两类：</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#空闲双向链表"><span class="nav-number"></span> <span class="nav-text">空闲双向链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速单向链表"><span class="nav-number"></span> <span class="nav-text">快速单向链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆块分配-堆块释放-堆块合并（Coaleace"><span class="nav-number"></span> <span class="nav-text">堆块分配/堆块释放/堆块合并（Coaleace)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆块分配"><span class="nav-number">1.</span> <span class="nav-text">堆块分配</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆块释放"><span class="nav-number">2.</span> <span class="nav-text">堆块释放</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆块合并"><span class="nav-number">3.</span> <span class="nav-text">堆块合并</span></a></li></ol></li></div>
             
 
           </div>
