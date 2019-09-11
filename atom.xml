@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-09-10T00:24:18.393Z</updated>
+  <updated>2019-09-10T01:30:17.391Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -21,12 +21,24 @@
     <link href="http://qywcysry.github.io/2019/09/10/Data-Structure/"/>
     <id>http://qywcysry.github.io/2019/09/10/Data-Structure/</id>
     <published>2019-09-10T00:24:18.000Z</published>
-    <updated>2019-09-10T00:24:18.393Z</updated>
+    <updated>2019-09-10T01:30:17.391Z</updated>
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;p&gt;线性表：具有相同数据类型的n(n&amp;gt;=0)个数据元素的有限序列。a[n]元素之前的a[n-1]元素称为a[n]的前驱，a[n]后的元素a[n+1]称为a[n]的后继。&lt;/p&gt;
+&lt;p&gt;线性表中对元素的插入，先移动其后的元素。&lt;/p&gt;
+&lt;figure
+        
+      
+    
     </summary>
     
+    
+      <category term="school course" scheme="http://qywcysry.github.io/tags/school-course/"/>
     
   </entry>
   
