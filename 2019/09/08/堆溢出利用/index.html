@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="堆与栈的区别： 堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完毕">
+<meta name="description" content="堆与栈的区别：堆基础堆与栈的区别： 堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指">
 <meta name="keywords" content="0day安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="堆溢出利用">
 <meta property="og:url" content="http://qywcysry.github.io/2019/09/08/堆溢出利用/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="堆与栈的区别： 堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完毕">
+<meta property="og:description" content="堆与栈的区别：堆基础堆与栈的区别： 堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-09T12:06:16.102Z">
+<meta property="og:updated_time" content="2019-09-11T01:42:03.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆溢出利用">
-<meta name="twitter:description" content="堆与栈的区别： 堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。 使用完毕">
+<meta name="twitter:description" content="堆与栈的区别：堆基础堆与栈的区别： 堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。 堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。 一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指">
 
 
 
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-09-09T20:06:16+08:00">
-                2019-09-09
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-11T09:42:03+08:00">
+                2019-09-11
               </time>
             
           </span>
@@ -385,7 +385,7 @@
       
 
       
-        <h5 id="堆与栈的区别："><a href="#堆与栈的区别：" class="headerlink" title="堆与栈的区别："></a>堆与栈的区别：</h5><ol>
+        <h5 id="堆与栈的区别："><a href="#堆与栈的区别：" class="headerlink" title="堆与栈的区别："></a>堆与栈的区别：</h5><h2 id="堆基础"><a href="#堆基础" class="headerlink" title="堆基础"></a>堆基础</h2><h5 id="堆与栈的区别：-1"><a href="#堆与栈的区别：-1" class="headerlink" title="堆与栈的区别："></a>堆与栈的区别：</h5><ol>
 <li>堆是一种在程序运行时动态分配的内存，所谓动态分配是指所需内存大小在程序设计时并不能事先决定，需要在程序运行时参考用户的反馈。</li>
 <li>堆在使用时需要程序员使用专门的函数进行申请，如C语言中的malloc函数，是分配内存的函数，堆内存申请有可能成功，也有可能失败，这与申请的内存大小，机器性能和当前运行环境有关。</li>
 <li>一般使用一个堆指针来使用申请得到的内存，读写释放都通过这个指针来完成。</li>
@@ -414,7 +414,23 @@
 <p>此处没有考虑堆缓存(heap cache)，低碎片堆(LFH)与虚分配。</p>
 <h5 id="堆块释放"><a href="#堆块释放" class="headerlink" title="堆块释放"></a>堆块释放</h5><p>堆块释放的操作包括将堆块状态改为空闲，链入相应的堆表。所有释放块都链入堆表的末尾，分配的时候也从堆表末尾拿。特殊强调：快表最多有4项。</p>
 <h5 id="堆块合并"><a href="#堆块合并" class="headerlink" title="堆块合并"></a>堆块合并</h5><p>经过反复的申请与释放操作，内存中的堆区可能会产生很多内存碎片。为了合理有效地利用内存，堆系统还能够进行堆块合并操作：当堆管理系统发现两个堆块相邻的时候，就会进行堆块合并操作。</p>
-<p>堆块合并包括将两个块从空闲链表中卸下，合并堆块，调整合并后大块的块首信息，将新块重新链入空闲链表。</p>
+<p>堆块合并包括将两个块从空闲链表中卸下，合并堆块，调整合并后大块的块首信息，将新块重新链入空闲链表。并且对于小于1KB的小块，大于等于1KB小于512KB的大块，大于等于512KB的巨块，有不同的分配与释放的算法，此处不做深入了解，二周目的时候再调试。</p>
+<h5 id="堆分配函数之间的调用关系"><a href="#堆分配函数之间的调用关系" class="headerlink" title="堆分配函数之间的调用关系"></a>堆分配函数之间的调用关系</h5><p>Windows中许多类型的堆分配函数最终都将使用位于ntdll.dll中的RtlAllocateHeap()函数进行分配，这个函数也是在用户态能够看到的最底层的堆分配函数。</p>
+<h5 id="调试堆的方法"><a href="#调试堆的方法" class="headerlink" title="调试堆的方法"></a>调试堆的方法</h5><p>调试栈不同，调试堆时如果直接用OD，Windbg加载程序，会被堆管理函数检测到当前进程处于调试状态。而使用调试态的堆管理策略，调试态的堆管理与常态的堆管理有很大差异：</p>
+<ol>
+<li><p>调试态堆不适用快表，只使用空表分配(我知道这只是演习)。</p>
+</li>
+<li><p>所有的堆块都被加上了多余的16字节尾部(8个字节的0xAB与8个字节的0x00)用来防止溢出(防止程序溢出而非堆溢出攻击)。</p>
+</li>
+<li><p>块首的标志不同。</p>
+<h5 id="Debug版本与Release版本的区别"><a href="#Debug版本与Release版本的区别" class="headerlink" title="Debug版本与Release版本的区别"></a>Debug版本与Release版本的区别</h5></li>
+</ol>
+<ul>
+<li><strong>Debug通常称为调试版本</strong>，通过一系列编译选项的配合，编译的结果通常包含调试信息，但是<strong>不做任何优化（性能有影响）</strong>，目的是为开发人员提供强大的应用程序调试能力，也就是说<strong>只有在Debug模式下，我们才可以使用vs所提供的所有的程序调试功能</strong>，比如：单步调试中将光标移至变量处即可以获取该变量的实时数据。</li>
+<li><strong>Release通常称为发布版本</strong>，是为用户使用的，一般客户不允许在发布版本上进行调试，在Release模式下也无法使用vs所有的调试功能。所以不保存调试信息，同时，<strong>它往往进行了各种优化，以期达到代码最小和速度最优。</strong>为用户的使用提供便利。</li>
+</ul>
+<p>调试态的堆就像debug版本的PE,常态堆就像release版本的PE，为了避免程序检测出调试器而使用调试态堆管理策略，我们可以在创建堆之后加入一个人工断点:_asm int 3,然后让程序单独执行。程序把堆初始化后，再用调试器attach进程，就能够看到真实的堆。、</p>
+<p><strong>堆分配算法依赖于操作系统版本，编译器版本，编译选项，bulid类型等因素，甚至与虚拟机版本有关。实验环境不恰当，将得到不同的调试结果。<em>难搞啊</em></strong></p>
 
       
     </div>
@@ -551,7 +567,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -635,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆与栈的区别："><span class="nav-number">1.</span> <span class="nav-text">堆与栈的区别：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#现代操作系统的堆数据结构一般包括堆块与堆表两类："><span class="nav-number">2.</span> <span class="nav-text">现代操作系统的堆数据结构一般包括堆块与堆表两类：</span></a></li></ol><li class="nav-item nav-level-4"><a class="nav-link" href="#空闲双向链表"><span class="nav-number"></span> <span class="nav-text">空闲双向链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速单向链表"><span class="nav-number"></span> <span class="nav-text">快速单向链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆块分配-堆块释放-堆块合并（Coaleace"><span class="nav-number"></span> <span class="nav-text">堆块分配/堆块释放/堆块合并（Coaleace)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆块分配"><span class="nav-number">1.</span> <span class="nav-text">堆块分配</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆块释放"><span class="nav-number">2.</span> <span class="nav-text">堆块释放</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆块合并"><span class="nav-number">3.</span> <span class="nav-text">堆块合并</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆与栈的区别："><span class="nav-number">1.</span> <span class="nav-text">堆与栈的区别：</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#堆基础"><span class="nav-number"></span> <span class="nav-text">堆基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆与栈的区别：-1"><span class="nav-number">1.</span> <span class="nav-text">堆与栈的区别：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#现代操作系统的堆数据结构一般包括堆块与堆表两类："><span class="nav-number">2.</span> <span class="nav-text">现代操作系统的堆数据结构一般包括堆块与堆表两类：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空闲双向链表"><span class="nav-number"></span> <span class="nav-text">空闲双向链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速单向链表"><span class="nav-number"></span> <span class="nav-text">快速单向链表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆块分配-堆块释放-堆块合并（Coaleace"><span class="nav-number"></span> <span class="nav-text">堆块分配/堆块释放/堆块合并（Coaleace)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#堆块分配"><span class="nav-number">1.</span> <span class="nav-text">堆块分配</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆块释放"><span class="nav-number">2.</span> <span class="nav-text">堆块释放</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆块合并"><span class="nav-number">3.</span> <span class="nav-text">堆块合并</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#堆分配函数之间的调用关系"><span class="nav-number">4.</span> <span class="nav-text">堆分配函数之间的调用关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调试堆的方法"><span class="nav-number">5.</span> <span class="nav-text">调试堆的方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Debug版本与Release版本的区别"><span class="nav-number">6.</span> <span class="nav-text">Debug版本与Release版本的区别</span></a></li></ol></li></div>
             
 
           </div>

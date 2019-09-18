@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="线性表：具有相同数据类型的n(n&amp;gt;=0)个数据元素的有限序列。a[n]元素之前的a[n-1]元素称为a[n]的前驱，a[n]后的元素a[n+1]称为a[n]的后继。 线性表中对元素的插入，先移动其后的元素。 1234567If(pos&amp;lt;1&amp;amp;&amp;amp;pos&amp;gt;length)exit(error)for(i&amp;gt;cnt;i&amp;gt;n;i--;)arr[n+1]=arr[n]">
+<meta name="description" content="单链表的类型定义： 123456789Typedef struct Node&amp;#123;​	ElemType data;​	Struct Node *next;&amp;#125;LNode,*Linkedlist;  申请： 1P=（Node*)malloc(sizeof(Node))  取链表中第i个元素: 12345678910111213141516171819202122232425&amp;#123;">
 <meta name="keywords" content="school course">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Data Structure">
 <meta property="og:url" content="http://qywcysry.github.io/2019/09/10/Data-Structure/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="线性表：具有相同数据类型的n(n&amp;gt;=0)个数据元素的有限序列。a[n]元素之前的a[n-1]元素称为a[n]的前驱，a[n]后的元素a[n+1]称为a[n]的后继。 线性表中对元素的插入，先移动其后的元素。 1234567If(pos&amp;lt;1&amp;amp;&amp;amp;pos&amp;gt;length)exit(error)for(i&amp;gt;cnt;i&amp;gt;n;i--;)arr[n+1]=arr[n]">
+<meta property="og:description" content="单链表的类型定义： 123456789Typedef struct Node&amp;#123;​	ElemType data;​	Struct Node *next;&amp;#125;LNode,*Linkedlist;  申请： 1P=（Node*)malloc(sizeof(Node))  取链表中第i个元素: 12345678910111213141516171819202122232425&amp;#123;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-10T01:30:17.391Z">
+<meta property="og:updated_time" content="2019-09-12T02:38:21.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Data Structure">
-<meta name="twitter:description" content="线性表：具有相同数据类型的n(n&amp;gt;=0)个数据元素的有限序列。a[n]元素之前的a[n-1]元素称为a[n]的前驱，a[n]后的元素a[n+1]称为a[n]的后继。 线性表中对元素的插入，先移动其后的元素。 1234567If(pos&amp;lt;1&amp;amp;&amp;amp;pos&amp;gt;length)exit(error)for(i&amp;gt;cnt;i&amp;gt;n;i--;)arr[n+1]=arr[n]">
+<meta name="twitter:description" content="单链表的类型定义： 123456789Typedef struct Node&amp;#123;​	ElemType data;​	Struct Node *next;&amp;#125;LNode,*Linkedlist;  申请： 1P=（Node*)malloc(sizeof(Node))  取链表中第i个元素: 12345678910111213141516171819202122232425&amp;#123;">
 
 
 
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-09-10T09:30:17+08:00">
-                2019-09-10
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-12T10:38:21+08:00">
+                2019-09-12
               </time>
             
           </span>
@@ -385,9 +385,14 @@
       
 
       
-        <p>线性表：具有相同数据类型的n(n&gt;=0)个数据元素的有限序列。a[n]元素之前的a[n-1]元素称为a[n]的前驱，a[n]后的元素a[n+1]称为a[n]的后继。</p>
-<p>线性表中对元素的插入，先移动其后的元素。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">If(pos&lt;<span class="number">1</span>&amp;&amp;pos&gt;length)</span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span>(error)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i&gt;cnt;i&gt;n;i--;)</span><br><span class="line"></span><br><span class="line">arr[n+<span class="number">1</span>]=arr[n]</span><br></pre></td></tr></table></figure>
+        <p>单链表的类型定义：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Typedef <span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"></span><br><span class="line">​	ElemType data;</span><br><span class="line"></span><br><span class="line">​	Struct Node *next;</span><br><span class="line"></span><br><span class="line">&#125;LNode,*Linkedlist;</span><br></pre></td></tr></table></figure>
+
+<p>申请：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">P=（Node*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node))</span><br></pre></td></tr></table></figure>
+
+<p>取链表中第i个元素:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">p=L-&gt;next;</span><br><span class="line"></span><br><span class="line">j=1;</span><br><span class="line"></span><br><span class="line">while(p&amp;&amp;j&lt;i)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">p=p-&gt;next;</span><br><span class="line"></span><br><span class="line">++j;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (!p||j&gt;1=)</span><br><span class="line"></span><br><span class="line">return error;</span><br><span class="line"></span><br><span class="line">e=p-&gt;data;</span><br><span class="line"></span><br><span class="line">return OK;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -440,6 +445,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/18/各种报错/" rel="prev" title="各种报错">
+                各种报错 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -512,7 +521,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

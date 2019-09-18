@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-09-10T01:30:17.391Z</updated>
+  <updated>2019-09-18T01:06:45.831Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Data Structure</title>
-    <link href="http://qywcysry.github.io/2019/09/10/Data-Structure/"/>
-    <id>http://qywcysry.github.io/2019/09/10/Data-Structure/</id>
-    <published>2019-09-10T00:24:18.000Z</published>
-    <updated>2019-09-10T01:30:17.391Z</updated>
+    <title>各种报错</title>
+    <link href="http://qywcysry.github.io/2019/09/18/%E5%90%84%E7%A7%8D%E6%8A%A5%E9%94%99/"/>
+    <id>http://qywcysry.github.io/2019/09/18/各种报错/</id>
+    <published>2019-09-18T01:02:29.000Z</published>
+    <updated>2019-09-18T01:06:45.831Z</updated>
     
     <summary type="html">
     
@@ -29,9 +29,30 @@
       
         
         
-          &lt;p&gt;线性表：具有相同数据类型的n(n&amp;gt;=0)个数据元素的有限序列。a[n]元素之前的a[n-1]元素称为a[n]的前驱，a[n]后的元素a[n+1]称为a[n]的后继。&lt;/p&gt;
-&lt;p&gt;线性表中对元素的插入，先移动其后的元素。&lt;/p&gt;
-&lt;figure
+          &lt;h2 id=&quot;0X00：用ssh时-报错：WARNING-POSSIBLE-DNS-SPOOFING-DETECTED&quot;&gt;&lt;a href=&quot;#0X00：用ssh时-报错：WARNING-POSSIBLE-DNS-SPOOFING-DETECTED&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Data Structure</title>
+    <link href="http://qywcysry.github.io/2019/09/10/Data-Structure/"/>
+    <id>http://qywcysry.github.io/2019/09/10/Data-Structure/</id>
+    <published>2019-09-10T00:24:18.000Z</published>
+    <updated>2019-09-12T02:38:21.108Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;单链表的类型定义：&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
         
       
     
@@ -85,7 +106,7 @@
     <link href="http://qywcysry.github.io/2019/09/08/%E5%A0%86%E6%BA%A2%E5%87%BA%E5%88%A9%E7%94%A8/"/>
     <id>http://qywcysry.github.io/2019/09/08/堆溢出利用/</id>
     <published>2019-09-08T14:04:07.000Z</published>
-    <updated>2019-09-09T12:06:16.102Z</updated>
+    <updated>2019-09-11T01:42:03.663Z</updated>
     
     <summary type="html">
     
@@ -93,7 +114,7 @@
       
         
         
-          &lt;h5 id=&quot;堆与栈的区别：&quot;&gt;&lt;a href=&quot;#堆与栈的区别：&quot; class=&quot;headerlink&quot;
+          &lt;h5 id=&quot;堆与栈的区别：&quot;&gt;&lt;a href=&quot;#堆与栈的区别：&quot; class=&quot;headerlink&quot; title=&quot;堆与栈的区别：&quot;&gt;&lt;/a&gt;堆与栈的区别：&lt;/h5&gt;&lt;h2 id=&quot;堆基础&quot;&gt;&lt;a href=&quot;#堆基础&quot; class=&quot;headerlink&quot;
         
       
     
@@ -147,11 +168,11 @@
   </entry>
   
   <entry>
-    <title>计算机中数的存储</title>
-    <link href="http://qywcysry.github.io/2019/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8/"/>
-    <id>http://qywcysry.github.io/2019/09/08/计算机中数的存储/</id>
+    <title>计算机基础知识</title>
+    <link href="http://qywcysry.github.io/2019/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://qywcysry.github.io/2019/09/08/计算机基础知识/</id>
     <published>2019-09-08T05:37:58.000Z</published>
-    <updated>2019-09-09T01:39:44.074Z</updated>
+    <updated>2019-09-11T01:39:15.245Z</updated>
     
     <summary type="html">
     
@@ -159,7 +180,7 @@
       
         
         
-          &lt;p&gt;一直对计算机中数的存储方式一知半解，make a summary
+          &lt;h1 id=&quot;数的存储&quot;&gt;&lt;a href=&quot;#数的存储&quot; class=&quot;headerlink&quot; title=&quot;数的存储&quot;&gt;&lt;/a&gt;数的存储&lt;/h1&gt;&lt;p&gt;一直对计算机中数的存储方式一知半解，make a summary
         
       
     
@@ -449,33 +470,6 @@
         
         
           &lt;h4 id=&quot;0X00-Introduction&quot;&gt;&lt;a href=&quot;#0X00-Introduction&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="http://qywcysry.github.io/tags/essay/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2019/7/13</title>
-    <link href="http://qywcysry.github.io/2019/07/13/2019-7-13/"/>
-    <id>http://qywcysry.github.io/2019/07/13/2019-7-13/</id>
-    <published>2019-07-13T12:22:17.000Z</published>
-    <updated>2019-07-13T13:01:45.076Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在微信公众号”赛先生”上看到的一篇文章，采访对象为吴军，原腾讯副总裁，Google中日韩搜索算法开发者。对这个人挺感兴趣的，兴许后面会把他写的书都看一遍。&lt;/p&gt;
-&lt;p&gt;以下为摘录：&lt;/p&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;个人成长的关键在于做减法和走出舒适
         
       
     
