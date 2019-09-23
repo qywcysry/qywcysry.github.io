@@ -88,10 +88,16 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="在大学计算机专业、理工类专业大多学习，C/C++，Java这些开发语言，Android, iOS也有不少同学买书或下载视频学习，但是最后都是没有结果。  把编程开发学习当作一个技能来学习，而不是大学中的学习。中学、大学的学习目标是为了考试，完成学分。了解习得性的技能学习的规律。即强化训练，反复训练。没有一定强度的反复操练是不可能掌握一门技能。 完成代码量的训练，如果要定一个量的话是10000行。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-21T15:25:08.031Z">
+<meta property="og:image" content="https://piaosanlang.gitbooks.io/spiders/content/photos/01-engine.png">
+<meta property="og:image" content="https://piaosanlang.gitbooks.io/spiders/content/photos/01-webdns.jpg">
+<meta property="og:image" content="https://piaosanlang.gitbooks.io/spiders/content/photos/http_protocol.gif">
+<meta property="og:image" content="https://piaosanlang.gitbooks.io/spiders/content/photos/01_request.png">
+<meta property="og:image" content="https://piaosanlang.gitbooks.io/spiders/content/photos/01_response.jpg">
+<meta property="og:updated_time" content="2019-09-22T09:51:47.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫">
 <meta name="twitter:description" content="在大学计算机专业、理工类专业大多学习，C/C++，Java这些开发语言，Android, iOS也有不少同学买书或下载视频学习，但是最后都是没有结果。  把编程开发学习当作一个技能来学习，而不是大学中的学习。中学、大学的学习目标是为了考试，完成学分。了解习得性的技能学习的规律。即强化训练，反复训练。没有一定强度的反复操练是不可能掌握一门技能。 完成代码量的训练，如果要定一个量的话是10000行。">
+<meta name="twitter:image" content="https://piaosanlang.gitbooks.io/spiders/content/photos/01-engine.png">
 
 
 
@@ -335,8 +341,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-09-21T23:25:08+08:00">
-                2019-09-21
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-22T17:51:47+08:00">
+                2019-09-22
               </time>
             
           </span>
@@ -393,6 +399,103 @@
 <li><strong>每天写日志、写总结。用markdown、博客来写，记录你学习过程中的问题、思路和成就。</strong></li>
 </ul>
 </blockquote>
+<h2 id="基础知识："><a href="#基础知识：" class="headerlink" title="基础知识："></a>基础知识：</h2><p>网络爬虫，是一种按照一定的规则，自动的抓取万维网信息的程序或者脚本。</p>
+<p><img src="https://piaosanlang.gitbooks.io/spiders/content/photos/01-engine.png" alt></p>
+<p>搜索引擎工作原理</p>
+<p>第一步：抓取网页(spider)</p>
+<p>搜索引擎通过特定规律抓取网页，这种特殊规律体现在Robots协议(网络爬虫排除标准)中，网站通过Robot协议告诉搜索引擎哪些页面可以被抓取，哪些不能。查看Robots协议的方法是在网址后加上”/robots.txt”</p>
+<p>第二步：数据存储</p>
+<p>搜索引擎通过spider跟踪链接爬行到网页，并将爬行的数据存入原始页面数据库。</p>
+<p>第三步：预处理</p>
+<p>搜索引擎将蜘蛛抓取回来的页面，进行各种步骤的预处理。如⒈提取文字 ⒉中文分词 ⒊去停止词 ⒋消除噪音（搜索引擎需要识别并消除这些噪声，比如版权声明文字、导航条、广告等……） 5.正向索引 6.倒排索引 7.链接关系计算 8.特殊文件处理。除了HTML文件外，搜索引擎通常还能抓取和索引以文字为基础的多种文件类型，如 PDF、Word、WPS、XLS、PPT、TXT 文件等。</p>
+<p>第四步：排名，提供检索服务</p>
+<p>聚焦爬虫与通用爬虫</p>
+<p> 聚焦爬虫是一个自动下载网页的程序，它根据既定的抓取目标，有选择的访问万维网上的网页与相关的链接，获取所需要的信息。与通用爬虫(general purpose web crawler)不同，聚焦爬虫并不追求大的覆盖，而将目标定为抓取与某一特定主题内容相关的网页，为面向主题的用户查询准备数据资源。</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>爬虫是 模拟用户在浏览器或者某个应用上的操作，把操作的过程、实现自动化的程序。</p>
+<p>输入url对服务器发起请求后，简单来说将经历四个步骤：</p>
+<ol>
+<li>查找域名对应的IP地址</li>
+<li>向IP对应的服务器发出请求</li>
+<li>服务器响应请求，发回网页内容</li>
+<li>浏览器解析网页内容</li>
+</ol>
+<p><img src="https://piaosanlang.gitbooks.io/spiders/content/photos/01-webdns.jpg" alt></p>
+<p>网络爬虫本质上就是浏览器的http请求，浏览器与爬虫都通过相同的方式来获取网页，但是网络爬虫所做的相当于将浏览器的功能批量执行，通过指定url直接返回符合查找规律的数据，而不用用户人工获取。</p>
+<p><strong>HTTP协议</strong>：即超文本传输协议，是一种发布和接受超文本链接HTML的方法。</p>
+<p><img src="https://piaosanlang.gitbooks.io/spiders/content/photos/http_protocol.gif" alt></p>
+<p>HTTP协议基于TCP协议，TCP/IP协议参考模型如上。http为应用层的协议，默认其端口号为80，https的端口号是443.</p>
+<p>http操作的具体过程：</p>
+<ol>
+<li><p>地址解析：从url中分离出协议名，主机名，端口，对象路径等部分,域名系统DNS解析域名也是在这一步。</p>
+</li>
+<li><p>封装HTTP请求包：将以上部分结合本机信息(IP等)，封装成一个HTTP请求包，</p>
+</li>
+<li><p>封装成TCP包，建立TCP连接（三次握手）：HTTP协议是比TCP更高级的应用层协议，根据规则，只有低层协议建立之后，才能进行更高层协议的连接，所以在HTTP开始工作之前，客户机的web浏览器首先通过网络与服务器通过TCP协议建立连接。一般TCP连接的端口号是80，但在这是8080.</p>
+</li>
+<li><p>客户机发送请求命令：建立连接后，客户机发送http请求请求给服务器，(具体操作，请求的格式，状态码，get/post在此处不深究。)</p>
+<p><img src="https://piaosanlang.gitbooks.io/spiders/content/photos/01_request.png" alt></p>
+</li>
+<li><p>服务器相应：服务器接到请求后，给予相应的http相应。</p>
+<p><img src="https://piaosanlang.gitbooks.io/spiders/content/photos/01_response.jpg" alt></p>
+</li>
+<li><p>服务器关闭TCP连接：一般情况下，一旦Web服务器向浏览器发送了请求数据，它就要关闭TCP连接。</p>
+</li>
+</ol>
+<p>HTTPS（全称：Hypertext Transfer Protocol over Secure Socket Layer），是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL。其所用的端口号是443。</p>
+<p>Http协议定义了很多与服务器交互的方法，最基本的有4种，分别是GET,POST,PUT,DELETE. 一个URL地址用于描述一个网络上的资源，而HTTP中的GET, POST, PUT, DELETE就对应着对这个资源的查，改，增，删4个操作。 我们最常见的就是GET和POST了。GET一般用于获取/查询资源信息，而POST一般用于更新资源信息.</p>
+<blockquote>
+<ol>
+<li>GET提交的数据会放在URL之后，以?分割URL和传输数据，参数之间以&amp;相连，如EditPosts.aspx?name=test1&amp;id=123456. POST方法是把提交的数据放在HTTP包的Body中.</li>
+<li>GET提交的数据大小有限制（因为浏览器对URL的长度有限制），而POST方法提交的数据没有限制.</li>
+<li>GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值。</li>
+<li>GET方式提交数据，会带来安全问题，比如一个登录页面，通过GET方式提交数据时，用户名和密码将出现在URL上，如果页面可以被缓存或者其他人可以访问这台机器，就可以从历史记录获得该用户的账号和密码.</li>
+</ol>
+</blockquote>
+<p>一个URL的请求过程：当你在浏览器输入URL <a href="http://www.website.com/" target="_blank" rel="noopener">http://www.website.com</a> 的时候，浏览器发送一个Request去获取 <a href="http://www/" target="_blank" rel="noopener">http://www</a>. website.com的html. 服务器把Response发送回给浏览器.<br>浏览器分析Response中的 HTML，发现其中引用了很多其他文件，比如图片，CSS文件，JS文件。<br>浏览器会自动再次发送Request去获取图片，CSS文件，或者JS文件。<br>当所有的文件都下载成功后， 网页就被显示出来了。</p>
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th align="center">分类描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1**</td>
+<td align="center">信息，服务器收到请求，需要请求者继续执行操作</td>
+</tr>
+<tr>
+<td>2**</td>
+<td align="center">成功，操作被成功接收并处理</td>
+</tr>
+<tr>
+<td>3**</td>
+<td align="center">重定向，需要进一步的操作以完成请求</td>
+</tr>
+<tr>
+<td>4**</td>
+<td align="center">客户端错误，请求包含语法错误或无法完成请求</td>
+</tr>
+<tr>
+<td>5**</td>
+<td align="center">服务器错误，服务器在处理请求的过程中发生了错误</td>
+</tr>
+</tbody></table>
+<p>最常用的响应状态码</p>
+<p>◆200 (OK): 找到了该资源，并且一切正常。</p>
+<p>◆301(Moved Permanently): 客户请求的文档在其他地方，新的URL在Location头中给出，浏览器应该自动地访问新的URL。</p>
+<p>◆302 (Found): 类似于301，但新的URL应该被视为临时性的替代，而不是永久性的。</p>
+<p>◆304 (NOT MODIFIED): 该资源在上次请求之后没有任何修改。这通常用于浏览器的缓存机制。</p>
+<p>◆400 (Bad Request): 请求出现语法错误。</p>
+<p>◆403 (FORBIDDEN): 客户端未能获得授权。这通常是在401之后输入了不正确的用户名或密码。</p>
+<p>◆404 (NOT FOUND): 在指定的位置不存在所申请的资源。</p>
+<p>◆500 (Internal Server Error): 服务器遇到了意料不到的情况，不能完成客户的请求</p>
+<p>◆503 (Service Unavailable): 服务器由于维护或者负载过重未能应答。例如，Servlet可能在数据库连接池已满的情况下返回503。服务器返回503时可以提供一个Retry-After头</p>
+<h1 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h1><ul>
+<li>首先选取一部分精心挑选的种子URL；</li>
+<li>将这些URL放入待抓取URL队列；</li>
+<li>从待抓取URL队列中取出待抓取在URL，解析DNS，并且得到主机的ip，并将URL对应的网页下载下来，存储进已下载网页库中。此外，将这些URL放进已抓取URL队列。</li>
+<li><strong>分析已抓取URL队列中的URL，分析其中的其他URL，并且将URL放入待抓取URL队列，从而进入下一个循环。</strong></li>
+</ul>
 
       
     </div>
@@ -492,8 +595,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -584,6 +696,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识："><span class="nav-number">1.</span> <span class="nav-text">基础知识：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本原理"><span class="nav-number">2.</span> <span class="nav-text">基本原理</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#工作流程"><span class="nav-number"></span> <span class="nav-text">工作流程</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
