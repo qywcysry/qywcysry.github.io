@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;unsigned long hashcode = 0x21DD09EC;unsigned long check_password(const char* p)&amp;#123;	int* ip = (int*)p;	int i;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一天一道pwn题">
-<meta property="og:url" content="http://qywcysry.github.io/一天一道pwn题.html">
+<meta name="description" content="0X01：冒泡排序 123456789101112131415161718import java.util.Arrays;public class Bubblesort &amp;#123;    public static void main(String[] args) &amp;#123;        int[] ns = &amp;#123;12,23,45,32,87,65&amp;#125;;        Sys">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法の基石">
+<meta property="og:url" content="http://qywcysry.github.io/2019/09/30/算法の基石/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="123456789101112131415161718192021222324#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;unsigned long hashcode = 0x21DD09EC;unsigned long check_password(const char* p)&amp;#123;	int* ip = (int*)p;	int i;">
+<meta property="og:description" content="0X01：冒泡排序 123456789101112131415161718import java.util.Arrays;public class Bubblesort &amp;#123;    public static void main(String[] args) &amp;#123;        int[] ns = &amp;#123;12,23,45,32,87,65&amp;#125;;        Sys">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-18T01:56:32.739Z">
+<meta property="og:updated_time" content="2019-09-30T09:11:39.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一天一道pwn题">
-<meta name="twitter:description" content="123456789101112131415161718192021222324#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;unsigned long hashcode = 0x21DD09EC;unsigned long check_password(const char* p)&amp;#123;	int* ip = (int*)p;	int i;">
+<meta name="twitter:title" content="算法の基石">
+<meta name="twitter:description" content="0X01：冒泡排序 123456789101112131415161718import java.util.Arrays;public class Bubblesort &amp;#123;    public static void main(String[] args) &amp;#123;        int[] ns = &amp;#123;12,23,45,32,87,65&amp;#125;;        Sys">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/一天一道pwn题.html">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/09/30/算法の基石/">
 
 
 
 
 
-  <title>一天一道pwn题 | Hy0uka</title>
+  <title>算法の基石 | Hy0uka</title>
   
 
 
@@ -278,41 +278,180 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/09/30/算法の基石/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hy0uka">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hy0uka">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">一天一道pwn题</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">unsigned long hashcode = 0x21DD09EC;</span><br><span class="line">unsigned long check_password(const char* p)&#123;</span><br><span class="line">	int* ip = (int*)p;</span><br><span class="line">	int i;</span><br><span class="line">	int res=0;</span><br><span class="line">	for(i=0; i&lt;5; i++)&#123;</span><br><span class="line">		res += ip[i];</span><br><span class="line">	&#125;</span><br><span class="line">	return res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(int argc, char* argv[])&#123;</span><br><span class="line">	if(argc&lt;2)&#123;</span><br><span class="line">		printf(&quot;usage : %s [passcode]\n&quot;, argv[0]);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	if(strlen(argv[1]) != 20)&#123;</span><br><span class="line">		printf(&quot;passcode length should be 20 bytes\n&quot;);</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
-
-<p>if(hashcode == check_password( argv[1] )){<br>    system(“/bin/cat flag”);<br>    return 0;<br>}
-else<br>    printf(“wrong passcode.\n”);<br>return 0;<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>最后要执行第26行”/bin/cat/flag”</p>
-<p>则要使hashcode == check_password(argv[1])</p>
-<p>unsigned long hashcode = 0x21DD09EC;</p>
-<p>main函数首先对输入参数的个数进行判断，再对argv[1]数组长度进行判断。</p>
-
+          <h1 class="post-title" itemprop="name headline">算法の基石</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-30T16:26:04+08:00">
+                2019-09-30
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-09-30T17:11:39+08:00">
+                2019-09-30
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/30/算法の基石/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/30/算法の基石/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>0X01：冒泡排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">public class Bubblesort &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] ns = &#123;12,23,45,32,87,65&#125;;</span><br><span class="line">        System.out.println(Arrays.toString(ns));</span><br><span class="line">        for (int i = 0;i &lt; ns.length-1;i++)&#123;</span><br><span class="line">            for (int j = 0;j &lt; ns.length-i-1;j++)&#123;</span><br><span class="line">                if(ns[j]&gt;ns[j+1])&#123;</span><br><span class="line">                    int temp = ns[j+1];</span><br><span class="line">                    ns[j+1] = ns[j];</span><br><span class="line">                    ns [j] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    System.out.println(Arrays.toString(ns));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意是ns.length-1,引用数组的循环要注意遍历时，i的临界是长度减一（由于ns[0]的存在）。核心在于两轮循环与交换，第一轮循环在于对0~n-1每个元素进行操作一次，第二轮循环在于确定数之后将该数与未被排序的数逐个进行比较。交换在于使大数排列到坐标轴后面。</p>
+
       
     </div>
+
+        <div>
+            
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------This is my bottom line------</div>
+    
+</div>
+            
+        </div>
     
     
     
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/20/Python爬虫/" rel="next" title="Python爬虫">
+                <i class="fa fa-chevron-left"></i> Python爬虫
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -366,7 +505,7 @@ else<br>    printf(“wrong passcode.\n”);<br>return 0;<br>​<figure class="h
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

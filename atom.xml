@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-09-22T09:51:47.361Z</updated>
+  <updated>2019-09-30T09:11:39.406Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>算法の基石</title>
+    <link href="http://qywcysry.github.io/2019/09/30/%E7%AE%97%E6%B3%95%E3%81%AE%E5%9F%BA%E7%9F%B3/"/>
+    <id>http://qywcysry.github.io/2019/09/30/算法の基石/</id>
+    <published>2019-09-30T08:26:04.000Z</published>
+    <updated>2019-09-30T09:11:39.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;0X01：冒泡排序&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Python爬虫</title>
@@ -31,6 +54,28 @@
         
           &lt;blockquote&gt;
 &lt;p&gt;在大学计算机专业、理工类专业大多学习，C/C++，Java这些开发语言，Android,
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2019/9/30</title>
+    <link href="http://qywcysry.github.io/2019/09/20/Java/"/>
+    <id>http://qywcysry.github.io/2019/09/20/Java/</id>
+    <published>2019-09-20T08:19:01.000Z</published>
+    <updated>2019-10-12T09:16:37.482Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Java实用&quot;&gt;&lt;a href=&quot;#Java实用&quot; class=&quot;headerlink&quot;
         
       
     
@@ -246,7 +291,7 @@
     <link href="http://qywcysry.github.io/2019/09/05/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86&amp;%E6%A0%88%E6%BA%A2%E5%87%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
     <id>http://qywcysry.github.io/2019/09/05/基础知识&amp;栈溢出原理与实践/</id>
     <published>2019-09-05T15:42:58.000Z</published>
-    <updated>2019-09-09T08:52:56.982Z</updated>
+    <updated>2019-10-21T03:52:34.466Z</updated>
     
     <summary type="html">
     
@@ -417,58 +462,6 @@
         
         
           &lt;p&gt;我们当然还会想到过去几十年老科学家如何牺牲自我的故事。但说实话，过去四十年来的老科学家们的生活绝对在社会平均水平之上，他们有单位分配的房子，有各种保障，没有几个是吃不饱饭的，他们得到了充分的尊重与报酬。科学家拿钱搞科研，做好自己的本分工作就可以了，不额外承担感动国人的责任。
-        
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="http://qywcysry.github.io/tags/essay/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>饶毅：赛先生在中国还是客人么？——“赛先生”创刊致词</title>
-    <link href="http://qywcysry.github.io/2019/07/18/%E9%A5%B6%E6%AF%85%EF%BC%9A%E8%B5%9B%E5%85%88%E7%94%9F%E5%9C%A8%E4%B8%AD%E5%9B%BD%E8%BF%98%E6%98%AF%E5%AE%A2%E4%BA%BA%E4%B9%88%EF%BC%9F%E2%80%94%E2%80%94%E2%80%9C%E8%B5%9B%E5%85%88%E7%94%9F%E2%80%9D%E5%88%9B%E5%88%8A%E8%87%B4%E8%AF%8D/"/>
-    <id>http://qywcysry.github.io/2019/07/18/饶毅：赛先生在中国还是客人么？——“赛先生”创刊致词/</id>
-    <published>2019-07-18T13:00:19.000Z</published>
-    <updated>2019-07-18T13:01:26.500Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;饶毅：赛先生在中国还是客人么？——“赛先生”创刊致词**&lt;/p&gt;
-&lt;p&gt;「要改善我国的科学，不仅需要改革体制，而且需要改进文化。」&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;饶毅（北京大学教授）&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;作为观念的“德先生”（democracy）和“赛先生”（s
-        
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="http://qywcysry.github.io/tags/essay/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Z3约束求解器</title>
-    <link href="http://qywcysry.github.io/2019/07/14/Z3%E7%BA%A6%E6%9D%9F%E6%B1%82%E8%A7%A3%E5%99%A8/"/>
-    <id>http://qywcysry.github.io/2019/07/14/Z3约束求解器/</id>
-    <published>2019-07-14T13:15:08.000Z</published>
-    <updated>2019-08-30T13:31:45.218Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;如果高中数学给我们用Z3就好了&lt;/p&gt;
-&lt;h4 id=&quot;0X00-Introduction&quot;&gt;&lt;a href=&quot;#0X00-Introduction&quot; class=&quot;headerlink&quot;
         
       
     
