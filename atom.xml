@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-09-30T09:11:39.406Z</updated>
+  <updated>2019-11-17T14:44:21.823Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tree</title>
+    <link href="http://qywcysry.github.io/2019/11/17/Tree/"/>
+    <id>http://qywcysry.github.io/2019/11/17/Tree/</id>
+    <published>2019-11-17T14:42:37.000Z</published>
+    <updated>2019-11-17T14:44:21.823Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2 id=&quot;树-tree&quot;&gt;&lt;a href=&quot;#树-tree&quot; class=&quot;headerlink&quot; title=&quot;树(tree)&quot;&gt;&lt;/a&gt;树(tree)&lt;/h2&gt;&lt;h4 id=&quot;一：树的相关基本概念：&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>算法の基石</title>
@@ -445,30 +468,6 @@
     
     
       <category term="error" scheme="http://qywcysry.github.io/tags/error/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>One Piece</title>
-    <link href="http://qywcysry.github.io/2019/07/18/One-Piece/"/>
-    <id>http://qywcysry.github.io/2019/07/18/One-Piece/</id>
-    <published>2019-07-18T13:04:30.000Z</published>
-    <updated>2019-07-18T13:05:29.312Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;我们当然还会想到过去几十年老科学家如何牺牲自我的故事。但说实话，过去四十年来的老科学家们的生活绝对在社会平均水平之上，他们有单位分配的房子，有各种保障，没有几个是吃不饱饭的，他们得到了充分的尊重与报酬。科学家拿钱搞科研，做好自己的本分工作就可以了，不额外承担感动国人的责任。
-        
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="http://qywcysry.github.io/tags/essay/"/>
     
   </entry>
   
