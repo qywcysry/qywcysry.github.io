@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="essay,">
+  <meta name="keywords" content="Data Structure,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="0X00:Introductionangr是一个二进制代码分析工具，能够自动化完成二进制文件的分析，并找出漏洞，是一个基于python的二进制漏洞分析框架，它将以前多种分析技术集成进来，­­­它能够进行动态的符号执行分析，也能够进行多种静态分析。 0X01:基本过程 将二进制程序载入angr分析系统 将二进制程序转换成中间语言 将IR语言转换成语义较强的表达形式 执行进一步的分析  0X02：用法">
-<meta name="keywords" content="essay">
+<meta name="description" content="图的基本概念 顶点(vertex)：数据元素。类似于在线性表中：元素；树中：结点； 图(Graph)：由顶点的有穷非空集合和顶点之间边的集合组成，通常表示为G(V,E),G表示图，V表示顶点的集合，E表示边(edge)的集合。 子图(Subgraph)：B图的顶点和边都属于A图，则B图是A图的子图。 边：顶点Vi到顶点Vj之间的连线没有方向，则称这条连线为边。用小括号(Vi,Vj)或(Vj,Vi)">
+<meta name="keywords" content="Data Structure">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angr">
-<meta property="og:url" content="http://qywcysry.github.io/2019/07/14/angr/index.html">
+<meta property="og:title" content="图">
+<meta property="og:url" content="http://qywcysry.github.io/2019/11/21/图/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="0X00:Introductionangr是一个二进制代码分析工具，能够自动化完成二进制文件的分析，并找出漏洞，是一个基于python的二进制漏洞分析框架，它将以前多种分析技术集成进来，­­­它能够进行动态的符号执行分析，也能够进行多种静态分析。 0X01:基本过程 将二进制程序载入angr分析系统 将二进制程序转换成中间语言 将IR语言转换成语义较强的表达形式 执行进一步的分析  0X02：用法">
+<meta property="og:description" content="图的基本概念 顶点(vertex)：数据元素。类似于在线性表中：元素；树中：结点； 图(Graph)：由顶点的有穷非空集合和顶点之间边的集合组成，通常表示为G(V,E),G表示图，V表示顶点的集合，E表示边(edge)的集合。 子图(Subgraph)：B图的顶点和边都属于A图，则B图是A图的子图。 边：顶点Vi到顶点Vj之间的连线没有方向，则称这条连线为边。用小括号(Vi,Vj)或(Vj,Vi)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-30T13:14:16.356Z">
+<meta property="og:updated_time" content="2019-11-21T16:10:45.506Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angr">
-<meta name="twitter:description" content="0X00:Introductionangr是一个二进制代码分析工具，能够自动化完成二进制文件的分析，并找出漏洞，是一个基于python的二进制漏洞分析框架，它将以前多种分析技术集成进来，­­­它能够进行动态的符号执行分析，也能够进行多种静态分析。 0X01:基本过程 将二进制程序载入angr分析系统 将二进制程序转换成中间语言 将IR语言转换成语义较强的表达形式 执行进一步的分析  0X02：用法">
+<meta name="twitter:title" content="图">
+<meta name="twitter:description" content="图的基本概念 顶点(vertex)：数据元素。类似于在线性表中：元素；树中：结点； 图(Graph)：由顶点的有穷非空集合和顶点之间边的集合组成，通常表示为G(V,E),G表示图，V表示顶点的集合，E表示边(edge)的集合。 子图(Subgraph)：B图的顶点和边都属于A图，则B图是A图的子图。 边：顶点Vi到顶点Vj之间的连线没有方向，则称这条连线为边。用小括号(Vi,Vj)或(Vj,Vi)">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/2019/07/14/angr/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/11/21/图/">
 
 
 
 
 
-  <title>angr | Hy0uka</title>
+  <title>图 | Hy0uka</title>
   
 
 
@@ -291,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/07/14/angr/">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/11/21/图/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hy0uka">
@@ -308,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">angr</h1>
+          <h1 class="post-title" itemprop="name headline">图</h1>
         
 
         <div class="post-meta">
@@ -320,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-14T20:57:13+08:00">
-                2019-07-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-21T21:33:54+08:00">
+                2019-11-21
               </time>
             
 
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-08-30T21:14:16+08:00">
-                2019-08-30
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-22T00:10:45+08:00">
+                2019-11-22
               </time>
             
           </span>
@@ -351,8 +351,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/14/angr/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/14/angr/" itemprop="commentCount"></span>
+                <a href="/2019/11/21/图/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/21/图/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -385,28 +385,61 @@
       
 
       
-        <h4 id="0X00-Introduction"><a href="#0X00-Introduction" class="headerlink" title="0X00:Introduction"></a>0X00:Introduction</h4><p>angr是一个二进制代码分析工具，能够自动化完成二进制文件的分析，并找出漏洞，是一个基于python的二进制漏洞分析框架，它将以前多种分析技术集成进来，­­­它能够进行动态的符号执行分析，也能够进行多种静态分析。</p>
-<h4 id="0X01-基本过程"><a href="#0X01-基本过程" class="headerlink" title="0X01:基本过程"></a>0X01:基本过程</h4><ol>
-<li>将二进制程序载入angr分析系统</li>
-<li>将二进制程序转换成中间语言</li>
-<li>将IR语言转换成语义较强的表达形式</li>
-<li>执行进一步的分析</li>
+        <h4 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h4><ol>
+<li><strong>顶点</strong>(vertex)：数据元素。类似于在线性表中：元素；树中：结点；</li>
+<li><strong>图</strong>(Graph)：由顶点的有穷非空集合和顶点之间边的集合组成，通常表示为G(V,E),G表示图，V表示顶点的集合，E表示边(edge)的集合。</li>
+<li><strong>子图</strong>(Subgraph)：B图的顶点和边都属于A图，则B图是A图的子图。</li>
+<li><strong>边</strong>：顶点Vi到顶点Vj之间的连线没有方向，则称这条连线为边。用小括号(Vi,Vj)或(Vj,Vi)表示。若有方向，则称之为<strong>弧</strong>(Arc)，用&lt;Vi,Vj&gt;表示。其中Vi是弧尾，Vj是弧头。箭头即弧头。</li>
+<li>图中顶点之间的连线全是没有方向的边，则称之为<strong>无向图</strong>(<strong>Undirected graphs</strong>).顶点全是有方向的弧，则将该种图称之为<strong>有向图</strong>(<strong>Directed graphs</strong>)。</li>
+<li><strong>简单图</strong>：不存在顶点到其自身的连线，并且同一条连线不重复出现。</li>
+<li>对于无向图：</li>
+<li><strong>邻接点</strong>：与该结点存在边相关联的点称之为邻接点。顶点的<strong>度</strong>就是与该顶点相关联的边的数目。</li>
+<li>对于有向图：</li>
+<li>存在弧&lt;Vi,Vj&gt;,则称顶点Vi邻接到Vj，以该顶点为头的弧的数目称为该顶点的<strong>入度</strong>(Indegree)，反之称之为<strong>出度</strong>(Outdegree)。</li>
+<li><strong>路径</strong>：从一个点到另一个点所经过的顶点序列。<strong>路径长度</strong>：路径上的边或者弧的数目。</li>
+<li>回路或环：路径中出发点和终止点为同一点。</li>
+<li>简单回路或简单环：路径中出发点与终止点为同一点，而其他顶点互不相同。</li>
+<li>简单路径：所有顶点都不相同。</li>
+<li>连通图：从顶点Vi到顶点Vj存在路径，则称Vi到Vj是连通的。如果图中任意两个顶点都是连通的，则称其为连通图(Connected Graph)。</li>
+<li>连通分量：极大连通子图。</li>
+<li>强连通图：从Vi到Vj，以及从Vj到Vi，都存在路径，则称该图为强连通图。</li>
+<li>生成树：连接n个结点的n-1条边形成的所极小连通子图。有向图中的极大强连通子图称为有向图的强连通分量。有向图中若干棵有向树连接n个结点，且总共有n-1条弧，构成了生成森林。</li>
+<li>无向图中，如果任意两个顶点之间都存在边，则称该图为<strong>无向完全图</strong>。有向图中，任意两个顶点之间都存在互为相反的两条弧，则称该图为<strong>有向完全图</strong>。</li>
+<li>不管是有向图还是无向图，边/弧比较少时，称之为<strong>稀疏图</strong>，反之称之为<strong>稠密图</strong>。</li>
+<li><strong>权</strong>(<strong>Weight</strong>)：实际应用时，图的边/弧往往映射为现实中某个具体的信息，附带相关的数字值，这种与图的边/弧相关联的数字的值称之为权。带权的图称之为网(Network)。</li>
 </ol>
-<h4 id="0X02：用法"><a href="#0X02：用法" class="headerlink" title="0X02：用法"></a>0X02：用法</h4><h6 id="angr-CLE：首先加载二进制文件，在加载二进制文件的时候会分析病读取binary的信息，包括指令地址、shared-library、arch-information等等。"><a href="#angr-CLE：首先加载二进制文件，在加载二进制文件的时候会分析病读取binary的信息，包括指令地址、shared-library、arch-information等等。" class="headerlink" title="angr-CLE：首先加载二进制文件，在加载二进制文件的时候会分析病读取binary的信息，包括指令地址、shared library、arch information等等。"></a>angr-CLE：首先加载二进制文件，在加载二进制文件的时候会分析病读取binary的信息，包括指令地址、shared library、arch information等等。</h6><blockquote>
-<blockquote>
-<p>import angr</p>
-<p>b = angr.Project(“./test”)</p>
-</blockquote>
-</blockquote>
-<h6 id="angr-IR：angr用VEX-IR将指令转化为中间语言IR"><a href="#angr-IR：angr用VEX-IR将指令转化为中间语言IR" class="headerlink" title="angr_IR：angr用VEX IR将指令转化为中间语言IR"></a>angr_IR：angr用VEX IR将指令转化为中间语言IR</h6><h6 id="angr-Solver-Engine："><a href="#angr-Solver-Engine：" class="headerlink" title="angr-Solver Engine："></a>angr-Solver Engine：</h6><blockquote>
-<blockquote>
-<p>import claripy<br>bv = claripy.BVV(0x41424344, 32)</p>
-</blockquote>
-</blockquote>
-<h6 id="ArchInfo"><a href="#ArchInfo" class="headerlink" title="ArchInfo"></a><strong>ArchInfo</strong></h6><p>Archinfo是包含特定于体系结构的信息的类的集合。例如，little-endian amd64、little-endian i386。</p>
-<h6 id="PyVex"><a href="#PyVex" class="headerlink" title="PyVex"></a><strong>PyVex</strong></h6><p>PyVex是中间语言，Angr使用Valgrind的中间语言——VEX来完成这方面的内容。VEX中间语言抽象了几种不同架构间的区别，允许在他们之上进行统一的分析。各种中间语言在设计理念上有很多的共通点</p>
-<h6 id="SimuVEX"><a href="#SimuVEX" class="headerlink" title="SimuVEX"></a><strong>SimuVEX</strong></h6><p>SimuVEX模块是中间语言VEX执行的模拟器，它允许你控制符号执行。</p>
-<p>Angr是一个很强大的工具，对进行过代码混淆的代码，无法在IDA中反编译，但能够用这个工具。</p>
+<h4 id="图的存储结构"><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a>图的存储结构</h4><h5 id="邻接矩阵表示法："><a href="#邻接矩阵表示法：" class="headerlink" title="邻接矩阵表示法："></a>邻接矩阵表示法：</h5><p>将<strong>顶点与边/弧分别用两个结构来进行存储</strong>，并且从中建立关联。邻接矩阵表示法用<strong>两个数组</strong>来表示图，一个<strong>一维数组用于存储图中的顶点信息</strong>(存储顺序体现出结点的编号顺序)，一个<strong>二维数组</strong>(称之为邻接矩阵)<strong>用于存储图中边/弧的信息</strong>。</p>
+<p>arc=①1，若该边/弧存在。②0，反之。</p>
+<p>易知，无向图的边数组其实是一个基于主对角线的对称矩阵，编号为i的顶点的度，等于第i行或i列中非0元的个数。有向图的弧数组不再是对称矩阵，而且第i行的非0元个数表示编号为i的顶点的出度，第i列的非0元个数表示编号为i的顶点的入度，整个矩阵的非0元个数等于弧的总数。</p>
+<p>使矩阵能够表示出带权值的网，可将权值代替原矩阵中的1.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">图的邻接矩阵存储结构</span><br><span class="line">#define maxvex 100</span><br><span class="line">typedef struct</span><br><span class="line">&#123;</span><br><span class="line">char vexs[maxvex];</span><br><span class="line">int arc[maxvex][maxvex];</span><br><span class="line">int vertex,edges;</span><br><span class="line">&#125;MGraph;</span><br></pre></td></tr></table></figure>
+
+<h5 id="邻接表表示法："><a href="#邻接表表示法：" class="headerlink" title="邻接表表示法："></a>邻接表表示法：</h5><p>第一部分，用一个一维数组来存储所有顶点的值。第二部分，多个单链表。<strong>将该结点(一维数组中的元素)弧尾对应的弧头存储在链表中的data域</strong>。</p>
+<p>无向图的表示方法与有向图几乎完全相同，但是单链表结点数翻倍(一条边视为两条弧)。对于带权值的网，可以在链表中加入一个存放权值的域。</p>
+<p>邻接表的优点在于根据实际的边/弧数目动态确定存储结构(多个单链表)，避免了存储空间的浪费。有向图中很容易确定该顶点的出度(求出单链表表长)，无向图中表长就是顶点的出度。缺点在于在有向图中要获取顶点i的入度非常麻烦，需要遍历出链表中有多少链表中data域为i。</p>
+<p>于是出现逆邻接表表示方法：<strong>将链表中的data域存放指向当前顶点的弧的弧尾编号</strong>。这样获取入度非常简单(同时获取出度很难)。</p>
+<p>十字链表表示方法：略。</p>
+<h4 id="图的遍历Traversing-Graph"><a href="#图的遍历Traversing-Graph" class="headerlink" title="图的遍历Traversing Graph"></a>图的遍历Traversing Graph</h4><h5 id="深度优先遍历-Depth-First-Search-DFS"><a href="#深度优先遍历-Depth-First-Search-DFS" class="headerlink" title="深度优先遍历(Depth_First_Search,DFS)"></a>深度优先遍历(Depth_First_Search,DFS)</h5><p>很难用言语表达清楚，你懂的，类似于树的先序遍历。先一条道走到黑，再一步一步往回走看是否有别的路径。因为可能存在多个符合条件的邻接点，所以图的深度优先遍历序列是不唯一的。</p>
+<h5 id="广度优先遍历-Breadth-First-Search，BFS"><a href="#广度优先遍历-Breadth-First-Search，BFS" class="headerlink" title="广度优先遍历(Breadth First Search，BFS)"></a>广度优先遍历(Breadth First Search，BFS)</h5><p>①访问任意一个顶点。②访问该顶点所有的邻接点。③访问该顶点的所有邻接点的所有邻接点。④……</p>
+<p>找出当前邻接点的所有外一层邻接点，后按任意序列进行遍历。</p>
+<h4 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h4><p>n个顶点，用n-1条边把一个连通图连接起来，并使得权值之和最小。有Prim算法与Kruskal算法。<strong>注意最小生成树与遍历是不一样的，寻找最小生成树时，不要求上一步与下一步之间连续。</strong></p>
+<h5 id="Prim算法："><a href="#Prim算法：" class="headerlink" title="Prim算法："></a>Prim算法：</h5><p>观察符合条件的那些边，<strong>(边的一个端点是灰色，另一个端点是白色)</strong>，并选出其中权值最小的一条。与边数目无关，只与顶点个数有关，适用于稠密图。(稀疏图亦可)。</p>
+<h5 id="Kruskal算法："><a href="#Kruskal算法：" class="headerlink" title="Kruskal算法："></a>Kruskal算法：</h5><p>一句话，”不构成环的情况下，选权值最小的边。“与边数目有关，与顶点个数无关，适用于稀疏图。</p>
+<h4 id="AOV网："><a href="#AOV网：" class="headerlink" title="AOV网："></a>AOV网：</h4><p>用顶点表示活动，弧表示活动的优先关系的有向图称为AOV网。弧表示活动之间的某种固有的制约关系。</p>
+<p>拓扑序列：假设活动Vi是活动Vj的前驱活动，则在顶点序列中顶点Vi必定在顶点Vj的前面。满足这样的条件，则称这样的顶点序列为一个拓扑序列。</p>
+<p>拓扑排序：构造拓扑序列的过程。</p>
+<p>拓扑排序的方法：每次从AOV网中选择一个入度为0的顶点，输出，然后删去此顶点及所有与他相关的弧。重复上述操作直到，输出全部的顶点，或者AOV网中找不到入度为0的顶点。</p>
+<h4 id="AOE网："><a href="#AOE网：" class="headerlink" title="AOE网："></a>AOE网：</h4><p>弧表示每个步骤环节的活动，顶点表示步骤环节开始时或者结束时的状态，权值表示该活动进行所需要的时间，构成的弧表示活动的有向无环图称为AOE网。主要用于解决时间上的一些相关问题。此处常用到顶点i最早呈现时间ve(i),顶点i最晚呈现时间vl(i)。</p>
+<p>由于在AOE网中，活动可以并行地进行，所以完成工程的最短时间是从始点到终点的最长路径的最短长度(权值之和)。路径长度最长的路径叫做关键路径。<strong>最长路径并不追求最长，反而是保证所有活动完成的最短。</strong></p>
+<p>ve(i)等于从出发点到当前点i的最长路径的长度(满足所有状态而非一个状态)。</p>
+<p>vl(i)等于总工期与从当前点到终点的最长路径的差值(后面都是理想状态，预留给前面的最多时间)。</p>
+<p>ve(i)=vl(i)，顶点i称为关键点，该活动称为关键活动。</p>
+<h4 id="最短路径："><a href="#最短路径：" class="headerlink" title="最短路径："></a>最短路径：</h4><p>指的是两个顶点之间经过的边/弧上权值最小的路径。</p>
+<p>具体操作：</p>
+<p>三行表，i为给顶点的序号，D[i]表示权值，最后一行为路径。</p>
+<p>初始化将源点可到的顶点的权值写下。</p>
+<p>①将落脚点标灰（D[i]最小的点）</p>
+<p>②修正邻接落脚点的点的路径与D[i]</p>
 
       
     </div>
@@ -436,7 +469,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/essay/" rel="tag"># essay</a>
+            <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
           
         </div>
       
@@ -449,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/13/2019-7-13/" rel="next" title="2019/7/13">
-                <i class="fa fa-chevron-left"></i> 2019/7/13
+              <a href="/2019/11/17/Tree/" rel="next" title="Tree">
+                <i class="fa fa-chevron-left"></i> Tree
               </a>
             
           </div>
@@ -458,10 +491,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/14/Z3约束求解器/" rel="prev" title="Z3约束求解器">
-                Z3约束求解器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -627,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#0X00-Introduction"><span class="nav-number">1.</span> <span class="nav-text">0X00:Introduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0X01-基本过程"><span class="nav-number">2.</span> <span class="nav-text">0X01:基本过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0X02：用法"><span class="nav-number">3.</span> <span class="nav-text">0X02：用法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#angr-CLE：首先加载二进制文件，在加载二进制文件的时候会分析病读取binary的信息，包括指令地址、shared-library、arch-information等等。"><span class="nav-number">3.0.1.</span> <span class="nav-text">angr-CLE：首先加载二进制文件，在加载二进制文件的时候会分析病读取binary的信息，包括指令地址、shared library、arch information等等。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#angr-IR：angr用VEX-IR将指令转化为中间语言IR"><span class="nav-number">3.0.2.</span> <span class="nav-text">angr_IR：angr用VEX IR将指令转化为中间语言IR</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#angr-Solver-Engine："><span class="nav-number">3.0.3.</span> <span class="nav-text">angr-Solver Engine：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ArchInfo"><span class="nav-number">3.0.4.</span> <span class="nav-text">ArchInfo</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#PyVex"><span class="nav-number">3.0.5.</span> <span class="nav-text">PyVex</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SimuVEX"><span class="nav-number">3.0.6.</span> <span class="nav-text">SimuVEX</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#图的基本概念"><span class="nav-number">1.</span> <span class="nav-text">图的基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的存储结构"><span class="nav-number">2.</span> <span class="nav-text">图的存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#邻接矩阵表示法："><span class="nav-number">2.1.</span> <span class="nav-text">邻接矩阵表示法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#邻接表表示法："><span class="nav-number">2.2.</span> <span class="nav-text">邻接表表示法：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图的遍历Traversing-Graph"><span class="nav-number">3.</span> <span class="nav-text">图的遍历Traversing Graph</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#深度优先遍历-Depth-First-Search-DFS"><span class="nav-number">3.1.</span> <span class="nav-text">深度优先遍历(Depth_First_Search,DFS)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#广度优先遍历-Breadth-First-Search，BFS"><span class="nav-number">3.2.</span> <span class="nav-text">广度优先遍历(Breadth First Search，BFS)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最小生成树"><span class="nav-number">4.</span> <span class="nav-text">最小生成树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Prim算法："><span class="nav-number">4.1.</span> <span class="nav-text">Prim算法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Kruskal算法："><span class="nav-number">4.2.</span> <span class="nav-text">Kruskal算法：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AOV网："><span class="nav-number">5.</span> <span class="nav-text">AOV网：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AOE网："><span class="nav-number">6.</span> <span class="nav-text">AOE网：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最短路径："><span class="nav-number">7.</span> <span class="nav-text">最短路径：</span></a></li></ol></div>
             
 
           </div>

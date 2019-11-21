@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-11-17T14:44:21.823Z</updated>
+  <updated>2019-11-21T16:10:45.506Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图</title>
+    <link href="http://qywcysry.github.io/2019/11/21/%E5%9B%BE/"/>
+    <id>http://qywcysry.github.io/2019/11/21/图/</id>
+    <published>2019-11-21T13:33:54.000Z</published>
+    <updated>2019-11-21T16:10:45.506Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;图的基本概念&quot;&gt;&lt;a href=&quot;#图的基本概念&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Data Structure" scheme="http://qywcysry.github.io/tags/Data-Structure/"/>
+    
+  </entry>
   
   <entry>
     <title>Tree</title>
@@ -443,31 +467,6 @@
     
     
       <category term="essay" scheme="http://qywcysry.github.io/tags/essay/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python&#39;s error</title>
-    <link href="http://qywcysry.github.io/2019/07/18/Python-s-error/"/>
-    <id>http://qywcysry.github.io/2019/07/18/Python-s-error/</id>
-    <published>2019-07-18T13:06:28.000Z</published>
-    <updated>2019-09-22T02:21:35.502Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;hr&gt;
-&lt;h4 id=&quot;报错1&quot;&gt;&lt;a href=&quot;#报错1&quot; class=&quot;headerlink&quot; title=&quot;报错1:&quot;&gt;&lt;/a&gt;报错1:&lt;/h4&gt;&lt;p&gt;Exception:&lt;br&gt;Traceback (most recent call last):&lt;br&gt;  File
-        
-      
-    
-    </summary>
-    
-    
-      <category term="error" scheme="http://qywcysry.github.io/tags/error/"/>
     
   </entry>
   
