@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="Java实用0.public是为了公开给其他类存取，class是声明类，Myfirst是类的名称。 main为方法名，String[] agrs表示传string的字符串给此方法当参数，命名为args。 Java的源文件为.java，编译之后的.class文件为可执行文件。 12345public class Myfisrt&amp;#123;	public static void main (Strin">
+<meta name="description" content="Java0.public是为了公开给其他类存取，class是声明类，Myfirst是类的名称。 main为方法名，String[] agrs表示传string的字符串给此方法当参数，命名为args。 Java的源文件为.java，编译之后的.class文件为可执行文件。 12345public class Myfisrt&amp;#123;	public static void main (String[">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019&#x2F;9&#x2F;30">
 <meta property="og:url" content="http://qywcysry.github.io/2019/09/20/Java/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="Java实用0.public是为了公开给其他类存取，class是声明类，Myfirst是类的名称。 main为方法名，String[] agrs表示传string的字符串给此方法当参数，命名为args。 Java的源文件为.java，编译之后的.class文件为可执行文件。 12345public class Myfisrt&amp;#123;	public static void main (Strin">
+<meta property="og:description" content="Java0.public是为了公开给其他类存取，class是声明类，Myfirst是类的名称。 main为方法名，String[] agrs表示传string的字符串给此方法当参数，命名为args。 Java的源文件为.java，编译之后的.class文件为可执行文件。 12345public class Myfisrt&amp;#123;	public static void main (String[">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-12T09:16:37.482Z">
+<meta property="og:updated_time" content="2019-11-23T11:36:02.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019&#x2F;9&#x2F;30">
-<meta name="twitter:description" content="Java实用0.public是为了公开给其他类存取，class是声明类，Myfirst是类的名称。 main为方法名，String[] agrs表示传string的字符串给此方法当参数，命名为args。 Java的源文件为.java，编译之后的.class文件为可执行文件。 12345public class Myfisrt&amp;#123;	public static void main (Strin">
+<meta name="twitter:description" content="Java0.public是为了公开给其他类存取，class是声明类，Myfirst是类的名称。 main为方法名，String[] agrs表示传string的字符串给此方法当参数，命名为args。 Java的源文件为.java，编译之后的.class文件为可执行文件。 12345public class Myfisrt&amp;#123;	public static void main (String[">
 
 
 
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-10-12T17:16:37+08:00">
-                2019-10-12
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-23T19:36:02+08:00">
+                2019-11-23
               </time>
             
           </span>
@@ -384,7 +384,7 @@
       
 
       
-        <h2 id="Java实用"><a href="#Java实用" class="headerlink" title="Java实用"></a>Java实用</h2><p>0.public是为了公开给其他类存取，class是声明类，Myfirst是类的名称。</p>
+        <h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p>0.public是为了公开给其他类存取，class是声明类，Myfirst是类的名称。</p>
 <p>main为方法名，String[] agrs表示传string的字符串给此方法当参数，命名为args。</p>
 <p>Java的源文件为.java，编译之后的.class文件为可执行文件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Myfisrt&#123;</span><br><span class="line">	public static void main (String[] args)&#123;</span><br><span class="line">	System.out.print(&quot;HelloWorld!&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -404,6 +404,60 @@
 <p>继承的类无法访问其父类的private字段与方法，除非把private改为protected，则可被其子类以及子类的子类访问。</p>
 <p>一般情况下可以直接引用父类中的方法与字段，但如果父类没有默认的构造方法，子类就必须显式调用super(),并给出参数以便让编译器定位到父类的一个合适的构造方法。</p>
 <p>9.注意String与string，Double与double的区别。</p>
+<h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><h4 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h4><p>定义一个class</p>
+<blockquote>
+<p>[类修饰符] class [类名] [extends 父类，implements 接口]{</p>
+<p>//成员变量</p>
+<p>//成员方法</p>
+<p>//构造器</p>
+<p>//……</p>
+<p>}</p>
+</blockquote>
+<p>类修饰符：public，protected，private，abstract，static，final，strictfp。</p>
+<h4 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h4><p>声明成员变量：</p>
+<blockquote>
+<p>[修饰符] 数据类型 变量名 = [初始化值]</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class Student&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	protected float score;</span><br><span class="line">	String ID;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>变量分类：</p>
+<p>成员变量：类似C语言中全局变量，在整个类中都有效。</p>
+<p>局部变量：在该代码块/该方法中有效。</p>
+<p>参数变量：在该方法或catch代码块中有效。</p>
+<p>变量修饰符：</p>
+<blockquote>
+<p>public protected private 设定成员变量的访问权限，无法修饰局部变量与参数变量</p>
+<p>static 只能够修饰成员变量，不能够修饰局部变量与参数变量，由static修饰的成员变量为静态成员变量，反之为非静态成员变量（实例变量）</p>
+<p>final常量</p>
+<p>transient 只能修饰成员变量，序列化时不会被保存</p>
+<p>volatile 只能修饰成员变量，多线程相关</p>
+</blockquote>
+<p>所有变量在声明时不用初始化，但在使用前必须初始化，否则编译错误。</p>
+<h4 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h4><blockquote>
+<p>[修饰词] 返回类型 方法名 ([参数1，参数2，…]) [throws 异常]{</p>
+<p>方法实现</p>
+<p>}</p>
+</blockquote>
+<p>setter方法和getter方法：</p>
+<p>出于封装考虑，某些class的成员变量通常都声明为private变量，无法直接访问此对象的private属性，通常的做法就是：为private的成员变量声明public的访问接口，称为setter方法与getter方法。</p>
+<p>setter：</p>
+<p>命名方法：set+变量名，such as setName/setScore；setter方法用于赋值，返回类型都为void</p>
+<p>getter：</p>
+<p>命名方法：get+变量名，such as getName/getScore ；getter方法用于取值，无需输入参数，但是返回类型一定是该成员变量的数据类型。</p>
+<blockquote>
+<p>public protected private 访问控制修饰符，用于设定成员方法的访问权限 </p>
+<p>abstract 修饰的方法叫抽象方法， 抽象方法只有方法的声明部分， 没有方法体部 分，也就不提供方法的实现 </p>
+</blockquote>
+<h4 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h4><p>Java允许同一个类中定义多个同名方法，只要其形参列表不同即可。<strong>如果一个类中包含了两个或者两个以上方法名相同的方法，但是形参列表不同，这种情况被称为重载overload</strong>。</p>
+<p>方法重载的要求是同一个类中方法名相同，参数列表不同。方法的其他部分如返回值类型/修饰符等，与方法重载无关。实际调用时，根据实参的类型来决定调用哪一个方法。</p>
+<h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h4><ol>
+<li><p>Java作为面向对象的语言，同样可以描述一个事物的多种形态。如Student类继承了Person类，一个Student的对象便既是Student，又是Person。</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> Person ming = new Person();</span><br><span class="line"> ......</span><br><span class="line">class Person &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private int age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象与类相对应，第一行代码Person ming = new Person()相当于创建了一个名为ming的对象，具有name(String)和age(int)两种属性。</p>
+</li>
+</ol>
 
       
     </div>
@@ -534,7 +588,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -618,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java实用"><span class="nav-number">1.</span> <span class="nav-text">Java实用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.</span> <span class="nav-text">Java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类与对象"><span class="nav-number">1.1.</span> <span class="nav-text">类与对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类的定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">类的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员变量"><span class="nav-number">1.1.2.</span> <span class="nav-text">成员变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#成员方法"><span class="nav-number">1.1.3.</span> <span class="nav-text">成员方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重载"><span class="nav-number">1.1.4.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tips"><span class="nav-number">1.1.5.</span> <span class="nav-text">Tips</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

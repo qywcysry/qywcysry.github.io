@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-11-21T16:10:45.506Z</updated>
+  <updated>2019-11-23T12:39:40.588Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java review</title>
+    <link href="http://qywcysry.github.io/2019/11/23/Java-review/"/>
+    <id>http://qywcysry.github.io/2019/11/23/Java-review/</id>
+    <published>2019-11-23T07:26:22.000Z</published>
+    <updated>2019-11-23T12:39:40.588Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h3 id=&quot;类的定义&quot;&gt;&lt;a href=&quot;#类的定义&quot; class=&quot;headerlink&quot; title=&quot;类的定义&quot;&gt;&lt;/a&gt;类的定义&lt;/h3&gt;&lt;p&gt;在 Java 中定义一个类，需要使用 class
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>图</title>
@@ -114,7 +137,7 @@
     <link href="http://qywcysry.github.io/2019/09/20/Java/"/>
     <id>http://qywcysry.github.io/2019/09/20/Java/</id>
     <published>2019-09-20T08:19:01.000Z</published>
-    <updated>2019-10-12T09:16:37.482Z</updated>
+    <updated>2019-11-23T11:36:02.122Z</updated>
     
     <summary type="html">
     
@@ -122,7 +145,7 @@
       
         
         
-          &lt;h2 id=&quot;Java实用&quot;&gt;&lt;a href=&quot;#Java实用&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;Java&quot;&gt;&lt;a href=&quot;#Java&quot; class=&quot;headerlink&quot;
         
       
     
@@ -435,31 +458,6 @@
         
         
           &lt;h4 id=&quot;Linux-可执行文件格式-ELF-（Executable-Linkable-Format）文件的三种类型：&quot;&gt;&lt;a href=&quot;#Linux-可执行文件格式-ELF-（Executable-Linkable-Format）文件的三种类型：&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="http://qywcysry.github.io/tags/essay/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>反静态调试</title>
-    <link href="http://qywcysry.github.io/2019/07/21/%E5%8F%8D%E9%9D%99%E6%80%81%E8%B0%83%E8%AF%95/"/>
-    <id>http://qywcysry.github.io/2019/07/21/反静态调试/</id>
-    <published>2019-07-21T07:48:40.000Z</published>
-    <updated>2019-08-30T13:34:10.310Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;反调试：插入代码，让程序意识到自己在被调试时，执行代码阻止调试器的分析，延长调试的时间。通过改变正常的执行路径或者修改自身程序让自己崩溃，从而增加调试的时间和复杂度。&lt;/p&gt;
-&lt;h4 id=&quot;0X00-IDA中的反反调试&quot;&gt;&lt;a
         
       
     
