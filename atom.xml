@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2019-11-23T12:39:40.588Z</updated>
+  <updated>2019-11-27T12:31:33.901Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -17,11 +17,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>查找</title>
+    <link href="http://qywcysry.github.io/2019/11/27/%E6%9F%A5%E6%89%BE/"/>
+    <id>http://qywcysry.github.io/2019/11/27/查找/</id>
+    <published>2019-11-27T12:31:33.000Z</published>
+    <updated>2019-11-27T12:31:33.901Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>SQL</title>
+    <link href="http://qywcysry.github.io/2019/11/25/SQL/"/>
+    <id>http://qywcysry.github.io/2019/11/25/SQL/</id>
+    <published>2019-11-25T10:06:25.000Z</published>
+    <updated>2019-11-27T12:28:18.688Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一：去掉重复数据的方法&lt;/p&gt;
+&lt;p&gt;1.distinct&lt;/p&gt;
+&lt;p&gt;根据单个字段去重，能够精确去重。但作用在多个字段时，只有当这几个字段完全相同才能去重。（要保证每一列都一样）。count(distinct
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Java review</title>
     <link href="http://qywcysry.github.io/2019/11/23/Java-review/"/>
     <id>http://qywcysry.github.io/2019/11/23/Java-review/</id>
     <published>2019-11-23T07:26:22.000Z</published>
-    <updated>2019-11-23T12:39:40.588Z</updated>
+    <updated>2019-11-26T02:19:51.251Z</updated>
     
     <summary type="html">
     
@@ -425,46 +463,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Brisk</title>
-    <link href="http://qywcysry.github.io/2019/08/21/Brisk/"/>
-    <id>http://qywcysry.github.io/2019/08/21/Brisk/</id>
-    <published>2019-08-21T09:00:25.000Z</published>
-    <updated>2019-08-25T16:09:15.897Z</updated>
-    
-    <summary type="html">
-    
-      Welcome to my blog, enter password to read this private essay.
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Linux ELF</title>
-    <link href="http://qywcysry.github.io/2019/08/21/Linux-ELF/"/>
-    <id>http://qywcysry.github.io/2019/08/21/Linux-ELF/</id>
-    <published>2019-08-21T08:23:42.000Z</published>
-    <updated>2019-08-30T08:38:46.479Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;Linux-可执行文件格式-ELF-（Executable-Linkable-Format）文件的三种类型：&quot;&gt;&lt;a href=&quot;#Linux-可执行文件格式-ELF-（Executable-Linkable-Format）文件的三种类型：&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="essay" scheme="http://qywcysry.github.io/tags/essay/"/>
     
   </entry>
   

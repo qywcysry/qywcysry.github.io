@@ -81,13 +81,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hy0uka">
-<meta property="og:url" content="http://qywcysry.github.io/archive/2019/page/4/index.html">
+<meta name="description" content="一：去掉重复数据的方法 1.distinct 根据单个字段去重，能够精确去重。但作用在多个字段时，只有当这几个字段完全相同才能去重。（要保证每一列都一样）。count(distinct 重复数据所在字段)会返回不重复的条数。 2.group by 在语句最后加上group by+重复数据所在字段。 二：group by的用法 group by必须配合聚合函数用，分组之后可以计数count，求和su">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL">
+<meta property="og:url" content="http://qywcysry.github.io/2019/11/25/SQL/index.html">
 <meta property="og:site_name" content="Hy0uka">
+<meta property="og:description" content="一：去掉重复数据的方法 1.distinct 根据单个字段去重，能够精确去重。但作用在多个字段时，只有当这几个字段完全相同才能去重。（要保证每一列都一样）。count(distinct 重复数据所在字段)会返回不重复的条数。 2.group by 在语句最后加上group by+重复数据所在字段。 二：group by的用法 group by必须配合聚合函数用，分组之后可以计数count，求和su">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-27T12:28:18.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hy0uka">
+<meta name="twitter:title" content="SQL">
+<meta name="twitter:description" content="一：去掉重复数据的方法 1.distinct 根据单个字段去重，能够精确去重。但作用在多个字段时，只有当这几个字段完全相同才能去重。（要保证每一列都一样）。count(distinct 重复数据所在字段)会返回不重复的条数。 2.group by 在语句最后加上group by+重复数据所在字段。 二：group by的用法 group by必须配合聚合函数用，分组之后可以计数count，求和su">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/archive/2019/page/4/">
+  <link rel="canonical" href="http://qywcysry.github.io/2019/11/25/SQL/">
 
 
 
 
 
-  <title>Archive | Hy0uka</title>
+  <title>SQL | Hy0uka</title>
   
 
 
@@ -146,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,215 +276,212 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 35 posts in total. Keep on posting.
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/11/25/SQL/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hy0uka">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hy0uka">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">SQL</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-25T18:06:25+08:00">
+                2019-11-25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-11-27T20:28:18+08:00">
+                2019-11-27
+              </time>
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/25/SQL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/25/SQL/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/11/Summer Hoilday Plan/" itemprop="url">
-              
-                <span itemprop="name">Summer Hoilday's Plan</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-11T23:25:25+08:00" content="2019-07-11">
-          07-11
-        </time>
-      </div>
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
 
-    </header>
-  </article>
+          
 
+          
 
+        </div>
+      </header>
+    
 
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/01/Android/" itemprop="url">
-              
-                <span itemprop="name">Android</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-01T14:28:27+08:00" content="2019-07-01">
-          07-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/20/CTF-Wiki/" itemprop="url">
-              
-                <span itemprop="name">CTF-Wiki Stack Overflow and ROP</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-20T00:06:21+08:00" content="2019-06-20">
-          06-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/19/Stack Frame/" itemprop="url">
-              
-                <span itemprop="name">栈帧（stack frame）</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-19T03:03:07+08:00" content="2019-06-19">
-          06-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>一：去掉重复数据的方法</p>
+<p>1.distinct</p>
+<p>根据单个字段去重，能够精确去重。但作用在多个字段时，只有当这几个字段完全相同才能去重。（要保证每一列都一样）。count(distinct 重复数据所在字段)会返回不重复的条数。</p>
+<p>2.group by</p>
+<p>在语句最后加上group by+重复数据所在字段。</p>
+<p>二：group by的用法</p>
+<p>group by必须配合聚合函数用，分组之后可以计数count，求和sum，求平均数avg，max和min等。group by不会将所有信息显示出来，只能得到所需的特定数值。</p>
+<p>提到group by就不得不提到HAVING，它与WHERE筛选不同(where是聚合前的筛选，having是聚合后的筛选)，HAVING是对于group by对象进行筛选。它可以用来筛选group by之后的数值符合条件的部分。</p>
+<p>GROUP BY 子句:指定用来放置输出行的组。指定 GROUP BY 时，选择列表中任一非聚合表达式内的所有列都应包含在 GROUP BY 列表中，或者 GROUP BY 表达式必须与选择列表表达式完全匹配。如果 SELECT 子句中包含聚合函数，则计算每组的汇总值。</p>
+<p>order by xxx按照xxx排列，desc为降序</p>
+<p>三：limit用法</p>
+<p>select * from tableName limit i,n</p>
+<p><em>tableName：表名</em></p>
+<p><em>i：为查询结果的索引值(默认从0开始)，当i=0时可省略i</em></p>
+<p><em>n：为查询结果返回的数量</em></p>
+<p><em>i与n之间使用英文逗号”,”隔开</em></p>
+<p>limit n 等同于 limit 0,n</p>
+<p>四：datediff函数</p>
+<p>select datediff(year，birthday，gatdate())</p>
+<p>五：模糊查询</p>
+<p>select * from XXX </p>
+<p>where (XXX <strong>like</strong> ‘%XX’)</p>
+<p>六：排序</p>
+<p>desc为从高到低</p>
+<p>七：left join</p>
+<p>LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。</p>
+<p>如果是表名或者列名之类的属性，不用加引号。如果是列中的值，或者输入的值，则必须加引号。</p>
+<p>八：多表查询</p>
+<p>对于n张表，依靠n-1个字段联结的，在select语句中，对要求的多个列名进行查询(作为联结的列名要写出所属表名)，再用where语句对其进行去重，如：学生.学号=选修.学号。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/17/Genesis/" itemprop="url">
-              
-                <span itemprop="name">Genesis</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-17T22:10:28+08:00" content="2019-06-17">
-          06-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+        <div>
+            
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------This is my bottom line------</div>
+    
+</div>
+            
+        </div>
+    
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/23/Java-review/" rel="next" title="Java review">
+                <i class="fa fa-chevron-left"></i> Java review
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/27/查找/" rel="prev" title="查找">
+                查找 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archive/2019/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archive/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archive/2019/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -488,6 +489,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -749,6 +757,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
