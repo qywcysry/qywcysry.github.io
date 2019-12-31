@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="一：去掉重复数据的方法 1.distinct 根据单个字段去重，能够精确去重。但作用在多个字段时，只有当这几个字段完全相同才能去重。（要保证每一列都一样）。count(distinct 重复数据所在字段)会返回不重复的条数。 2.group by 在语句最后加上group by+重复数据所在字段。 二：group by的用法 group by必须配合聚合函数用，分组之后可以计数count，求和su">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-27T12:28:18.688Z">
+<meta property="og:updated_time" content="2019-12-13T03:37:20.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL">
 <meta name="twitter:description" content="一：去掉重复数据的方法 1.distinct 根据单个字段去重，能够精确去重。但作用在多个字段时，只有当这几个字段完全相同才能去重。（要保证每一列都一样）。count(distinct 重复数据所在字段)会返回不重复的条数。 2.group by 在语句最后加上group by+重复数据所在字段。 二：group by的用法 group by必须配合聚合函数用，分组之后可以计数count，求和su">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-11-27T20:28:18+08:00">
-                2019-11-27
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-13T11:37:20+08:00">
+                2019-12-13
               </time>
             
           </span>
@@ -393,6 +393,7 @@
 <p>group by必须配合聚合函数用，分组之后可以计数count，求和sum，求平均数avg，max和min等。group by不会将所有信息显示出来，只能得到所需的特定数值。</p>
 <p>提到group by就不得不提到HAVING，它与WHERE筛选不同(where是聚合前的筛选，having是聚合后的筛选)，HAVING是对于group by对象进行筛选。它可以用来筛选group by之后的数值符合条件的部分。</p>
 <p>GROUP BY 子句:指定用来放置输出行的组。指定 GROUP BY 时，选择列表中任一非聚合表达式内的所有列都应包含在 GROUP BY 列表中，或者 GROUP BY 表达式必须与选择列表表达式完全匹配。如果 SELECT 子句中包含聚合函数，则计算每组的汇总值。</p>
+<p>group by语句后接上多个参数时，为了去重需要用where语句进行去重。使用count并重命名的列不用加在group by里。</p>
 <p>order by xxx按照xxx排列，desc为降序</p>
 <p>三：limit用法</p>
 <p>select * from tableName limit i,n</p>
@@ -410,9 +411,18 @@
 <p>desc为从高到低</p>
 <p>七：left join</p>
 <p>LEFT JOIN 关键字会从左表 (table_name1) 那里返回所有的行，即使在右表 (table_name2) 中没有匹配的行。</p>
-<p>如果是表名或者列名之类的属性，不用加引号。如果是列中的值，或者输入的值，则必须加引号。</p>
-<p>八：多表查询</p>
+<p>用法如下:</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; SELECT column_name(s)</span><br><span class="line">&gt; FROM table_name1</span><br><span class="line">&gt; LEFT JOIN table_name2 </span><br><span class="line">&gt; ON table_name1.column_name=table_name2.column_nam</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>八：如果是表名或者列名之类的属性，不用加引号。如果是列中的值，或者输入的值，则必须加引号。</p>
+<p>九：多表查询</p>
 <p>对于n张表，依靠n-1个字段联结的，在select语句中，对要求的多个列名进行查询(作为联结的列名要写出所属表名)，再用where语句对其进行去重，如：学生.学号=选修.学号。</p>
+<p>十：子查询返回的值不止一个。当子查询跟随在 =、!=、&lt;、&lt;=、&gt;、&gt;= 之后，或子查询用作表达式时，这种情况是不允许的。这种情况不能在语句中使用等号，要用in</p>
+<blockquote>
+<p>select * from 学生<br>where 学生.班号 <strong>in</strong> (select 班级.班号 from 班级 where (班级.专业编号=’001’))</p>
+</blockquote>
+<p>子查询就是把一个查询的结果在另一个查询中使用。</p>
 
       
     </div>
