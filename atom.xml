@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2020-03-13T09:49:56.802Z</updated>
+  <updated>2020-03-16T08:44:47.404Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Anaconda教程</title>
+    <link href="http://qywcysry.github.io/2020/03/16/Anaconda%E6%95%99%E7%A8%8B/"/>
+    <id>http://qywcysry.github.io/2020/03/16/Anaconda教程/</id>
+    <published>2020-03-16T01:58:27.000Z</published>
+    <updated>2020-03-16T08:44:47.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Anaconda指的是一个开源的Python发行版本，其包含了&lt;strong&gt;Python、conda&lt;/strong&gt;等180多个科学包及其依赖项。 因为包含了大量的科学包，Anaconda
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://qywcysry.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码学笔记</title>
+    <link href="http://qywcysry.github.io/2020/03/13/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://qywcysry.github.io/2020/03/13/密码学笔记/</id>
+    <published>2020-03-13T10:17:53.000Z</published>
+    <updated>2020-03-13T11:58:49.120Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;即使有安全的分组密码算法，也需要采用适当的工作模式来屏蔽明文的统计特性，数据格式等等，以提高整体的安全性，降低删除，重放插入和伪造成功的机会。美国NIST-SP800中定义了五种运行模式：电子码本ECB(Electronic
+        
+      
+    
+    </summary>
+    
+    
+      <category term="crypto" scheme="http://qywcysry.github.io/tags/crypto/"/>
+    
+  </entry>
   
   <entry>
     <title>python第三方模块汇总</title>
@@ -424,57 +472,6 @@
     
     
       <category term="0day安全" scheme="http://qywcysry.github.io/tags/0day%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机基础知识</title>
-    <link href="http://qywcysry.github.io/2019/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://qywcysry.github.io/2019/09/08/计算机基础知识/</id>
-    <published>2019-09-08T05:37:58.000Z</published>
-    <updated>2019-09-11T01:39:15.245Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;数的存储&quot;&gt;&lt;a href=&quot;#数的存储&quot; class=&quot;headerlink&quot; title=&quot;数的存储&quot;&gt;&lt;/a&gt;数的存储&lt;/h1&gt;&lt;p&gt;一直对计算机中数的存储方式一知半解，make a summary
-        
-      
-    
-    </summary>
-    
-    
-      <category term="底层" scheme="http://qywcysry.github.io/tags/%E5%BA%95%E5%B1%82/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库原理及其应用课程笔记</title>
-    <link href="http://qywcysry.github.io/2019/09/06/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/"/>
-    <id>http://qywcysry.github.io/2019/09/06/数据库原理及其应用/</id>
-    <published>2019-09-06T00:26:28.000Z</published>
-    <updated>2019-09-06T02:38:36.429Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;1.3数据模型&lt;/p&gt;
-&lt;p&gt;对事物描述的符号记录称为数据。&lt;/p&gt;
-&lt;p&gt;实体(Entity):实体是具有相同性质并且彼此之间可以相互区分的现实世界对象集合。&lt;/p&gt;
-&lt;p&gt;在关系数据库中，一个实体被映射成一个关系表，表中一行对应一个现实世界对象（组成实体的对象）即Ent
-        
-      
-    
-    </summary>
-    
-    
-      <category term="school course" scheme="http://qywcysry.github.io/tags/school-course/"/>
     
   </entry>
   
