@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="Anaconda指的是一个开源的Python发行版本，其包含了Python、conda等180多个科学包及其依赖项。 因为包含了大量的科学包，Anaconda 的下载文件比较大。Anaconda对于python初学者而言及其友好，相比单独安装python主程序，选择Anaconda可以帮助省去很多麻烦，Anaconda里添加了许多常用的功能包，如果单独安装python，这些功能包则需要一条一条自行">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-16T08:44:47.404Z">
+<meta property="og:updated_time" content="2020-03-17T04:35:20.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Anaconda教程">
 <meta name="twitter:description" content="Anaconda指的是一个开源的Python发行版本，其包含了Python、conda等180多个科学包及其依赖项。 因为包含了大量的科学包，Anaconda 的下载文件比较大。Anaconda对于python初学者而言及其友好，相比单独安装python主程序，选择Anaconda可以帮助省去很多麻烦，Anaconda里添加了许多常用的功能包，如果单独安装python，这些功能包则需要一条一条自行">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-03-16T16:44:47+08:00">
-                2020-03-16
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-17T12:35:20+08:00">
+                2020-03-17
               </time>
             
           </span>
@@ -437,7 +437,15 @@
 <p>14.与Pycharm连接</p>
 <p>在工作环境中我们会集成开发环境去编码, 这里推荐JB公司的PyCharm, 而PyCharm也能很方便的和anaconda的虚拟环境结合</p>
 <p>在Setting =&gt; Project =&gt; Project Interpreter 里面修改 Project Interpreter , 点击齿轮标志再点击Add Local为你某个环境的python.exe解释器就行了</p>
+<p>15.长期更换pip镜像源</p>
+<p>-i </p>
+<p>阿里云 <a href="https://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">https://mirrors.aliyun.com/pypi/simple/</a><br>  电子科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>  豆瓣(douban) <a href="http://pypi.douban.com/simple/" target="_blank" rel="noopener">http://pypi.douban.com/simple/</a><br>  清华大学 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>  中国科学技术大学 <a href="http://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">http://pypi.mirrors.ustc.edu.cn/simple/</a><br>修改源方法：</p>
+<p>临时使用：<br>可以在使用pip的时候在后面加上-i参数，指定pip源<br>eg:    pip install scrapy -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
+<p>永久修改：<br>linux:<br>修改 ~/.pip/pip.conf (没有就创建一个)， 内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
 
+<p>windows:<br>直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，新建文件pip.ini，内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -488,6 +496,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/17/读书笔记之python3网络爬虫开发实战/" rel="prev" title="读书笔记之python3网络爬虫开发实战">
+                读书笔记之python3网络爬虫开发实战 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -560,7 +572,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="爬虫,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hy0uka" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="[TOC] 第一章：环境配置Python3的安装推荐了Anaconda，注意环境变量配置。 作者推荐解决版本冲突问题的方法：将安装目录中的python.exe复制一份，命名为python3.exe，能够更好地区分python版本。 请求库的安装爬虫可以简单分为几步：抓取页面，分析页面和存储数据。在抓取页面的过程中，我们需要模拟浏览器向服务器发出请求，所以需要python库来实现HTTP请求操作。">
+<meta name="keywords" content="爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记之python3网络爬虫开发实战">
+<meta property="og:url" content="http://qywcysry.github.io/2020/03/17/读书笔记之python3网络爬虫开发实战/index.html">
+<meta property="og:site_name" content="Hy0uka">
+<meta property="og:description" content="[TOC] 第一章：环境配置Python3的安装推荐了Anaconda，注意环境变量配置。 作者推荐解决版本冲突问题的方法：将安装目录中的python.exe复制一份，命名为python3.exe，能够更好地区分python版本。 请求库的安装爬虫可以简单分为几步：抓取页面，分析页面和存储数据。在抓取页面的过程中，我们需要模拟浏览器向服务器发出请求，所以需要python库来实现HTTP请求操作。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-03-19T07:42:55.695Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="读书笔记之python3网络爬虫开发实战">
+<meta name="twitter:description" content="[TOC] 第一章：环境配置Python3的安装推荐了Anaconda，注意环境变量配置。 作者推荐解决版本冲突问题的方法：将安装目录中的python.exe复制一份，命名为python3.exe，能够更好地区分python版本。 请求库的安装爬虫可以简单分为几步：抓取页面，分析页面和存储数据。在抓取页面的过程中，我们需要模拟浏览器向服务器发出请求，所以需要python库来实现HTTP请求操作。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://qywcysry.github.io/2020/03/17/读书笔记之python3网络爬虫开发实战/">
+
+
+
+
+
+  <title>读书笔记之python3网络爬虫开发实战 | Hy0uka</title>
+  
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+<script src="/live2d-widget/autoload.js"></script>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hy0uka</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Cyber Security</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2020/03/17/读书笔记之python3网络爬虫开发实战/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hy0uka">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hy0uka">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">读书笔记之python3网络爬虫开发实战</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-17T11:44:46+08:00">
+                2020-03-17
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-19T15:42:55+08:00">
+                2020-03-19
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/17/读书笔记之python3网络爬虫开发实战/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/17/读书笔记之python3网络爬虫开发实战/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<h3 id="第一章：环境配置"><a href="#第一章：环境配置" class="headerlink" title="第一章：环境配置"></a>第一章：环境配置</h3><h5 id="Python3的安装"><a href="#Python3的安装" class="headerlink" title="Python3的安装"></a>Python3的安装</h5><p>推荐了Anaconda，注意环境变量配置。</p>
+<p>作者推荐解决版本冲突问题的方法：将安装目录中的python.exe复制一份，命名为python3.exe，能够更好地区分python版本。</p>
+<h4 id="请求库的安装"><a href="#请求库的安装" class="headerlink" title="请求库的安装"></a>请求库的安装</h4><p>爬虫可以简单分为几步：抓取页面，分析页面和存储数据。在抓取页面的过程中，我们需要模拟浏览器向服务器发出请求，所以需要python库来实现HTTP请求操作。</p>
+<ol>
+<li>requests的安装</li>
+</ol>
+<p>分为pip+库名安装，wheel（原来后缀为.whl是这个意思，安装好wheel库后直接用pip3命令+文件名）安装与源码安装（这个没听过，cd requests，python3 setup.py install）。</p>
+<p>2.Selenium的安装</p>
+<p>Selenium是一个自动化测试工具，利用它可以驱使浏览器执行特定动作，如点击/下拉。对于JS渲染的页面非常有效。</p>
+<p>安装方式同上，但还需要配置浏览器来配合其工作。</p>
+<h5 id="ChromeDriver安装"><a href="#ChromeDriver安装" class="headerlink" title="ChromeDriver安装"></a>ChromeDriver安装</h5><p>安装ChromeDriver能够驱动Chrome完成相应的操作。注意在Chrome中输入chrome://version/查看版本，不同版本的Chrome与ChromeDriver不适配。</p>
+<p>下载完后将ChromeDriver.exe放到Chrome安装的文件夹并配置环境变量（用户变量）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">命令行配置环境变量的快捷方式：</span><br><span class="line">export PATH=&quot;$PATH:复制的路径&quot;</span><br><span class="line">保存后执行如下命令：</span><br><span class="line">source ~/.profile</span><br><span class="line">测试：</span><br><span class="line">from selenium import webdriver</span><br><span class="line">browser = webdriver.Chrome()</span><br></pre></td></tr></table></figure>
+
+<p>此处在cmd中执行该命令报错没有selenium这个模块，百度得知是selenium不能通过pip install安装，要到官网下载然后在解压路径下执行python setup.py install.就是第三种源码安装。这回总算没报错，算是每种方法都尝试过了。</p>
+<h5 id="aiohttp的安装"><a href="#aiohttp的安装" class="headerlink" title="aiohttp的安装"></a>aiohttp的安装</h5><p>requests库是一个阻塞式HTTP请求库，当我们发出一个请求后，程序会一直等待服务器响应，直到得到响应后才会进行下一步处理。这个过程很耗时间。如果程序可以在这个等待过程中做一些其他事情，则会大大提高爬取效率。aiohttp就是这样提供异步web服务的库，从python3.5开始加入了async/await关键字，使得回调的写法更加直观与人性化。aiohttp借助于async/await。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install aiohttp</span><br><span class="line"></span><br><span class="line">pip install cchardet aiodns</span><br></pre></td></tr></table></figure>
+
+<h5 id="lxml的安装"><a href="#lxml的安装" class="headerlink" title="lxml的安装"></a>lxml的安装</h5><p>lxml是python的解析库，支持HTML和XML解析，支持XPath解析方式。</p>
+<p>如果没有任何报错，则证明安装成功。如果出现报锚，比如提示缺少libxml2库等信息，可以采用wheel方式安装。推荐直接到这里（链接为：<a href="http://www.lfd.uci.edu/-goblke/pythonlibs/#lxml）下载对应的wheel文件，找到本地安装Python版本和系统对应的lxml版本，例如Windows64位、Python3.6，就选作lxml-3" target="_blank" rel="noopener">http://www.lfd.uci.edu/-goblke/pythonlibs/#lxml）下载对应的wheel文件，找到本地安装Python版本和系统对应的lxml版本，例如Windows64位、Python3.6，就选作lxml-3</a> .8.0-cp36-cp36m-win _ amd64. whl，将其下载到本地。然后pip。</p>
+<h5 id="Beauitful-Soup安装"><a href="#Beauitful-Soup安装" class="headerlink" title="Beauitful Soup安装"></a>Beauitful Soup安装</h5><p>Beauitful Soup是python的一个HTML或XML解析库，我们可以用它方便地从网页中提取数据，它拥有强大的API与多样的解析方式。</p>
+<p><strong>版本管理真是个奇妙的事情</strong>，好好用conda（为啥镜像源还会报错） ，以及pip与pip3，pycharm里安装了bs4，cmd中安装了beautifulsoup4，但是import的时候还是报错，就很难过。看了挺多中文办法，不得行。还是stack overflow上讲的明白：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ou have the module installed for Python 2.7, however you&apos;re using and trying to import it with Python 3.6.</span><br><span class="line"></span><br><span class="line">You have to use pip3 like you use python3.</span><br></pre></td></tr></table></figure>
+
+<p>注意这里我们虽然安装的是beautifulsoup4这个包，但是在引入的时候却是bs4，因为这个包源代码本身的库文件夹的名称就是bs4.所以安装完成之后，这个库文件夹就被移入到本机python3的lib库里，所以识别到的库文件名就是bs4.</p>
+<h5 id="pyquery的安装"><a href="#pyquery的安装" class="headerlink" title="pyquery的安装"></a>pyquery的安装</h5><p>强大的网页解析工具，提供了和jQuery类似的语法来解析HTML文档，支持CSS选择器。</p>
+<h5 id="tesserocr安装"><a href="#tesserocr安装" class="headerlink" title="tesserocr安装"></a>tesserocr安装</h5><p>爬虫过程中难免会遇到各种各样验证码，并且还是图形验证码，此时可以用OCR来识别。</p>
+<p>OCR，即Optical Character Recognition，光学字符识别，指通过扫描字符，然后通过其形状将其翻译成电子文本的过程。tesserocr是Python的一个OCR识别库，实际上是对tesseract做的一层python API封装，所以在安装前者前要安装后者。下载tesseract，记住勾选Additional language data来安装OCR识别支持的语言包。</p>
+<p><strong>安装完后注意要配置环境变量，现在终于知道环境变量是用来干嘛的了，是为了在使用命令行的时候能够直接使用某种命令，如python，tesseract。</strong></p>
+<p>在系统环境变量中，Path添加tesseract的安装目录。在系统环境变量中，添加变量“TESSDATA_PREFIX”，变量值为tessdata文件夹所在路径。<strong>注意系统要重启。</strong></p>
+<p>命令：</p>
+<p>tesseract [xxx.jpg/png/etc] [result.txt|stdout] [-l eng | chi_sim]</p>
+<p>如果要输入文字到result.txt中，需要以管理员身份运行cmd。指定字库的时候，只需要字库的前缀。eng.traineddata，只输入并且只能输入eng。</p>
+<p><strong>tesseract命令第一个参数为图片名称，第二个参数result为结果保存的目标文件名，-l指定使用的语言包，eng即英文。</strong></p>
+<p>验证安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">import pytesseract</span><br><span class="line"> </span><br><span class="line">text = pytesseract.image_to_string(Image.open(r&apos;D:\My Tools\image.png&apos;))</span><br><span class="line">print(text)</span><br><span class="line">//Image.open读取了图片文件，然后调用pytesseract的image_to_string方法。</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据库的安装："><a href="#数据库的安装：" class="headerlink" title="数据库的安装："></a>数据库的安装：</h4><p>作为数据存储的重要部分，数据库必不可少，可以分为关系型数据库和非关系型数据库，前者数据库以表的形式存储，后哦这存储形式为键值对，更加灵活。MySQL是一个轻量级的关系数据库，MongoDB使用C++编写的非关系型数据库，是一个基于分布式文件存储的开源数据库系统（啥意思），其存储方式类似JSON对象，字段值可以包含其他文档，数组以及文档数组。</p>
+<p>可视化工具：RoboMongo/Robo 3T，Studio 3T。</p>
+<p>安装了Redis，Host没找对，直接输入local就行，结果搞了很久。看起来一直在努力找资料，实际上太懒了根本没动脑子。</p>
+<h4 id="存储库的安装："><a href="#存储库的安装：" class="headerlink" title="存储库的安装："></a>存储库的安装：</h4><p>PyMySQL/PyMongo/redis-py（用于与redis交互）</p>
+<p>RedisDump安装：他是一个用于Redis数据导入导出的工具，基于Ruby实现。</p>
+<p>安装Ruby后就可执行gem命令，类似于pip。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install redis-dump</span><br></pre></td></tr></table></figure>
+
+<p>验证安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis-dump</span><br><span class="line">redis-load</span><br></pre></td></tr></table></figure>
+
+<h4 id="Web库的安装："><a href="#Web库的安装：" class="headerlink" title="Web库的安装："></a>Web库的安装：</h4><p>Flask，Django这样的一些web服务程序是基于python开发的，我们可以拿他来开发网站和接口。目前主要使用这些web服务程序来搭建一些API接口供爬虫使用。</p>
+<p>API:Application Programming Interface，应用程序接口，是一些预先定义的函数，或者说软件系统不同组成部分衔接的约定。</p>
+<p>目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力，而又无需访问原码，或理解内部工作机制的细节。</p>
+<h5 id="Flask安装"><a href="#Flask安装" class="headerlink" title="Flask安装"></a>Flask安装</h5><p>Flask是一个轻量级的web服务程序，此处主要用来做一些API服务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install flask</span><br></pre></td></tr></table></figure>
+
+<p>验证安装总没法成功，再找找原因。</p>
+<p>验证的脚本出错了，问题在于最后一段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python </span><br><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">#导入了Flask类</span><br><span class="line">from flask import Flask</span><br><span class="line">#创建一个该类的实例</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line">#route装饰器告诉告诉Flask什么样的URL能够触发函数</span><br><span class="line">@app.route(&apos;/&apos;)</span><br><span class="line">#这个函数的名字也在生成 URL 时被特定的函数采用，这个函数返回我们想要显示在用户#浏览器中的信息。</span><br><span class="line">def hello_world():</span><br><span class="line">    return &apos;Hello World!&apos;</span><br><span class="line">#最后我们用 run() 函数来让应用运行在本地服务器上。 其中 if __name__ #==&apos;__main__&apos;: 确保服务器只会在该脚本被 Python 解释器直接执行的时候才会运行，而不是作为模块导入的时候。</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
+
+<p>后面将利用Flask+Redis维护动态代理池和Cookie池。</p>
+<h5 id="Tornado安装"><a href="#Tornado安装" class="headerlink" title="Tornado安装"></a>Tornado安装</h5><p>Tornado是一个支持异步的Web框架，通过使用非阻塞I/O流，支持上千万的开放连接。</p>
+<p>pip3安装，后面将利用Tornado+redis来搭建一个ADSL拨号代理池。</p>
+<h4 id="APP爬取相关库的安装："><a href="#APP爬取相关库的安装：" class="headerlink" title="APP爬取相关库的安装："></a>APP爬取相关库的安装：</h4><p>除了Web网页，爬虫也可以抓取APP数据。<strong>APP中页面加载所需要的数据通过请求服务器的接口获取。</strong>由于APP没有浏览器这种直观看到后台请求的数据，所以<strong>主要使用一些抓包工具来抓取数据</strong>。一些<strong>简单的接口可以使用Charles或者mitmproxy分析</strong>，找出规律，然后直接利用程序模拟来抓取。<strong>更复杂的接口利用mitmdump</strong>，对抓取到的请求进行实时处理与保存。自动化APP工具：Appium，可以像selenium一样对App进行自动化控制，模拟点击等操作。</p>
+<h5 id="Cherles的安装"><a href="#Cherles的安装" class="headerlink" title="Cherles的安装"></a>Cherles的安装</h5><p>Charles是一个网络抓包工具，这里主要选用为移动端抓包工具。</p>
+<p>证书配置：现在很多页面都在向HTTPS发展，如果一个App通信应用了HTTPS协议，那么它的通信数据是会被加密的，常规的抓包方法无法识别请求的内部数据。如果要做HTTPS抓包的话，需要配置相关的SSL证书。Help&gt;SSL Proxying&gt;install Charles Root Certificate,将所有的证书放入下列存储，然后浏览选择受信任的根证书颁发机构。</p>
+<p><strong>使用Charles代理手机请求：找WLAN的设定就找了很久，长按修改，进阶模式。但是设置好代理之后一直连接不上网络，监听不了，是啥原因？等到后面实战移动端的时候再肝一下。</strong></p>
+<h5 id="mitmproxy的安装"><a href="#mitmproxy的安装" class="headerlink" title="mitmproxy的安装"></a>mitmproxy的安装</h5><p>暂时不用</p>
+<h5 id="Appium的安装"><a href="#Appium的安装" class="headerlink" title="Appium的安装"></a>Appium的安装</h5><p>Appium负责驱动移动端来完成一系列操作，对于Android来说，它使用UIAutomator和Selendroid来实现驱动。Android开发环境配置，之后再看。Android SDK与Android Studio</p>
+<h4 id="爬虫框架的安装："><a href="#爬虫框架的安装：" class="headerlink" title="爬虫框架的安装："></a>爬虫框架的安装：</h4><p><strong>我们直接用requests,Selenium等库写爬虫，如果爬取量不是太大，速度要求不高，完全可以满足需求。但是写多了就会发现其内部许多代码与组件是完全可以复用的。把这些组件抽离出来，将各个功能模块化，就会形成爬虫框架。</strong></p>
+<h5 id="pyspider的安装"><a href="#pyspider的安装" class="headerlink" title="pyspider的安装"></a>pyspider的安装</h5><p>安装完报错，讲到时再试。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;C:\Users\Lenovo\AppData\Local\Programs\Python\Python37\Scripts\pyspider-script.py&quot;, line 11, in &lt;module&gt;</span><br><span class="line">    load_entry_point(&apos;pyspider==0.3.10&apos;, &apos;console_scripts&apos;, &apos;pyspider&apos;)()</span><br><span class="line">  File &quot;c:\users\lenovo\appdata\local\programs\python\python37\lib\site-packages\pkg_resources\__init__.py&quot;, line 489, in load_entry_point</span><br><span class="line">    return get_distribution(dist).load_entry_point(group, name)</span><br><span class="line">  File &quot;c:\users\lenovo\appdata\local\programs\python\python37\lib\site-packages\pkg_resources\__init__.py&quot;, line 2793, in load_entry_point</span><br><span class="line">    return ep.load()</span><br><span class="line">  File &quot;c:\users\lenovo\appdata\local\programs\python\python37\lib\site-packages\pkg_resources\__init__.py&quot;, line 2411, in load</span><br><span class="line">    return self.resolve()</span><br><span class="line">  File &quot;c:\users\lenovo\appdata\local\programs\python\python37\lib\site-packages\pkg_resources\__init__.py&quot;, line 2417, in resolve</span><br><span class="line">    module = __import__(self.module_name, fromlist=[&apos;__name__&apos;], level=0)</span><br><span class="line">  File &quot;c:\users\lenovo\appdata\local\programs\python\python37\lib\site-packages\pyspider\run.py&quot;, line 231</span><br><span class="line">    async=True, get_object=False, no_input=False):</span><br></pre></td></tr></table></figure>
+
+<h5 id="Scrapy的安装"><a href="#Scrapy的安装" class="headerlink" title="Scrapy的安装"></a>Scrapy的安装</h5><p>连上V2ray和不连v2ray，在用镜像源安装的时候差别居然这么大。注意安装好各种前置的库。</p>
+<h5 id="Scrapy-Splash的安装"><a href="#Scrapy-Splash的安装" class="headerlink" title="Scrapy-Splash的安装"></a>Scrapy-Splash的安装</h5><p>需要Docker</p>
+<h5 id="Scrapy-Redis的安装"><a href="#Scrapy-Redis的安装" class="headerlink" title="Scrapy-Redis的安装"></a>Scrapy-Redis的安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install scrapy-redis</span><br></pre></td></tr></table></figure>
+
+<h4 id="部署相关库的安装："><a href="#部署相关库的安装：" class="headerlink" title="部署相关库的安装："></a>部署相关库的安装：</h4><p>如果想要大规模抓取数据，那么一定会用到分布式爬虫。对于分布式爬虫，需要多台主机，每台主机上有多个爬虫任务，但只有一份源代码。此时需要做的就是将一份代码同时部署到多台主机上来运行。</p>
+<p>对于Scrapy，名为Scrapyd的扩展组件能够帮助我们远程管理Scrapy任务，包括部署源码，启动任务，监听任务等等。Scrapy-Client和Scrapyd API非常实用。</p>
+<p>或者利用Docker集群部署，只需要将爬虫只作为Docker镜像。只要主机中安装了Docker，就能够直接运行爬虫，无需担心环境与版本问题。</p>
+<h5 id="Docker的安装"><a href="#Docker的安装" class="headerlink" title="Docker的安装"></a>Docker的安装</h5><p>hyper-v，谜之报错，安装完发现不需要，不需要也就算了还不共存，不共存也就算了还不能删。</p>
+<p>可能是要安装docker for Windows？可不是说只支持专业版，这样一说要修改注册表？</p>
+<p>修改了注册表，但是依旧报错。</p>
+<p>老子不装了，等到后面学分布式爬虫再说。注意不能学啥都学的太浅薄，不然根本没有用。</p>
+<h5 id="Scrapyd的安装"><a href="#Scrapyd的安装" class="headerlink" title="Scrapyd的安装"></a>Scrapyd的安装</h5><p>需要linux环境，后面有需要再看。</p>
+<h5 id="Scrapyd-Client的安装"><a href="#Scrapyd-Client的安装" class="headerlink" title="Scrapyd-Client的安装"></a>Scrapyd-Client的安装</h5><p>基于Scrapyd</p>
+<h5 id="Scrapyd-API安装"><a href="#Scrapyd-API安装" class="headerlink" title="Scrapyd API安装"></a>Scrapyd API安装</h5><p>基于Scrapyd</p>
+<h5 id="Scrapyrt的安装"><a href="#Scrapyrt的安装" class="headerlink" title="Scrapyrt的安装"></a>Scrapyrt的安装</h5><p>Scrapyrt为Scrapy提供了一个调度的HTTP接口，有了它我们可以通过请求一个HTTP接口来调度Scrapy任务。Scarpyrt比Scrapyd更轻量，如果不需要分布式多任务，可简单实用Scarpyrt实现远程Scrapy任务调度。</p>
+<h5 id="Gerapy的安装"><a href="#Gerapy的安装" class="headerlink" title="Gerapy的安装"></a>Gerapy的安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install gerapy</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+        <div>
+            
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------This is my bottom line------</div>
+    
+</div>
+            
+        </div>
+    
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/16/Anaconda教程/" rel="next" title="Anaconda教程">
+                <i class="fa fa-chevron-left"></i> Anaconda教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/21/FTP配置/" rel="prev" title="FTP配置">
+                FTP配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Hy0uka">
+            
+              <p class="site-author-name" itemprop="name">Hy0uka</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archive">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/qq_39268483" title="playmake3r" target="_blank">playmake3r</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/qq_33356474" title="叮当猫" target="_blank">叮当猫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://slipslopx.github.io/" title="SlioslopX" target="_blank">SlioslopX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一章：环境配置"><span class="nav-number">1.</span> <span class="nav-text">第一章：环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Python3的安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">Python3的安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求库的安装"><span class="nav-number">1.1.</span> <span class="nav-text">请求库的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ChromeDriver安装"><span class="nav-number">1.1.1.</span> <span class="nav-text">ChromeDriver安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#aiohttp的安装"><span class="nav-number">1.1.2.</span> <span class="nav-text">aiohttp的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lxml的安装"><span class="nav-number">1.1.3.</span> <span class="nav-text">lxml的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Beauitful-Soup安装"><span class="nav-number">1.1.4.</span> <span class="nav-text">Beauitful Soup安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pyquery的安装"><span class="nav-number">1.1.5.</span> <span class="nav-text">pyquery的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tesserocr安装"><span class="nav-number">1.1.6.</span> <span class="nav-text">tesserocr安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的安装："><span class="nav-number">1.2.</span> <span class="nav-text">数据库的安装：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储库的安装："><span class="nav-number">1.3.</span> <span class="nav-text">存储库的安装：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Web库的安装："><span class="nav-number">1.4.</span> <span class="nav-text">Web库的安装：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Flask安装"><span class="nav-number">1.4.1.</span> <span class="nav-text">Flask安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tornado安装"><span class="nav-number">1.4.2.</span> <span class="nav-text">Tornado安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#APP爬取相关库的安装："><span class="nav-number">1.5.</span> <span class="nav-text">APP爬取相关库的安装：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Cherles的安装"><span class="nav-number">1.5.1.</span> <span class="nav-text">Cherles的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mitmproxy的安装"><span class="nav-number">1.5.2.</span> <span class="nav-text">mitmproxy的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Appium的安装"><span class="nav-number">1.5.3.</span> <span class="nav-text">Appium的安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#爬虫框架的安装："><span class="nav-number">1.6.</span> <span class="nav-text">爬虫框架的安装：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#pyspider的安装"><span class="nav-number">1.6.1.</span> <span class="nav-text">pyspider的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scrapy的安装"><span class="nav-number">1.6.2.</span> <span class="nav-text">Scrapy的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scrapy-Splash的安装"><span class="nav-number">1.6.3.</span> <span class="nav-text">Scrapy-Splash的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scrapy-Redis的安装"><span class="nav-number">1.6.4.</span> <span class="nav-text">Scrapy-Redis的安装</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署相关库的安装："><span class="nav-number">1.7.</span> <span class="nav-text">部署相关库的安装：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Docker的安装"><span class="nav-number">1.7.1.</span> <span class="nav-text">Docker的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scrapyd的安装"><span class="nav-number">1.7.2.</span> <span class="nav-text">Scrapyd的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scrapyd-Client的安装"><span class="nav-number">1.7.3.</span> <span class="nav-text">Scrapyd-Client的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scrapyd-API安装"><span class="nav-number">1.7.4.</span> <span class="nav-text">Scrapyd API安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scrapyrt的安装"><span class="nav-number">1.7.5.</span> <span class="nav-text">Scrapyrt的安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Gerapy的安装"><span class="nav-number">1.7.6.</span> <span class="nav-text">Gerapy的安装</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hy0uka</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+<div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style="display:none">
+    敝站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style="display:none">
+    共计<span id="busuanzi_value_site_uv"></span>人次莅临寒舍
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: '0GX1G6E7gI1yVdjUJKYMnVXv-gzGzoHsz',
+        appKey: 'BGdzmbmkaHb8MmitsLSmKyAg',
+        placeholder: '风过留声，燕过留痕，君过留言！',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+ 
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+ 
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/"});</script></body>
+</html>
