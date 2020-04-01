@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="爬虫,">
+  <meta name="keywords" content="python3网络爬虫开发实战,">
 
 
 
@@ -82,16 +82,16 @@
 
 
 <meta name="description" content="[TOC] 第一章：环境配置Python3的安装推荐了Anaconda，注意环境变量配置。 作者推荐解决版本冲突问题的方法：将安装目录中的python.exe复制一份，命名为python3.exe，能够更好地区分python版本。 请求库的安装爬虫可以简单分为几步：抓取页面，分析页面和存储数据。在抓取页面的过程中，我们需要模拟浏览器向服务器发出请求，所以需要python库来实现HTTP请求操作。">
-<meta name="keywords" content="爬虫">
+<meta name="keywords" content="python3网络爬虫开发实战">
 <meta property="og:type" content="article">
-<meta property="og:title" content="读书笔记之python3网络爬虫开发实战">
+<meta property="og:title" content="环境配置与爬虫基础">
 <meta property="og:url" content="http://qywcysry.github.io/2020/03/17/读书笔记之python3网络爬虫开发实战/index.html">
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="[TOC] 第一章：环境配置Python3的安装推荐了Anaconda，注意环境变量配置。 作者推荐解决版本冲突问题的方法：将安装目录中的python.exe复制一份，命名为python3.exe，能够更好地区分python版本。 请求库的安装爬虫可以简单分为几步：抓取页面，分析页面和存储数据。在抓取页面的过程中，我们需要模拟浏览器向服务器发出请求，所以需要python库来实现HTTP请求操作。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-27T13:45:42.970Z">
+<meta property="og:updated_time" content="2020-04-01T14:56:46.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="读书笔记之python3网络爬虫开发实战">
+<meta name="twitter:title" content="环境配置与爬虫基础">
 <meta name="twitter:description" content="[TOC] 第一章：环境配置Python3的安装推荐了Anaconda，注意环境变量配置。 作者推荐解决版本冲突问题的方法：将安装目录中的python.exe复制一份，命名为python3.exe，能够更好地区分python版本。 请求库的安装爬虫可以简单分为几步：抓取页面，分析页面和存储数据。在抓取页面的过程中，我们需要模拟浏览器向服务器发出请求，所以需要python库来实现HTTP请求操作。">
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>读书笔记之python3网络爬虫开发实战 | Hy0uka</title>
+  <title>环境配置与爬虫基础 | Hy0uka</title>
   
 
 
@@ -308,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">读书笔记之python3网络爬虫开发实战</h1>
+          <h1 class="post-title" itemprop="name headline">环境配置与爬虫基础</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-03-27T21:45:42+08:00">
-                2020-03-27
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-01T22:56:46+08:00">
+                2020-04-01
               </time>
             
           </span>
@@ -833,6 +833,84 @@
 
 <p>在网页中，一般会统一定义整个网页的CSS样式规则，并写入CSS文件中（后缀为css）。在HTML中只要用link标签就能够引入写好的css文件。</p>
 <h5 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript:"></a>JavaScript:</h5><p>是一种脚本语言，HTML与CSS配合使用，提供给用户的只是一种静态的信息缺乏交互，这要靠JS实现。JS通常也是以单独的文件加载的，后缀为js，通过在HTML<script>标签引用。</p>
+<h5 id="网页的结构："><a href="#网页的结构：" class="headerlink" title="网页的结构："></a>网页的结构：</h5><p>title标签定义标题，会显示在网页的选项卡中，而不会显示在正文。body标签是网页正文中显示的内容，div标签定义了网页中的区块，它的id是container，属于非常常用属性，并且id的内容在网页中是唯一的，便于定位。class=wrapper的div标签，经常与CSS配合使用来设定样式。每个标签元素都有自己的class属性。</p>
+<h5 id="节点树以及节点之间的关系："><a href="#节点树以及节点之间的关系：" class="headerlink" title="节点树以及节点之间的关系："></a>节点树以及节点之间的关系：</h5><p>在THML中，所有标签的定义都是节点，它们构成了一个HTML DOM树。DOM全称Document Object Model，文档对象模型。定义了访问HTML与XML的文档标准。W3C文档对象模型DOM是中立于平台和语言的接口，它允许程序和脚本动态地访问和更新文档的内容，结构与样式。</p>
+<p>W3C标准被分为3个不同的部分：</p>
+<p><strong>核心DOM：</strong>针对任何结构化文档的标准模型</p>
+<p><strong>XML DOM：</strong>针对XML文档的标准模型</p>
+<p><strong>HTML DOM：</strong>针对HTML文档的标准模型</p>
+<p>根据W3C的HTML DOM标准，HTML文档中的所有内容都是节点。</p>
+<ol>
+<li>整个文档是一个文档节点。</li>
+<li>每个HTML元素是一个元素节点</li>
+<li>HTML元素内的文本是文本节点。</li>
+<li>每个HTML属性是属性节点。</li>
+<li>注释是注释节点。</li>
+</ol>
+<p>通过HTML DOM，树中的所有节点均可通过JavaScript访问，所有HTML节点元素均可被修改,也可以被创立和删除。节点树中的节点彼此拥有层级关系，通常通过父，子，兄弟来描述这些关系。在节点树中，<strong>顶端节点通常称为根</strong></p>
+<p><strong>选择器：</strong></p>
+<p>分为派生选择器，通过依据元素在其位置的上下文关系来定义样式，派生选择器允许你根据文档的上下文关系来确定某个标签的样式。通过合理地使用派生选择器，我们可以使 HTML 代码变得更加整洁。id选择器，可以为标有特定id的HTML元素指定特定样式，以一个#号表示。类选择器，以一个点号表示。属性选择器，可以为拥有指定属性的 HTML 元素设置样式，而不仅限于 class 和 id 属性。</p>
+<h4 id="爬虫的基本原理："><a href="#爬虫的基本原理：" class="headerlink" title="爬虫的基本原理："></a>爬虫的基本原理：</h4><p>简单来说，爬虫就是获取网页并提取和保存信息的自动化程序。</p>
+<h5 id="获取网页："><a href="#获取网页：" class="headerlink" title="获取网页："></a>获取网页：</h5><p>首要工作便是获取网页的源代码，因为源代码包含网页的所有信息。向网站发送一个请求，返回的响应体便是网页源代码，所以最关键的便是构造请求，然后接收到响应并将其解析出来。python提供了许多库来实现这个操作，请求和响应都可以用类库提供的数据结构表示。得到响应之后我们只需要解析数据结构中的Body部分即可。</p>
+<h5 id="提取信息："><a href="#提取信息：" class="headerlink" title="提取信息："></a>提取信息：</h5><p>分析网页源代码最通用的方式是正则表达式。还有一些根据网页节点属性，CSS选择器或者Xpath提取网页信息的库。</p>
+<h5 id="保存数据："><a href="#保存数据：" class="headerlink" title="保存数据："></a>保存数据：</h5><p>可以简单保存为txt/json，或者保存到数据库，或者远程服务器。</p>
+<h5 id="自动化程序："><a href="#自动化程序：" class="headerlink" title="自动化程序："></a>自动化程序：</h5><p>在抓取过程中进行各种异常处理，错误重试等操作。</p>
+<p>除了网页源代码之外，还有些网页返回的不是HTML代码，而是JSON字符串（API接口大多如此），这样的数据方便传输与解析。还有各种二进制数据，如图片音频。以及各种扩展名的文件，只要能在浏览器访问到都可以抓取。</p>
+<h5 id="JS渲染页面："><a href="#JS渲染页面：" class="headerlink" title="JS渲染页面："></a>JS渲染页面：</h5><p>有时候在urllib或者requests抓取页面时，得到的源代码与实际看到的不一样，这是因为现在网页越来越多地采用Ajax，前端模块化工具构建，如果整个页面都是JS渲染出来的（只要在最后加上<script src="xxx.js">即可完成页面渲染(渲染：构建渲染树，对各个元素进行位置计算、样式计算等等，然后根据渲染树对页面进行渲染（可以理解为“画”元素）)，就会得到一个HTML骨架。</p>
+<p>在浏览器里打开这个页面时，首先加载这个HTML内容，然后浏览器会发现其中引入了一个app.js文件，接着请求这个文件，获得该文件后执行其中的JS代码改变HTML节点进行渲染。但是在用urllib/requests时不会帮我们继续加载这个JS文件。</p>
+<p>对于这种情况，可以分析其后台Ajax接口，也可使用Selenium/Splash实现模拟JS渲染。</p>
+<h4 id="会话和Cookies"><a href="#会话和Cookies" class="headerlink" title="会话和Cookies"></a>会话和Cookies</h4><p>最基本的HTML代码，将他放在某台具有固定公网IP的主机上，主机上装上Apache/Nginx服务器，这样这台主机就可以作为服务器，建立一个站点。这只是简单的静态网页无法实现交互。</p>
+<h5 id="无状态HTTP："><a href="#无状态HTTP：" class="headerlink" title="无状态HTTP："></a>无状态HTTP：</h5><p>HTTP的无状态指HTTP协议对事物处理无记忆能力。单纯的一次HTTP请求完成过后，服务器不会记录前后状态的变化，不知道客户端的状态。这意味着如果后续需要处理前面的信息，则必须重传。<strong>保持前后状态一致的技术就是会话和Cookies。会话位于服务端，即网站服务器，用来保存用户的会话信息。Cookies位于客户端(浏览器端)，有了Cookies服务器在下次访问网页时会自动将其附加发送给服务器。</strong>鉴定出是哪个用户，是否为登录状态，返回对应的页面。</p>
+<p>因此在爬虫中，处理需要登录才能访问的页面时，一般将登录成功后获取的Cookies放在请求头里直接请求。</p>
+<p>会话：<strong>会话对象用来存储特定用户绘画所需的属性以及配置信息。</strong>这样当用户在应用程序的web页面之间跳转的时候，存储在会话之间的变量不会消失，会在整个用户会话中一致存在下去。</p>
+<p>Cookies：网站为了辨识用户身份，进行会话跟踪而存储在本地终端上的数据。</p>
+<p><strong>会话维持：</strong>当客户端第一次请求服务器时，服务器会返回一个请求头里带有Set-Cookie字段的响应给客户端，用于标识用户，客户端浏览器会把Cookies保存起来。下一次一起提交。</p>
+<p><strong>属性结构：</strong>Cookies详解</p>
+<p>开发者工具>Application>Storage>Cookies</p>
+<p>Name：该Cookies的名称，一旦创建不可更改。</p>
+<p>Value：该Cookies的值，如果为Unicode则为字符编码。如果为二进制数据BASE64编码。</p>
+<p>Domain：可以访问该Cookies的域名，如果设置为.zhihu.com结尾的域名都可以访问该Cookie。</p>
+<p>Max Age：该Cookie失效的时间，单位为s，与Expires一起使用。为正数在Max Age秒后失效，为负数关闭浏览器即失效。</p>
+<p>Path：该Cookie的使用路径，设置为/则该域名下所有页面都可以访问该Cookie。</p>
+<p>Size：Cookie大小。</p>
+<p>HTTP字段：Cookie的httponly属性，如果为true则只有在HTTP头中会带有此Cookie信息，而不能通过document.cookie来访问此Cookie。</p>
+<p>Secure：该Cookie是否仅被使用安全协议传输。安全协议：SSL，HTTPS。</p>
+<p><img src="C:%5CUsers%5CLenovo%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200401212226395.png" alt="image-20200401212226395"></p>
+<p>会话Cookie与持久Cookie，前者把Cookie放在浏览器内存里，后者把Cookie存放到客户端硬盘中。(严格意义来说只是Max Age的大小问题。)除非程序通知服务器删除一个会话，否则服务器会一直保留。这就需要服务器为会话设置一个失效时间。</p>
+<h4 id="代理的基本原理："><a href="#代理的基本原理：" class="headerlink" title="代理的基本原理："></a>代理的基本原理：</h4><p>403 Forbidden>IP 访问频率太高>反爬虫措施>使用代理</p>
+<h5 id="基本原理："><a href="#基本原理：" class="headerlink" title="基本原理："></a>基本原理：</h5><p>proxy server，代理网络用户去取得网络信息，通过中转站传递向服务器的请求与响应，这样服务器识别出的IP就不再是本机IP。</p>
+<h5 id="代理作用"><a href="#代理作用" class="headerlink" title="代理作用:"></a>代理作用:</h5><ol>
+<li>突破自身IP访问限制，访问不能访问的站点。</li>
+<li>访问内网中的资源。</li>
+<li>提高访问速度：通常代理服务器都设置一个较大的硬盘缓冲区，外界信息通过时会被保留在缓冲区，别的用户访问相同信息则直接从缓冲区取，提高访问速度。</li>
+<li>隐藏真实IP，免受攻击。</li>
+</ol>
+<h5 id="代理分类："><a href="#代理分类：" class="headerlink" title="代理分类："></a>代理分类：</h5><p>根据协议区分/根据匿名程度区分：</p>
+<ol>
+<li><p>FTP代理服务器：用于访问FTP服务器，一般有上传，下载，缓存功能，port：21，2121。</p>
+</li>
+<li><p>HTTP代理服务器：主要用于访问网页，一般有内容过滤与缓存功能，port：80，8080，3128。</p>
+</li>
+<li><p>SSL/TLS代理：访问加密网站，一般有SSL/TLS加密功能，port：443。</p>
+</li>
+<li><p>RTSP代理：访问Real流媒体服务器，缓存功能，port：554.</p>
+</li>
+<li><p>Telnet代理：telnet远程控制（黑客入侵计算机时常用于隐藏身份？），port：23。</p>
+</li>
+<li><p>POP3/SMTP代理：主要用于POP3/SMTP方式收发邮件，缓存，port：110，25.</p>
+</li>
+<li><p>SOCKS代理：单纯传递数据包，不关系具体协议与用法，速度快很多，缓存，port：1080.分为SOCKS4和SOCKS5，前者支持TCP，后者支持TCP与UDP，还支持各种身份验证机制，服务器域名解析等，子集关系。</p>
+</li>
+<li><p>高度匿名代理：数据包原封不动转发，服务端看起来就是普通用户，IP为代理服务器IP。</p>
+</li>
+<li><p>普通匿名代理：会在数据包上做一些改动，服务端有可能察觉是代理服务器，可能追查到客户端IP。代理服务器通常加入的HTTP头又HTTP-VIA和HTTP-X-FORWARD-FOR。</p>
+</li>
+<li><p>透明代理：不但改动数据包，还告诉客户端真是IP。<strong>除了能用缓存技术提高浏览速度，能用内容过滤提高安全性，无其他 显著作用，如内网中的硬件防火墙。</strong></p>
+</li>
+</ol>
+<h5 id="常见代理设置："><a href="#常见代理设置：" class="headerlink" title="常见代理设置："></a>常见代理设置：</h5><p>使用网上免费代理：最好使用高匿代理。</p>
+<p>使用付费代理：网络上许多代理商。</p>
+<p>ADSL拨号：拨一次号换一次IP，稳定性高。</p>
 </script></p>
       
     </div>
@@ -862,7 +940,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+            <a href="/tags/python3网络爬虫开发实战/" rel="tag"># python3网络爬虫开发实战</a>
           
         </div>
       
@@ -969,7 +1047,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
