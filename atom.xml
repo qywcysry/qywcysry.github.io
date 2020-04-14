@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2020-04-01T15:02:20.824Z</updated>
+  <updated>2020-04-14T13:19:55.450Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -15,6 +15,149 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>长亭公开课-二进制程序基础原理入门</title>
+    <link href="http://qywcysry.github.io/2020/04/14/%E9%95%BF%E4%BA%AD%E5%85%AC%E5%BC%80%E8%AF%BE-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80%E5%8E%9F%E7%90%86%E5%85%A5%E9%97%A8/"/>
+    <id>http://qywcysry.github.io/2020/04/14/长亭公开课-二进制程序基础原理入门/</id>
+    <published>2020-04-14T02:54:52.000Z</published>
+    <updated>2020-04-14T13:19:55.450Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h3 id=&quot;二进制基础&quot;&gt;&lt;a href=&quot;#二进制基础&quot; class=&quot;headerlink&quot; title=&quot;二进制基础&quot;&gt;&lt;/a&gt;二进制基础&lt;/h3&gt;&lt;h5 id=&quot;程序的编译，汇编与链接&quot;&gt;&lt;a href=&quot;#程序的编译，汇编与链接&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GOT表和PLT表知识详解</title>
+    <link href="http://qywcysry.github.io/2020/04/13/GOT%E8%A1%A8%E5%92%8CPLT%E8%A1%A8%E7%9F%A5%E8%AF%86%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://qywcysry.github.io/2020/04/13/GOT表和PLT表知识详解/</id>
+    <published>2020-04-13T12:41:50.000Z</published>
+    <updated>2020-04-13T14:06:56.390Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天听了可以说是安全之路的启蒙大佬的CTF培训(高中看了一篇写清华蓝莲花和DEF
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DES</title>
+    <link href="http://qywcysry.github.io/2020/04/07/DES/"/>
+    <id>http://qywcysry.github.io/2020/04/07/DES/</id>
+    <published>2020-04-07T03:13:58.000Z</published>
+    <updated>2020-04-07T03:41:46.154Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;简介：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;DES是对称的，也就是说它使用同一个密钥来加密和解密数据。DES还和RSA一样是一种分组加密算法，该算法每次处理固定长度的数据段，称之为分组。DES分组的大小是64位，如果加密的数据长度不是64位的倍数，可以按照某种具
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Crypto" scheme="http://qywcysry.github.io/tags/Crypto/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RSA</title>
+    <link href="http://qywcysry.github.io/2020/04/07/RSA/"/>
+    <id>http://qywcysry.github.io/2020/04/07/RSA/</id>
+    <published>2020-04-07T02:41:17.000Z</published>
+    <updated>2020-04-07T03:13:26.460Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;简介：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;RSA是非对称的，即加密密钥与解密密钥不是同一个。当数据在网络中传输时，用来加密数据的密钥并不需要也和数据一起传送，这就减少了密钥泄露的可能性。加密的一方使用一个密钥称为共压迫，解密的一方使用一个密钥称为私钥，私钥需保
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Crypto" scheme="http://qywcysry.github.io/tags/Crypto/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络层</title>
+    <link href="http://qywcysry.github.io/2020/04/04/%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
+    <id>http://qywcysry.github.io/2020/04/04/网络层/</id>
+    <published>2020-04-04T03:20:26.000Z</published>
+    <updated>2020-04-05T11:21:16.732Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本章讨论网络互连问题：介绍&lt;strong&gt;网络层提供的两种不同服务&lt;/strong&gt;之后，进入本章核心内容：&lt;strong&gt;网际协议IP&lt;/strong&gt;。只有深入地掌握了IP协议的主要内容，才能够理解互联网是如何工作的。并讨论：&lt;strong&gt;网际控制报文协议ICMP&lt;/
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="http://qywcysry.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="http://qywcysry.github.io/2020/04/01/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>http://qywcysry.github.io/2020/04/01/正则表达式/</id>
+    <published>2020-04-01T15:18:21.000Z</published>
+    <updated>2020-04-01T15:52:55.583Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;正则表达式(Regular
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机基础知识" scheme="http://qywcysry.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
   
   <entry>
     <title>分布式爬虫</title>
@@ -105,9 +248,17 @@
     <link href="http://qywcysry.github.io/2020/04/01/%E5%9F%BA%E6%9C%AC%E5%BA%93%E4%B8%8E%E8%A7%A3%E6%9E%90%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://qywcysry.github.io/2020/04/01/基本库与解析库的使用/</id>
     <published>2020-04-01T14:59:24.000Z</published>
-    <updated>2020-04-01T14:59:24.778Z</updated>
+    <updated>2020-04-09T04:26:44.068Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;urllib&quot;&gt;&lt;a href=&quot;#urllib&quot; class=&quot;headerlink&quot;
+        
+      
     
     </summary>
     
@@ -269,152 +420,6 @@
     
     
       <category term="crypto" scheme="http://qywcysry.github.io/tags/crypto/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python lxml库中etree的简单应用</title>
-    <link href="http://qywcysry.github.io/2020/03/13/python-lxml%E5%BA%93%E4%B8%ADetree%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8/"/>
-    <id>http://qywcysry.github.io/2020/03/13/python-lxml库中etree的简单应用/</id>
-    <published>2020-03-13T08:11:19.000Z</published>
-    <updated>2020-03-13T09:49:24.749Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;1.etree.HTML()&lt;/p&gt;
-&lt;p&gt;它可以用来解析字符串格式的HTML文档对象，将传进去的字符变成_Element对象，方便使用getparent(),remove(),xpath()等方法。&lt;/p&gt;
-&lt;p&gt;例如&lt;/p&gt;
-&lt;figure
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://qywcysry.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pycharm使用时遇到的问题</title>
-    <link href="http://qywcysry.github.io/2020/03/13/pycharm%E4%BD%BF%E7%94%A8%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://qywcysry.github.io/2020/03/13/pycharm使用时遇到的问题/</id>
-    <published>2020-03-13T03:50:29.000Z</published>
-    <updated>2020-03-22T09:36:31.081Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;1.cmd中查看python安装了哪些第三方库命令：pip list。&lt;/p&gt;
-&lt;p&gt;2.手动下载python第三方库：在网站下载后缀为.whl的文件，并且将下载的文件放入C:user/xxx/文件夹中，利用cmd执行pip install
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2020/3/12</title>
-    <link href="http://qywcysry.github.io/2020/03/12/puppeteer%E5%85%A5%E9%97%A8/"/>
-    <id>http://qywcysry.github.io/2020/03/12/puppeteer入门/</id>
-    <published>2020-03-12T07:22:19.000Z</published>
-    <updated>2020-03-23T09:38:57.455Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Puppeteer入门&lt;/p&gt;
-&lt;p&gt;0.Node的安装，在windows下应该没啥问题。今天在centos上试了下，掌握得并不是很好。&lt;/p&gt;
-&lt;p&gt;在官网下载，一种是源码安装，下载之后编译。另一种是直接解压。&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>SQL</title>
-    <link href="http://qywcysry.github.io/2019/11/25/SQL/"/>
-    <id>http://qywcysry.github.io/2019/11/25/SQL/</id>
-    <published>2019-11-25T10:06:25.000Z</published>
-    <updated>2019-12-13T03:37:20.670Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;一：去掉重复数据的方法&lt;/p&gt;
-&lt;p&gt;1.distinct&lt;/p&gt;
-&lt;p&gt;根据单个字段去重，能够精确去重。但作用在多个字段时，只有当这几个字段完全相同才能去重。（要保证每一列都一样）。count(distinct
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java review</title>
-    <link href="http://qywcysry.github.io/2019/11/23/Java-review/"/>
-    <id>http://qywcysry.github.io/2019/11/23/Java-review/</id>
-    <published>2019-11-23T07:26:22.000Z</published>
-    <updated>2020-03-22T09:29:10.164Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h3 id=&quot;类的定义&quot;&gt;&lt;a href=&quot;#类的定义&quot; class=&quot;headerlink&quot; title=&quot;类的定义&quot;&gt;&lt;/a&gt;类的定义&lt;/h3&gt;&lt;p&gt;在 Java 中定义一个类，需要使用 class
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>图</title>
-    <link href="http://qywcysry.github.io/2019/11/21/%E5%9B%BE/"/>
-    <id>http://qywcysry.github.io/2019/11/21/图/</id>
-    <published>2019-11-21T13:33:54.000Z</published>
-    <updated>2019-11-21T16:10:45.506Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;图的基本概念&quot;&gt;&lt;a href=&quot;#图的基本概念&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Data Structure" scheme="http://qywcysry.github.io/tags/Data-Structure/"/>
     
   </entry>
   
