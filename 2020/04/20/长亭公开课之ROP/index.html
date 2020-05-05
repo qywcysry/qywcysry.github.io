@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hy0uka" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="栈溢出与Shellcode栈溢出利用思路保护及编译选项栈不可执行 1-z exestack  canary保护 1-fno-stack-protector  1gcc 以上两个参数 name.c -o name -m32  栈布局Stack Layout1234567891011Example BOF program：#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;str">
+<meta property="og:type" content="article">
+<meta property="og:title" content="长亭公开课之ROP">
+<meta property="og:url" content="http://qywcysry.github.io/2020/04/20/长亭公开课之ROP/index.html">
+<meta property="og:site_name" content="Hy0uka">
+<meta property="og:description" content="栈溢出与Shellcode栈溢出利用思路保护及编译选项栈不可执行 1-z exestack  canary保护 1-fno-stack-protector  1gcc 以上两个参数 name.c -o name -m32  栈布局Stack Layout1234567891011Example BOF program：#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;str">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-04-22T13:01:31.761Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="长亭公开课之ROP">
+<meta name="twitter:description" content="栈溢出与Shellcode栈溢出利用思路保护及编译选项栈不可执行 1-z exestack  canary保护 1-fno-stack-protector  1gcc 以上两个参数 name.c -o name -m32  栈布局Stack Layout1234567891011Example BOF program：#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;str">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://qywcysry.github.io/2020/04/20/长亭公开课之ROP/">
+
+
+
+
+
+  <title>长亭公开课之ROP | Hy0uka</title>
+  
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+<script src="/live2d-widget/autoload.js"></script>
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hy0uka</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Cyber Security</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2020/04/20/长亭公开课之ROP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hy0uka">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hy0uka">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">长亭公开课之ROP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-20T23:08:36+08:00">
+                2020-04-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-22T21:01:31+08:00">
+                2020-04-22
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/20/长亭公开课之ROP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/20/长亭公开课之ROP/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="栈溢出与Shellcode"><a href="#栈溢出与Shellcode" class="headerlink" title="栈溢出与Shellcode"></a>栈溢出与Shellcode</h2><h4 id="栈溢出利用思路"><a href="#栈溢出利用思路" class="headerlink" title="栈溢出利用思路"></a>栈溢出利用思路</h4><h5 id="保护及编译选项"><a href="#保护及编译选项" class="headerlink" title="保护及编译选项"></a>保护及编译选项</h5><p>栈不可执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-z exestack</span><br></pre></td></tr></table></figure>
+
+<p>canary保护</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-fno-stack-protector</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc 以上两个参数 name.c -o name -m32</span><br></pre></td></tr></table></figure>
+
+<h5 id="栈布局Stack-Layout"><a href="#栈布局Stack-Layout" class="headerlink" title="栈布局Stack Layout"></a>栈布局Stack Layout</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Example BOF program：</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main(int argc,char **argv)&#123;</span><br><span class="line">	char buf[128];</span><br><span class="line">	if (argc &lt; 2) return 1;</span><br><span class="line">	strcpy(buf,argv[1]);</span><br><span class="line">	printf(&quot;argv[1]:%s\n&quot;,buf);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="center">char **argv</th>
+<th align="center">高地址，函数参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int argc</td>
+<td align="center">函数参数</td>
+</tr>
+<tr>
+<td align="center">return address</td>
+<td align="center">函数被call时放入栈内</td>
+</tr>
+<tr>
+<td align="center">saved %ebp</td>
+<td align="center">函数开头push ebp</td>
+</tr>
+<tr>
+<td align="center">char buf[128]</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">char buf[128]</td>
+<td align="center">低地址，拷贝时↑</td>
+</tr>
+</tbody></table>
+<p>可以看出C语言传参是从右向左传的，最右边的最先入栈。 </p>
+<table>
+<thead>
+<tr>
+<th align="center">mov esp,ebp</th>
+<th align="center">恢复主调函数的栈顶指针esp，将其指向被调函数栈底。此时局部变量占用的栈空间被释放，但变量内容未被清楚。</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">pop ebp</td>
+<td align="center">主调函数的帧基指针%ebp出栈，即恢复主调函数栈底。此时，栈顶指针%esp指向主调函数栈顶(espßesp-4)，亦即返回地址存放处。</td>
+</tr>
+<tr>
+<td align="center">ret</td>
+<td align="center">从栈顶弹出主调函数压在栈中的返回地址到指令指针寄存器%eip中，跳回主调函数该位置处继续执行。再由主调函数恢复到调用前的栈。</td>
+</tr>
+</tbody></table>
+<p>前两条指令也可以由leave实现，具体用哪种方式由编译器决定。</p>
+<p>从物理上来说，CALL 指令将其返回地址压入堆栈，再把被调用过程的地址复制到指令指针寄存器。当过程准备返回时，它的 RET 指令从堆栈把返回地址弹回到指令指针寄存器。32 位模式下，CPU 执行的指令由 EIP（指令指针寄存器）在内存中指岀。</p>
+<p>可以把Shellcode放在缓冲区开头，然后通过覆盖返回地址跳转到Shellcode。</p>
+<p>也可以将Shellcode放在返回地址之后，然后通过覆盖返回地址跳转到Shellcode，可以不限长度。 →JMP ESP，将返回地址跳转到JMP ESP上。当函数返回时esp指向addr后，不用知道栈具体在哪。</p>
+<p>栈不够shellcode放在addr后，栈够了放在addr前。</p>
+<blockquote>
+<p> 其中，主调函数将参数按照调用约定依次入栈，然后将指令指针EIP入栈以保存主调函数的返回地址(下一条待执行指令的地址)。进入被调函数时，被调函数将主调函数的帧基指针EBP入栈，并将主调函数的栈顶指针ESP值赋给被调函数的EBP(作为被调函数的栈底)，接着改变ESP值来为函数局部变量预留空间。此时被调函数帧基指针指向被调函数的栈底。以该地址为基准，向上(栈底方向)可获取主调函数的返回地址、参数值，向下(栈顶方向)能获取被调函数的局部变量值，而该地址处又存放着上一层主调函数的帧基指针值。本级调用结束后，将EBP指针值赋给ESP，使ESP再次指向被调函数栈底以释放局部变量；再将已压栈的主调函数帧基指针弹出到EBP，并弹出返回地址到EIP。ESP继续上移越过参数，最终回到函数调用前的状态，即恢复原来主调函数的栈帧。如此递归便形成函数调用栈。</p>
+</blockquote>
+<h4 id="Shellcode的编写调试和生成"><a href="#Shellcode的编写调试和生成" class="headerlink" title="Shellcode的编写调试和生成"></a>Shellcode的编写调试和生成</h4><p>shellcode：在软件漏洞利用中经常用到的一小段代码，通常用于为攻击者启动一个能控制和受害者机器的shell。我们使用的shellcode:利用execve系统调用来获得一个高权限shell。</p>
+<p>Linux下的执行文件函数原型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int execve(const char *filename,char *const argv[],char *const envp[]);//文件名，参数，环境变量</span><br></pre></td></tr></table></figure>
+
+<p>shellcode:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">execve(&quot;/bin//sh&quot;,Null,Null)</span><br></pre></td></tr></table></figure>
+
+<p>Syscall调用约定：</p>
+<table>
+<thead>
+<tr>
+<th align="center">syscall number:%eax=0xb</th>
+<th align="center">0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">第一个参数:%ebx=filename</td>
+<td align="center">0x68732f2f=’//sh’</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">0x6e69622f=’/bin/</td>
+</tr>
+<tr>
+<td align="center">第二个参数:%ecx=argv</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">第三个参数:%edx=envp=0</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">第四个参数:%esi</td>
+<td align="center">X</td>
+</tr>
+<tr>
+<td align="center">第五个参数 :%edi</td>
+<td align="center">X</td>
+</tr>
+<tr>
+<td align="center">第六个参数:%ebp</td>
+<td align="center">X</td>
+</tr>
+</tbody></table>
+<p>/与//，凑字节。字符串以0结尾。</p>
+<p>寻找填充长度：找到缓冲区开头的地址，再找到返回地址所在位置，两者相减即可。为了找到缓冲区开头地址，我们可以在调用strcpy之前下断点，通过查看strcpy的第一个参数得知。另外可在main函数之前断下，此时esp指向的就是返回地址所在位置。</p>
+<p>gdb命令：x/2wx $esp//x表示打印，/2表示打印两个值，w表示word大小，x为十六进制。</p>
+<p>NOP sled：增加shellcode的长度，从而提高命中率。只要程序返回到了增加的许多个nop之中的任意一处，就会执行shellcode。</p>
+<p>在gdb中运行程序，gdb会为进程增加许多环境变量，存储在栈上，导致栈用的更多，栈的地址变低了。直接运行时，栈地址会比gdb中高，所以在gdb中的shellcode地址就不管用了。所以利用NOP sled，在shellcode前增加一串nop链，只要命中任意一个NOP即可。</p>
+<h2 id="从Return-to-libc到ROP"><a href="#从Return-to-libc到ROP" class="headerlink" title="从Return to libc到ROP"></a>从Return to libc到ROP</h2><h4 id="漏洞缓解措施Mitigation"><a href="#漏洞缓解措施Mitigation" class="headerlink" title="漏洞缓解措施Mitigation"></a>漏洞缓解措施Mitigation</h4><p>即便漏洞存在，也要让攻击者难以利用。操作系统和编译器都会提供。</p>
+<p>如何阻止攻击者利用：随机栈地址堆地址等地址，让攻击者无法知道shellcode地址，无处跳转。</p>
+<p>想办法检测栈溢出，检测到报错则退出。</p>
+<p>栈上不能执行shellcode</p>
+<p>具体实现分别为ALSR PIE/Stack Canary Stack Cooike/NX/W^X/DEP</p>
+<p>ALSR：开启随机化之后，会在堆栈以及共享库加载的时候，让栈往下移，堆往上移，共享库也留有空白，实现随机化。大量IOT设备仍未启用。</p>
+<p><code>/proc/sys/kernel/randomize_va_space</code> 来控制 ASLR 启动与否：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0，关闭 ASLR，没有随机化。栈、堆、.so 的基地址每次都相同。</span><br><span class="line">1，普通的 ASLR。栈基地址、mmap 基地址、.so 加载基地址都将被随机化，但是堆基地址没有随机化。</span><br><span class="line">2，增强的 ASLR，在 1 的基础上，增加了堆基地址随机化。</span><br></pre></td></tr></table></figure>
+
+<p>PIE实际上是代码随机。只开启ALSR，栈，共享库，堆地址会被随机化，但是程序本身代码通常固定在0x80480000.开启PIE，编译器可以在编译时生成地址无关代码，程序可以加载在任意地址执行。</p>
+<p><strong>地址空间随机化绕过思路：</strong>未开启PIE，Return to PLT，可绕过共享库随机化。/X86_32架构下可爆破，内存地址随机化力度以一个内存页为单位，0x1000字节对齐。/信息泄露/NOP sled：在shellcode前不知一长串指令/堆喷Heap spray/本地环境技巧：ulimit -s unlimited。</p>
+<p><strong>canary：</strong>原理不再赘述，出题时gcc的-fstack-protector选项可以启用这一机制。</p>
+<p>绕过：泄露canary，每个线程不同函数的canary都相同。/只覆盖局部变量，不覆盖返回地址。/修改Thread-local Strorage中的Canary。（修改对照的样本）</p>
+<p><strong>NX：内存权限精细划分</strong></p>
+<p>绕过方法：Return-to-libc/ROP，利用程序本身的代码去执行想要的操作。</p>
+<p>获取函数和代码片段的方法：动态调试与静态调试</p>
+<p><strong>动态调试：</strong>在gdb中直接用print打印system和exit函数地址。</p>
+<p><strong>静态调试：</strong>首先用ldd命令获取libc基地址，然后用readelf命令找到system和exit函数在libc中的偏移。用strings命令找到字符串。/bin/sh在libc中的偏移，最后通过与libc基址相加来获得最终地址。</p>
+<p>想了很久的的问题，自己用课上的下断点计算方法去做题，结果和答案有4个位置的差距，想了很久，想明白了这种在输入的地方下断，再在该函数ret的地方下断，用x/wx $ESP可以算出偏移量。这是包含了ebp在内的。但是直接用IDA看的话，sub-xx，这个xx是不包含ebp在内的。</p>
+<h4 id="Return-to-libc利用"><a href="#Return-to-libc利用" class="headerlink" title="Return to libc利用"></a>Return to libc利用</h4><p>ldd：看一个程序的动态链接库加载到了什么地址。</p>
+<p>strings -tx .so文件路径|grep strings</p>
+<p>readelf -s .so文件路径 |grep function name，可以得到函数在.so文件中的偏移量。相加即得到准确地址。</p>
+<p>传参的时候可能会碰到某些情况被截断，比如sh后有个回车，表现为多了个a被截断，此时只需再寻找字符串。</p>
+<h4 id="ROP-Return-Oriented-Programming"><a href="#ROP-Return-Oriented-Programming" class="headerlink" title="ROP:Return Oriented Programming"></a>ROP:Return Oriented Programming</h4><p>Return to PLT:如果动态共享库的地址随机化保护开启，则无法知道libc地址。而程序中已经引用的动态库函数，可以直接通过PLT调用，无需知道实际地址。</p>
+<p>以ret指令结尾的小段代码称为ROP gadget，实现某一功能而拼接成多个ROP gadget，称为ROP链。在栈上，从返回地址开始填充的用于执行ROP的命令称为ROP载荷ROP payload.</p>
+<p>以此类推，除了可以利用Ret，还可以利用Jmp/call来构造跳转链。</p>
+
+      
+    </div>
+
+        <div>
+            
+            <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------This is my bottom line------</div>
+    
+</div>
+            
+        </div>
+    
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/20/Computer-Networking-Tutorial/" rel="next" title="Computer Networking Tutorial">
+                <i class="fa fa-chevron-left"></i> Computer Networking Tutorial
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/21/从零开始安装pwn环境/" rel="prev" title="从零开始安装pwn环境">
+                从零开始安装pwn环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Hy0uka">
+            
+              <p class="site-author-name" itemprop="name">Hy0uka</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archive">
+              
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友链
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/qq_39268483" title="playmake3r" target="_blank">playmake3r</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/qq_33356474" title="叮当猫" target="_blank">叮当猫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://slipslopx.github.io/" title="SlioslopX" target="_blank">SlioslopX</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#栈溢出与Shellcode"><span class="nav-number">1.</span> <span class="nav-text">栈溢出与Shellcode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈溢出利用思路"><span class="nav-number">1.0.1.</span> <span class="nav-text">栈溢出利用思路</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#保护及编译选项"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">保护及编译选项</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#栈布局Stack-Layout"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">栈布局Stack Layout</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Shellcode的编写调试和生成"><span class="nav-number">1.0.2.</span> <span class="nav-text">Shellcode的编写调试和生成</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#从Return-to-libc到ROP"><span class="nav-number">2.</span> <span class="nav-text">从Return to libc到ROP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#漏洞缓解措施Mitigation"><span class="nav-number">2.0.1.</span> <span class="nav-text">漏洞缓解措施Mitigation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Return-to-libc利用"><span class="nav-number">2.0.2.</span> <span class="nav-text">Return to libc利用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ROP-Return-Oriented-Programming"><span class="nav-number">2.0.3.</span> <span class="nav-text">ROP:Return Oriented Programming</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hy0uka</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+<div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style="display:none">
+    敝站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style="display:none">
+    共计<span id="busuanzi_value_site_uv"></span>人次莅临寒舍
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: '0GX1G6E7gI1yVdjUJKYMnVXv-gzGzoHsz',
+        appKey: 'BGdzmbmkaHb8MmitsLSmKyAg',
+        placeholder: '风过留声，燕过留痕，君过留言！',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  undefined
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+ 
+ <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+ <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+ <script type="text/javascript" src="/js/fireworks.js"></script>
+ 
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/"});</script></body>
+</html>

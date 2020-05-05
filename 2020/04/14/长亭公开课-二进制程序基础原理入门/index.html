@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="[TOC] 二进制基础程序的编译，汇编与链接编译：gcc -S，将源代码.c文件编译成.s的汇编代码 汇编：gcc/as，将.s汇编代码汇编成.o的目标文件 链接：gcc/ld，将库文件libA.a/libB.so与.o目标文件链接成可执行程序。库文件是可复用的代码(包括函数或变量)集合，用于向其他程序提供代码。静态库.a中的代码和数据会完整拷贝到可执行程序中，而动态库.so则需要在程序运行时通过">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-04-14T13:19:55.450Z">
+<meta property="og:updated_time" content="2020-04-21T03:05:56.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="长亭公开课-二进制程序基础原理入门">
 <meta name="twitter:description" content="[TOC] 二进制基础程序的编译，汇编与链接编译：gcc -S，将源代码.c文件编译成.s的汇编代码 汇编：gcc/as，将.s汇编代码汇编成.o的目标文件 链接：gcc/ld，将库文件libA.a/libB.so与.o目标文件链接成可执行程序。库文件是可复用的代码(包括函数或变量)集合，用于向其他程序提供代码。静态库.a中的代码和数据会完整拷贝到可执行程序中，而动态库.so则需要在程序运行时通过">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-04-14T21:19:55+08:00">
-                2020-04-14
+              <time title="Post modified" itemprop="dateModified" datetime="2020-04-21T11:05:56+08:00">
+                2020-04-21
               </time>
             
           </span>
@@ -422,10 +422,10 @@
 <p>Caller Clean-up，调用者负责清理栈上的参数：cdecl，optlink。</p>
 <p>Callee Clean-up，被调者负责清理栈上的参数：stdcall，fastcall。</p>
 <p>开辟栈帧时预留更多字节的空间(一般是16的倍数)，是为了内存中的字节对齐的需求。  </p>
-<p>调用函数后栈帧的布局要牢记，自己画一下。关于存放局部变量与参数的问题讲德挺详细。开辟栈帧之后sub 0X10，esp为了预留空间存放局部变量，也就是在函数中定义的变量。此时调用函数，再特地将esp下移，存放参数，参数可以用ebp+xx的偏移量表示。所以会存在中间有unused dword的情况。</p>
+<p>调用函数后栈帧的布局要牢记，自己画一下。关于存放局部变量与参数的问题讲的挺详细。开辟栈帧之后sub 0X10，esp为了预留空间存放局部变量，也就是在函数中定义的变量。此时调用函数，再特地将esp下移，存放参数，参数可以用ebp+xx的偏移量表示。所以会存在中间有unused dword的情况。</p>
 <p>cdecl在调用者的代码中会有add 0xxx，esp的操作，实际就是在清理栈上的参数。</p>
 <p>leave：用于清理的指令。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov esp,ebp</span><br><span class="line">pop ebp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov esp,ebp//push ebp</span><br><span class="line">pop ebp//mov ebp，esp，然后再开辟栈帧。</span><br></pre></td></tr></table></figure>
 
 <p>通过ebp恢复esp </p>
 <p>X86(32位)cdecl调用约定：用栈传递参数，用寄存器eax来保存返回值。</p>
@@ -551,14 +551,14 @@
 <p>ELF Header包含架构，ABI版本(包含调用约定)等基础信息,以及program header table的位置和数量，section header table的位置和数量。</p>
 <p>Program header table中每个表项定义了一个segment，每个segment可包含多个section。</p>
 <p>Setion header table中每个表项定义一个section。 </p>
-<h5 id="动态链接与延迟绑定"><a href="#动态链接与延迟绑定" class="headerlink" title="动态链接与延迟绑定"></a>动态链接与延迟绑定</h5><p>动态链接：一种运行时才会加载和链接程序所依赖的共享库的技术，Linux最常见的共享库时libc。</p>
-<p>重定位Relocations：之二进制文件中的待填充项。静态链接，链接器在链接时填充，例如链接多个目标文件的时候，修正相互引用的函数，变量地址。动态链接器在运行时填充，例如动态解析函数，printf.</p>
-<p>延迟绑定：外部函数的地址在运行时才会确定，外部函数符号在首次调用时才会被解析，外部变量不使用延迟绑定机制。</p>
-<p>GOT表：Global Offset Table，用于存放外部库函数地址。初始状态指向一段代码(PLT,过程链接表，Procedure Linkage Table)。当库函数首次调用，真正的函数地址会被解析并填入相应的GOT表项。每个外部函数均有一段PLT代码，用于跳转到响应GOT表项中存储的地址。</p>
-<p>例如调用puts函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">call 0X80482e0 &lt;puts@plt&gt;</span><br><span class="line"></span><br><span class="line">0x80482e0 &lt;puts@plt&gt;:jmp *0x804a00c(跳转到puts对应的GOT表项，初始状态指向puts@plt+6)</span><br><span class="line">0x80482e6 &lt;puts@plt+6&gt;:push $0x0（传入第一个参数0）</span><br><span class="line">0x80482eb &lt;puts@plt+11&gt;:jmp 0x80482d0（跳转到0x80482d0，一般称为PLT0）</span><br><span class="line"></span><br><span class="line">0x80482d0：push 0x804a004（传入第一个参数0x804a004，此处存的是Link_map）</span><br><span class="line">0x80482d6：jmp *0x804a008（跳转到*0x8048008，_dl_runtime_resolve)</span><br></pre></td></tr></table></figure>
+<h5 id="动态链接与延迟绑定"><a href="#动态链接与延迟绑定" class="headerlink" title="动态链接与延迟绑定"></a>动态链接与延迟绑定</h5><p>动态链接**：一种运行时才会加载和链接程序所依赖的共享库的技术，Linux最常见的共享库是libc。</p>
+<p><strong>重定位(Relocations</strong>)：指二进制文件中的待填充项，在程序运行之后重新填充的过程。静态链接中，链接器在链接时填充，例如链接多个目标文件的时候，修正相互引用的函数，变量地址。而动态链接中在运行时填充。</p>
+<p><strong>延迟绑定</strong>：外部函数的地址在运行时才会确定，外部函数符号在首次调用时才会被解析（外部变量不使用延迟绑定机制）。</p>
+<p><strong>GOT表(Global Offset Table)</strong>：用于存放外部库函数地址。初始状态指向一段代码(PLT,过程链接表，Procedure Linkage Table)。当库函数首次调用，真正的函数地址会被解析并填入相应的GOT表项。每个外部函数均有一段PLT代码，用于跳转到响应GOT表项中存储的地址。</p>
+<p>例如调用puts函数，从gdb中看是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">call 0X80482e0 &lt;puts@plt&gt;</span><br><span class="line"></span><br><span class="line">0x80482e0 &lt;puts@plt&gt;:jmp *0x804a00c(跳转到puts对应的GOT表项，初始状态指向puts@plt+6)</span><br><span class="line">0x80482e6 &lt;puts@plt+6&gt;:push $0x0（传入第一个参数0）</span><br><span class="line">0x80482eb &lt;puts@plt+11&gt;:jmp 0x80482d0（跳转到0x80482d0，这种地址一般称为PLT0）</span><br><span class="line"></span><br><span class="line">0x80482d0：push 0x804a004（传入第一个参数0x804a004，此处存的是Link_map）</span><br><span class="line">0x80482d6：jmp *0x804a008（跳转到*0x8048008，_dl_runtime_resolve)</span><br></pre></td></tr></table></figure>
 
-<p>也就是说第一次调用外部函数，执行PLT代码第一行跳转第二行第二行传参后执行第三行传参Link_map，后继续跳转执行_dl_runtime_resolve(运行时解析)，一个用来解析动态链接函数的函数，执行完后GOT表中就会有正确的函数运行地址，而后面调用时就无需跳转。</p>
+<p>也就是说第一次调用外部函数时，执行PLT代码第一行跳转到第二行，第二行传参后执行第三行传参Link_map，后继续跳转执行_dl_runtime_resolve(运行时解析，一个用来解析动态链接函数的函数)，执行完后GOT表中就会有正确的函数运行地址，而后面调用时就无需跳转。</p>
 <p>.got Section中存放外部全局变量的GOT表，非延迟绑定。</p>
 <p>.got.plt Section中存放外部函数的GOT表，采用延迟绑定。</p>
 <table>
@@ -587,33 +587,32 @@
 </tbody></table>
 <p>.got.plt前三项有特殊含义：</p>
 <ol>
-<li>.dynamix section,为动态链接提供信息</li>
+<li>.dynamic section,为动态链接提供信息。</li>
 <li>link_map，一个链表，包含所有加载的共享库信息。</li>
 <li>_run_time_reslove,位于loader中，用于解析外部函数符号的函数。解析完成之后会直接执行该函数。</li>
 </ol>
-<p>从全局中看，.got.plt是sections的一部分</p>
+<p>从全局中看，.got.plt是sections的一部分：</p>
 <blockquote>
 <p>.dynamic</p>
 <p>.got</p>
 <p>.got.plt</p>
 <p>.data</p>
 </blockquote>
-<p>其中的.got.plt细分为</p>
+<p>其中的.got.plt细分为：</p>
 <blockquote>
 <p>.dynamic section地址</p>
 <p>link_map地址</p>
 <p>_dl_runtime_reslove地址</p>
-<p>//从第四项开始就是外部函数的GOT表项</p>
+<p>(从第四项开始就是外部函数的GOT表项)</p>
 </blockquote>
 <p>.plt Section中存放所有外部函数的plt表项。</p>
-<p>PLT0，push link_map跳转到_dl_runtime_reslove. </p>
 <h5 id="GOT表劫持攻击"><a href="#GOT表劫持攻击" class="headerlink" title="GOT表劫持攻击"></a>GOT表劫持攻击</h5><p>延迟绑定机制要求GOT表必须可写，内存泄露可导致GOT表项被改写，从而劫持PC。</p>
-<p>防御GOT表劫持：重定位只读缓解措施：</p>
+<p>防御GOT表劫持：重定位只读缓解措施,在编译时加入以下参数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc-z,relro</span><br></pre></td></tr></table></figure>
 
-<p>在进入main()之前，所有的外部函数都会被解析。所有GOT表设置为只读。</p>
+<p>原理：在进入main()之前，所有的外部函数都会被解析。所有GOT表设置为只读。</p>
 <p>绕过方法：劫持为开启该保护的动态库中的GOT表/改写函数返回地址或者函数指针。</p>
-<h5 id="整数溢出"><a href="#整数溢出" class="headerlink" title="整数溢出"></a>整数溢出</h5><p>IO2BO，利用对signed和unsigned的过滤不充分，用负数产生溢出。</p>
+<p>IO2BO，利用对signed和unsigned的过滤不充分，用负数产生溢出。</p>
 <p>数组下标越界</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (index&lt;arr_size)&#123;</span><br><span class="line">	arr[index]=value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -665,6 +664,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/20/Computer-Networking-Tutorial/" rel="prev" title="Computer Networking Tutorial">
+                Computer Networking Tutorial <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -746,7 +749,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -830,7 +833,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制基础"><span class="nav-number">1.</span> <span class="nav-text">二进制基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#程序的编译，汇编与链接"><span class="nav-number">1.0.1.</span> <span class="nav-text">程序的编译，汇编与链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#X86机器指令入门"><span class="nav-number">1.0.2.</span> <span class="nav-text">X86机器指令入门</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用约定"><span class="nav-number">1.0.3.</span> <span class="nav-text">调用约定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux-x86进程内存空间布局："><span class="nav-number">1.0.4.</span> <span class="nav-text">Linux x86进程内存空间布局：</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#ELF与动态链接"><span class="nav-number">2.</span> <span class="nav-text">ELF与动态链接</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ELF文件格式"><span class="nav-number">2.0.1.</span> <span class="nav-text">ELF文件格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态链接与延迟绑定"><span class="nav-number">2.0.2.</span> <span class="nav-text">动态链接与延迟绑定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GOT表劫持攻击"><span class="nav-number">2.0.3.</span> <span class="nav-text">GOT表劫持攻击</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#整数溢出"><span class="nav-number">2.0.4.</span> <span class="nav-text">整数溢出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#释放后利用UAF"><span class="nav-number">2.0.5.</span> <span class="nav-text">释放后利用UAF</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制基础"><span class="nav-number">1.</span> <span class="nav-text">二进制基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#程序的编译，汇编与链接"><span class="nav-number">1.0.1.</span> <span class="nav-text">程序的编译，汇编与链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#X86机器指令入门"><span class="nav-number">1.0.2.</span> <span class="nav-text">X86机器指令入门</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调用约定"><span class="nav-number">1.0.3.</span> <span class="nav-text">调用约定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux-x86进程内存空间布局："><span class="nav-number">1.0.4.</span> <span class="nav-text">Linux x86进程内存空间布局：</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#ELF与动态链接"><span class="nav-number">2.</span> <span class="nav-text">ELF与动态链接</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ELF文件格式"><span class="nav-number">2.0.1.</span> <span class="nav-text">ELF文件格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态链接与延迟绑定"><span class="nav-number">2.0.2.</span> <span class="nav-text">动态链接与延迟绑定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GOT表劫持攻击"><span class="nav-number">2.0.3.</span> <span class="nav-text">GOT表劫持攻击</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#释放后利用UAF"><span class="nav-number">2.0.4.</span> <span class="nav-text">释放后利用UAF</span></a></li></ol></li></div>
             
 
           </div>
