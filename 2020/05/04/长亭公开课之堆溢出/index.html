@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="什么是堆栈通常用于为函数分配固定大小的局部内存，而堆是可以根据运行时的需要进行动态分配与释放的内存，大小可变。Malloc/New-Free/Delete，两组接口，分别是申请内存的两种方式，C与C++。 堆的实现重点关注内存块的组织和管理方式，尤其是空闲内存块。重点在于如何提高分配和释放效率/如何降低碎片化，提高空间利用率。 常见堆实现 dlmalloc-通用分配器 ptmalloc2-glib">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-04T14:25:35.009Z">
+<meta property="og:updated_time" content="2020-05-05T07:51:47.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="长亭公开课之堆溢出">
 <meta name="twitter:description" content="什么是堆栈通常用于为函数分配固定大小的局部内存，而堆是可以根据运行时的需要进行动态分配与释放的内存，大小可变。Malloc/New-Free/Delete，两组接口，分别是申请内存的两种方式，C与C++。 堆的实现重点关注内存块的组织和管理方式，尤其是空闲内存块。重点在于如何提高分配和释放效率/如何降低碎片化，提高空间利用率。 常见堆实现 dlmalloc-通用分配器 ptmalloc2-glib">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-05-04T22:25:35+08:00">
-                2020-05-04
+              <time title="Post modified" itemprop="dateModified" datetime="2020-05-05T15:51:47+08:00">
+                2020-05-05
               </time>
             
           </span>
@@ -416,7 +416,7 @@
 <p>返回的chunk只要保证其中的可用数据大小大于等于用户申请即可。</p>
 <p>在x86 32位平台下，chunk的大小一定是8字节的整数倍，x64平台下，chunk的大小一定是16字节的整数倍。</p>
 <h5 id="Bins结构"><a href="#Bins结构" class="headerlink" title="Bins结构"></a>Bins结构</h5><p>用来管理和组织空闲内存块的链表结构，根据大小状态分为许多。</p>
-<p>Fast bins，用汉语管理小的chunk。</p>
+<p>Fast bins，小的chunk。</p>
 <p>small bins，中等大小的chunk</p>
 <p>large bins，较大的chunk</p>
 <p>unsorted bins，存放未整理chunk。</p>
@@ -466,6 +466,9 @@
 <li>下次分配时分配出伪造的Fast chunk。</li>
 <li>伪造的Fast chunk可以在.bss全局变量处，也可以在栈上。</li>
 </ol>
+<p>在栈上伪造Fast chunk：覆盖返回地址。</p>
+<p>在bss上伪造Fast chunk，修改全局变量。</p>
+<p>在堆上伪造Fast chunk，修改堆上的数据。</p>
 <h4 id="新版本中glibc中的tcache"><a href="#新版本中glibc中的tcache" class="headerlink" title="新版本中glibc中的tcache"></a>新版本中glibc中的tcache</h4><h4 id="堆的花式玩法"><a href="#堆的花式玩法" class="headerlink" title="堆的花式玩法"></a>堆的花式玩法</h4>
       
     </div>
