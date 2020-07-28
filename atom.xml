@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qywcysry.github.io/"/>
-  <updated>2020-05-05T07:51:47.216Z</updated>
+  <updated>2020-07-24T14:21:31.098Z</updated>
   <id>http://qywcysry.github.io/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Computer Networking A Top-Down Approach</title>
+    <link href="http://qywcysry.github.io/2020/07/16/Computer-Networking-A-Top-Down-Approach/"/>
+    <id>http://qywcysry.github.io/2020/07/16/Computer-Networking-A-Top-Down-Approach/</id>
+    <published>2020-07-16T13:09:48.000Z</published>
+    <updated>2020-07-24T14:21:31.098Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;在开始任何旅行之前,我们首先要查看路线图,以便更熟悉前面的主要道路和交界处,对于我们着手从事的这个travel,最终目的是深入理解有关计算机网络的怎么,什么和为什么.我们的路线图是本书各章顺序.(本科建议前5章).BRIEF!&lt;/p&gt;
+&lt;ol&gt;
+&lt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="http://qywcysry.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>互联网协议入门</title>
+    <link href="http://qywcysry.github.io/2020/07/16/%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E5%85%A5%E9%97%A8/"/>
+    <id>http://qywcysry.github.io/2020/07/16/互联网协议入门/</id>
+    <published>2020-07-16T07:24:35.000Z</published>
+    <updated>2020-07-16T13:02:23.912Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt; 硬学计网的时候有些头大,找到了这篇文章,首先对整体有一个认识,再换一本书,机械工业出版社的《Computer Networking A Top-Down Approach》.&lt;/p&gt;
+&lt;h4 id=&quot;序&quot;&gt;&lt;a href=&quot;#序&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="http://qywcysry.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>长亭公开课之堆溢出</title>
     <link href="http://qywcysry.github.io/2020/05/04/%E9%95%BF%E4%BA%AD%E5%85%AC%E5%BC%80%E8%AF%BE%E4%B9%8B%E5%A0%86%E6%BA%A2%E5%87%BA/"/>
     <id>http://qywcysry.github.io/2020/05/04/长亭公开课之堆溢出/</id>
     <published>2020-05-04T09:41:45.000Z</published>
-    <updated>2020-05-05T07:51:47.216Z</updated>
+    <updated>2020-05-17T13:47:36.862Z</updated>
     
     <summary type="html">
     
@@ -62,75 +114,11 @@
   </entry>
   
   <entry>
-    <title>数据链路层</title>
-    <link href="http://qywcysry.github.io/2020/04/29/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"/>
-    <id>http://qywcysry.github.io/2020/04/29/数据链路层/</id>
-    <published>2020-04-29T07:14:22.000Z</published>
-    <updated>2020-04-29T07:14:22.376Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>物理层</title>
-    <link href="http://qywcysry.github.io/2020/04/29/%E7%89%A9%E7%90%86%E5%B1%82/"/>
-    <id>http://qywcysry.github.io/2020/04/29/物理层/</id>
-    <published>2020-04-29T07:13:49.000Z</published>
-    <updated>2020-04-29T07:13:49.544Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>运输层</title>
-    <link href="http://qywcysry.github.io/2020/04/27/%E8%BF%90%E8%BE%93%E5%B1%82/"/>
-    <id>http://qywcysry.github.io/2020/04/27/运输层/</id>
-    <published>2020-04-27T08:01:01.000Z</published>
-    <updated>2020-04-27T08:28:06.480Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>长亭公开课之ROP实战</title>
-    <link href="http://qywcysry.github.io/2020/04/24/%E9%95%BF%E4%BA%AD%E5%85%AC%E5%BC%80%E8%AF%BE%E4%B9%8BROP%E5%AE%9E%E6%88%98/"/>
-    <id>http://qywcysry.github.io/2020/04/24/长亭公开课之ROP实战/</id>
-    <published>2020-04-24T07:03:33.000Z</published>
-    <updated>2020-04-24T07:56:31.083Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Return to libc
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Errors</title>
     <link href="http://qywcysry.github.io/2020/04/22/Errors/"/>
     <id>http://qywcysry.github.io/2020/04/22/Errors/</id>
     <published>2020-04-22T07:08:38.000Z</published>
-    <updated>2020-05-01T12:33:32.980Z</updated>
+    <updated>2020-05-17T14:26:37.306Z</updated>
     
     <summary type="html">
     
@@ -156,7 +144,7 @@
     <link href="http://qywcysry.github.io/2020/04/21/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85pwn%E7%8E%AF%E5%A2%83/"/>
     <id>http://qywcysry.github.io/2020/04/21/从零开始安装pwn环境/</id>
     <published>2020-04-21T12:53:05.000Z</published>
-    <updated>2020-04-22T01:10:39.798Z</updated>
+    <updated>2020-05-18T03:44:23.979Z</updated>
     
     <summary type="html">
     
@@ -363,11 +351,79 @@
   </entry>
   
   <entry>
-    <title>分布式爬虫</title>
-    <link href="http://qywcysry.github.io/2020/04/01/%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB/"/>
-    <id>http://qywcysry.github.io/2020/04/01/分布式爬虫/</id>
-    <published>2020-04-01T15:02:20.000Z</published>
-    <updated>2020-04-01T15:02:20.824Z</updated>
+    <title>基本库与解析库的使用</title>
+    <link href="http://qywcysry.github.io/2020/04/01/%E5%9F%BA%E6%9C%AC%E5%BA%93%E4%B8%8E%E8%A7%A3%E6%9E%90%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://qywcysry.github.io/2020/04/01/基本库与解析库的使用/</id>
+    <published>2020-04-01T14:59:24.000Z</published>
+    <updated>2020-04-09T04:26:44.068Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;urllib&quot;&gt;&lt;a href=&quot;#urllib&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AES加密</title>
+    <link href="http://qywcysry.github.io/2020/03/29/AES%E5%8A%A0%E5%AF%86/"/>
+    <id>http://qywcysry.github.io/2020/03/29/AES加密/</id>
+    <published>2020-03-29T12:09:36.000Z</published>
+    <updated>2020-03-29T12:10:11.930Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;AES加密详解&quot;&gt;&lt;a href=&quot;#AES加密详解&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Crypto" scheme="http://qywcysry.github.io/tags/Crypto/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python的zipfile模块</title>
+    <link href="http://qywcysry.github.io/2020/03/25/python%E7%9A%84zipfile%E6%A8%A1%E5%9D%97/"/>
+    <id>http://qywcysry.github.io/2020/03/25/python的zipfile模块/</id>
+    <published>2020-03-25T12:46:01.000Z</published>
+    <updated>2020-03-25T13:09:19.058Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;zipfile是python里用来做zip格式编码的压缩和解压缩的。有两个非常常用的class, 分别是ZipFile和ZipInfo,
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Docker</title>
+    <link href="http://qywcysry.github.io/2020/03/24/Docker/"/>
+    <id>http://qywcysry.github.io/2020/03/24/Docker/</id>
+    <published>2020-03-24T03:23:51.000Z</published>
+    <updated>2020-05-05T13:04:50.870Z</updated>
     
     <summary type="html">
     
@@ -377,44 +433,52 @@
   </entry>
   
   <entry>
-    <title>Pyspider&amp;Scrapy框架使用</title>
-    <link href="http://qywcysry.github.io/2020/04/01/Pyspider-Scrapy%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/"/>
-    <id>http://qywcysry.github.io/2020/04/01/Pyspider-Scrapy框架使用/</id>
-    <published>2020-04-01T15:02:06.000Z</published>
-    <updated>2020-04-01T15:02:06.325Z</updated>
+    <title>FTP配置</title>
+    <link href="http://qywcysry.github.io/2020/03/21/FTP%E9%85%8D%E7%BD%AE/"/>
+    <id>http://qywcysry.github.io/2020/03/21/FTP配置/</id>
+    <published>2020-03-21T01:28:31.000Z</published>
+    <updated>2020-03-21T01:36:33.492Z</updated>
     
     <summary type="html">
     
+      
+      
+        
+        
+          &lt;p&gt;说起来有点搞笑，查到腾讯云的教程，看webshell的标准登陆方式，发现出来个二维码让我登录，愣了愣，想起来自己领的是阿里云。&lt;/p&gt;
+&lt;p&gt;Vsftpd即very secure FTP
+        
+      
+    
     </summary>
     
+    
+      <category term="FTP" scheme="http://qywcysry.github.io/tags/FTP/"/>
     
   </entry>
   
   <entry>
-    <title>模拟登录与APP爬取</title>
-    <link href="http://qywcysry.github.io/2020/04/01/%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E4%B8%8EAPP%E7%88%AC%E5%8F%96/"/>
-    <id>http://qywcysry.github.io/2020/04/01/模拟登录与APP爬取/</id>
-    <published>2020-04-01T15:01:28.000Z</published>
-    <updated>2020-04-01T15:01:28.418Z</updated>
+    <title>环境配置与爬虫基础</title>
+    <link href="http://qywcysry.github.io/2020/03/17/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B9%8Bpython3%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/"/>
+    <id>http://qywcysry.github.io/2020/03/17/读书笔记之python3网络爬虫开发实战/</id>
+    <published>2020-03-17T03:44:46.000Z</published>
+    <updated>2020-04-01T14:56:46.911Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h3 id=&quot;第一章：环境配置&quot;&gt;&lt;a href=&quot;#第一章：环境配置&quot; class=&quot;headerlink&quot; title=&quot;第一章：环境配置&quot;&gt;&lt;/a&gt;第一章：环境配置&lt;/h3&gt;&lt;h5 id=&quot;Python3的安装&quot;&gt;&lt;a
+        
+      
     
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>验证码识别与代理使用</title>
-    <link href="http://qywcysry.github.io/2020/04/01/%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E4%B8%8E%E4%BB%A3%E7%90%86%E4%BD%BF%E7%94%A8/"/>
-    <id>http://qywcysry.github.io/2020/04/01/验证码识别与代理使用/</id>
-    <published>2020-04-01T15:01:05.000Z</published>
-    <updated>2020-04-01T15:01:05.977Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
+      <category term="python3网络爬虫开发实战" scheme="http://qywcysry.github.io/tags/python3%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   

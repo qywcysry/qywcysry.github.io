@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="gcc编译时报错 12345In file included from stacktest.c:1:0:/usr/include/stdio.h:27:10: fatal error: bits/libc-header-start.h: 没有那个文件或目录 #include &amp;lt;bits/libc-header-start.h&amp;gt;          ^~~~~~~~~~~~~~~~~~~">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-01T12:33:32.980Z">
+<meta property="og:updated_time" content="2020-05-17T14:26:37.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Errors">
 <meta name="twitter:description" content="gcc编译时报错 12345In file included from stacktest.c:1:0:/usr/include/stdio.h:27:10: fatal error: bits/libc-header-start.h: 没有那个文件或目录 #include &amp;lt;bits/libc-header-start.h&amp;gt;          ^~~~~~~~~~~~~~~~~~~">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-05-01T20:33:32+08:00">
-                2020-05-01
+              <time title="Post modified" itemprop="dateModified" datetime="2020-05-17T22:26:37+08:00">
+                2020-05-17
               </time>
             
           </span>
@@ -412,6 +412,19 @@
 <p>4.代码中全局变量占内存太大？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../x86_64-pc-cygwin/bin/ld: /tmp/ccNBY84M.o:ODGF.c:(.text+0x17c): undefined reference to `ODGF_rq_reference_measurement&apos;</span><br><span class="line">/tmp/ccNBY84M.o:ODGF.c:(.text+0x17c): relocation truncated to fit: R_X86_64_PC32 against undefined symbol `ODGF_rq_reference_measurement&apos;</span><br><span class="line">collect2: 错误：ld 返回 1</span><br><span class="line">make: *** [makefile:39：libODGF] 错误 1</span><br></pre></td></tr></table></figure>
 
+<p>5.运行《游戏外挂攻防艺术》随书文件报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">应用程序无法启动，因为应用程序的并行配置不正确</span><br></pre></td></tr></table></figure>
+
+<p>应该是缺少某个支持的文件，查看下日志。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">以管理员身份运行cmd</span><br><span class="line">sxstrace.exe Trace -logfile:D:\trace.log(自定义path)，开始跟踪。</span><br><span class="line">运行应用程序，回车，完成跟踪报告。</span><br><span class="line">sxstrace.exe Paese -logfile:D:\trace.log -outfile:D:\trace.txt</span><br><span class="line">打开trace.txt查看日志，找到缺少的C++库。</span><br></pre></td></tr></table></figure>
+
+<p>6.Ubuntu16.04安装pip3报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">下列软件包有未满足的依赖关系：</span><br><span class="line"> gnupg : 破坏: software-properties-common (&lt;= 0.96.24.3) 但是 0.96.20.9 正要被安装</span><br><span class="line">E: 错误，pkgProblemResolver::Resolve 发生故障，这可能是有软件包被要求保持现状的缘故。</span><br></pre></td></tr></table></figure>
+
+<p>解决办法，先把报错的包直接uninstall再继续安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install pip3</span><br></pre></td></tr></table></figure>
+
+<p>之后删了一堆东西，左边工具栏都空了一半，也不知道有什么影响。</p>
 
       
     </div>
@@ -464,8 +477,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/24/长亭公开课之ROP实战/" rel="prev" title="长亭公开课之ROP实战">
-                长亭公开课之ROP实战 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/01/makefile入门/" rel="prev" title="makefile入门">
+                makefile入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,7 +552,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -561,7 +574,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

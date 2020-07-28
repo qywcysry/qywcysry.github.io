@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Hy0uka">
 <meta property="og:description" content="什么是堆栈通常用于为函数分配固定大小的局部内存，而堆是可以根据运行时的需要进行动态分配与释放的内存，大小可变。Malloc/New-Free/Delete，两组接口，分别是申请内存的两种方式，C与C++。 堆的实现重点关注内存块的组织和管理方式，尤其是空闲内存块。重点在于如何提高分配和释放效率/如何降低碎片化，提高空间利用率。 常见堆实现 dlmalloc-通用分配器 ptmalloc2-glib">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-05T07:51:47.216Z">
+<meta property="og:updated_time" content="2020-05-17T13:47:36.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="长亭公开课之堆溢出">
 <meta name="twitter:description" content="什么是堆栈通常用于为函数分配固定大小的局部内存，而堆是可以根据运行时的需要进行动态分配与释放的内存，大小可变。Malloc/New-Free/Delete，两组接口，分别是申请内存的两种方式，C与C++。 堆的实现重点关注内存块的组织和管理方式，尤其是空闲内存块。重点在于如何提高分配和释放效率/如何降低碎片化，提高空间利用率。 常见堆实现 dlmalloc-通用分配器 ptmalloc2-glib">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-05-05T15:51:47+08:00">
-                2020-05-05
+              <time title="Post modified" itemprop="dateModified" datetime="2020-05-17T21:47:36+08:00">
+                2020-05-17
               </time>
             
           </span>
@@ -469,7 +469,9 @@
 <p>在栈上伪造Fast chunk：覆盖返回地址。</p>
 <p>在bss上伪造Fast chunk，修改全局变量。</p>
 <p>在堆上伪造Fast chunk，修改堆上的数据。</p>
-<h4 id="新版本中glibc中的tcache"><a href="#新版本中glibc中的tcache" class="headerlink" title="新版本中glibc中的tcache"></a>新版本中glibc中的tcache</h4><h4 id="堆的花式玩法"><a href="#堆的花式玩法" class="headerlink" title="堆的花式玩法"></a>堆的花式玩法</h4>
+<h4 id="新版本中glibc中的tcache"><a href="#新版本中glibc中的tcache" class="headerlink" title="新版本中glibc中的tcache"></a>新版本中glibc中的tcache</h4><h4 id="堆的花式玩法"><a href="#堆的花式玩法" class="headerlink" title="堆的花式玩法"></a>堆的花式玩法</h4><h4 id="指针与地址"><a href="#指针与地址" class="headerlink" title="指针与地址"></a>指针与地址</h4><p>用户在调用malloc函数时返回的值为一个指针，指向分配到的堆空间（用户数据区）</p>
+<h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><p>在pwn的堆题中，经常会有一些”笔记管理系统”的题目，笔记的数据结构就是使用链表连接起来的</p>
+
       
     </div>
 
@@ -514,6 +516,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/16/互联网协议入门/" rel="prev" title="互联网协议入门">
+                互联网协议入门 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -595,7 +601,7 @@
               
                 <a href="/archive">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -617,7 +623,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -679,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是堆"><span class="nav-number">1.</span> <span class="nav-text">什么是堆</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常见堆实现"><span class="nav-number">1.1.</span> <span class="nav-text">常见堆实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ptmalloc2的多线程支持："><span class="nav-number">1.2.</span> <span class="nav-text">ptmalloc2的多线程支持：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#glibc的堆管理实现"><span class="nav-number">2.</span> <span class="nav-text">glibc的堆管理实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#arena"><span class="nav-number">2.1.</span> <span class="nav-text">arena</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#malloc-state"><span class="nav-number">2.2.</span> <span class="nav-text">malloc_state</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bins"><span class="nav-number">2.3.</span> <span class="nav-text">bins</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#chunks"><span class="nav-number">2.4.</span> <span class="nav-text">chunks</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arena的头部结构：malloc-state"><span class="nav-number">2.5.</span> <span class="nav-text">arena的头部结构：malloc_state</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bins结构"><span class="nav-number">2.6.</span> <span class="nav-text">Bins结构</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fastbin-attack"><span class="nav-number">3.</span> <span class="nav-text">fastbin attack</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#small-bins"><span class="nav-number">3.1.</span> <span class="nav-text">small bins</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#large-bins-QQ图片20200504204347-D-My-Daily-P-QQ图片20200504204347-png"><span class="nav-number">3.2.</span> <span class="nav-text">large bins![QQ图片20200504204347](D:\My Daily\P\QQ图片20200504204347.png)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unsorted-bins（放入对应的xxxx有误）"><span class="nav-number">3.3.</span> <span class="nav-text">unsorted bins（放入对应的xxxx有误）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#malloc和free的工作流程"><span class="nav-number">4.</span> <span class="nav-text">malloc和free的工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#malloc-工作流程"><span class="nav-number">4.1.</span> <span class="nav-text">malloc()工作流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#free-的工作流程"><span class="nav-number">4.2.</span> <span class="nav-text">free()的工作流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Fast-bin利用技术"><span class="nav-number">4.3.</span> <span class="nav-text">Fast bin利用技术</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新版本中glibc中的tcache"><span class="nav-number">5.</span> <span class="nav-text">新版本中glibc中的tcache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆的花式玩法"><span class="nav-number">6.</span> <span class="nav-text">堆的花式玩法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是堆"><span class="nav-number">1.</span> <span class="nav-text">什么是堆</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常见堆实现"><span class="nav-number">1.1.</span> <span class="nav-text">常见堆实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ptmalloc2的多线程支持："><span class="nav-number">1.2.</span> <span class="nav-text">ptmalloc2的多线程支持：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#glibc的堆管理实现"><span class="nav-number">2.</span> <span class="nav-text">glibc的堆管理实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#arena"><span class="nav-number">2.1.</span> <span class="nav-text">arena</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#malloc-state"><span class="nav-number">2.2.</span> <span class="nav-text">malloc_state</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bins"><span class="nav-number">2.3.</span> <span class="nav-text">bins</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#chunks"><span class="nav-number">2.4.</span> <span class="nav-text">chunks</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#arena的头部结构：malloc-state"><span class="nav-number">2.5.</span> <span class="nav-text">arena的头部结构：malloc_state</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bins结构"><span class="nav-number">2.6.</span> <span class="nav-text">Bins结构</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fastbin-attack"><span class="nav-number">3.</span> <span class="nav-text">fastbin attack</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#small-bins"><span class="nav-number">3.1.</span> <span class="nav-text">small bins</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#large-bins-QQ图片20200504204347-D-My-Daily-P-QQ图片20200504204347-png"><span class="nav-number">3.2.</span> <span class="nav-text">large bins![QQ图片20200504204347](D:\My Daily\P\QQ图片20200504204347.png)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unsorted-bins（放入对应的xxxx有误）"><span class="nav-number">3.3.</span> <span class="nav-text">unsorted bins（放入对应的xxxx有误）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#malloc和free的工作流程"><span class="nav-number">4.</span> <span class="nav-text">malloc和free的工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#malloc-工作流程"><span class="nav-number">4.1.</span> <span class="nav-text">malloc()工作流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#free-的工作流程"><span class="nav-number">4.2.</span> <span class="nav-text">free()的工作流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Fast-bin利用技术"><span class="nav-number">4.3.</span> <span class="nav-text">Fast bin利用技术</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新版本中glibc中的tcache"><span class="nav-number">5.</span> <span class="nav-text">新版本中glibc中的tcache</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆的花式玩法"><span class="nav-number">6.</span> <span class="nav-text">堆的花式玩法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针与地址"><span class="nav-number">7.</span> <span class="nav-text">指针与地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链表"><span class="nav-number">8.</span> <span class="nav-text">链表</span></a></li></ol></div>
             
 
           </div>

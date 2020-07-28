@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="计算机网络,">
 
 
 
@@ -81,17 +81,29 @@
 
 
 
-<meta name="description" content="[TOC] 树(tree)一：树的相关基本概念： 树是n个节点的有限集(n&amp;gt;=0)，当n=1时，该元素就称为树的根节点，当n&amp;gt;1时，其他节点可分为m个非空且不相交的有限集称为子树(SubTree)。 树的节点包含一个数据元素以及若干指向子树的分支，节点拥有的子树个数称为节点的度(Degree),度为0的节点称为叶子(Leaf)或终端节点，度不为零的节点称为非终端节点/分支节点。 一棵树">
+<meta name="description" content="硬学计网的时候有些头大,找到了这篇文章,首先对整体有一个认识,再换一本书,机械工业出版社的《Computer Networking A Top-Down Approach》. 序互联网的核心是一系列协议,总称为互联网协议:Internet Protocol Suite.它们对电脑如何连接和组网,做出了详尽的规定.理解了这些协议的规定,就理解了互联网的原理. 概述五层模型自顶向下分别为应用层App">
+<meta name="keywords" content="计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Tree">
-<meta property="og:url" content="http://qywcysry.github.io/2019/11/17/Tree/index.html">
+<meta property="og:title" content="互联网协议入门">
+<meta property="og:url" content="http://qywcysry.github.io/2020/07/16/互联网协议入门/index.html">
 <meta property="og:site_name" content="Hy0uka">
-<meta property="og:description" content="[TOC] 树(tree)一：树的相关基本概念： 树是n个节点的有限集(n&amp;gt;=0)，当n=1时，该元素就称为树的根节点，当n&amp;gt;1时，其他节点可分为m个非空且不相交的有限集称为子树(SubTree)。 树的节点包含一个数据元素以及若干指向子树的分支，节点拥有的子树个数称为节点的度(Degree),度为0的节点称为叶子(Leaf)或终端节点，度不为零的节点称为非终端节点/分支节点。 一棵树">
+<meta property="og:description" content="硬学计网的时候有些头大,找到了这篇文章,首先对整体有一个认识,再换一本书,机械工业出版社的《Computer Networking A Top-Down Approach》. 序互联网的核心是一系列协议,总称为互联网协议:Internet Protocol Suite.它们对电脑如何连接和组网,做出了详尽的规定.理解了这些协议的规定,就理解了互联网的原理. 概述五层模型自顶向下分别为应用层App">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-17T14:44:21.823Z">
+<meta property="og:image" content="https://pic004.cnblogs.com/news/201205/20120531_153208_10.jpg">
+<meta property="og:image" content="https://pic004.cnblogs.com/news/201205/20120531_153209_11.jpg">
+<meta property="og:image" content="https://pic004.cnblogs.com/news/201205/20120531_153209_12.jpg">
+<meta property="og:image" content="https://pic004.cnblogs.com/news/201205/20120531_153209_13.jpg">
+<meta property="og:image" content="https://pic004.cnblogs.com/news/201205/20120531_153209_14.jpg">
+<meta property="og:image" content="https://segmentfault.com/img/bVc8eX">
+<meta property="og:image" content="https://segmentfault.com/img/bVc8e1">
+<meta property="og:image" content="https://segmentfault.com/img/bVc8e4">
+<meta property="og:image" content="https://segmentfault.com/img/bVc8e6">
+<meta property="og:image" content="https://segmentfault.com/img/bVc8e7">
+<meta property="og:updated_time" content="2020-07-16T13:02:23.912Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tree">
-<meta name="twitter:description" content="[TOC] 树(tree)一：树的相关基本概念： 树是n个节点的有限集(n&amp;gt;=0)，当n=1时，该元素就称为树的根节点，当n&amp;gt;1时，其他节点可分为m个非空且不相交的有限集称为子树(SubTree)。 树的节点包含一个数据元素以及若干指向子树的分支，节点拥有的子树个数称为节点的度(Degree),度为0的节点称为叶子(Leaf)或终端节点，度不为零的节点称为非终端节点/分支节点。 一棵树">
+<meta name="twitter:title" content="互联网协议入门">
+<meta name="twitter:description" content="硬学计网的时候有些头大,找到了这篇文章,首先对整体有一个认识,再换一本书,机械工业出版社的《Computer Networking A Top-Down Approach》. 序互联网的核心是一系列协议,总称为互联网协议:Internet Protocol Suite.它们对电脑如何连接和组网,做出了详尽的规定.理解了这些协议的规定,就理解了互联网的原理. 概述五层模型自顶向下分别为应用层App">
+<meta name="twitter:image" content="https://pic004.cnblogs.com/news/201205/20120531_153208_10.jpg">
 
 
 
@@ -121,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://qywcysry.github.io/2019/11/17/Tree/">
+  <link rel="canonical" href="http://qywcysry.github.io/2020/07/16/互联网协议入门/">
 
 
 
 
 
-  <title>Tree | Hy0uka</title>
+  <title>互联网协议入门 | Hy0uka</title>
   
 
 
@@ -290,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2019/11/17/Tree/">
+    <link itemprop="mainEntityOfPage" href="http://qywcysry.github.io/2020/07/16/互联网协议入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hy0uka">
@@ -307,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Tree</h1>
+          <h1 class="post-title" itemprop="name headline">互联网协议入门</h1>
         
 
         <div class="post-meta">
@@ -319,8 +331,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-17T22:42:37+08:00">
-                2019-11-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-16T15:24:35+08:00">
+                2020-07-16
               </time>
             
 
@@ -335,8 +347,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-11-17T22:44:21+08:00">
-                2019-11-17
+              <time title="Post modified" itemprop="dateModified" datetime="2020-07-16T21:02:23+08:00">
+                2020-07-16
               </time>
             
           </span>
@@ -350,8 +362,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/11/17/Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/17/Tree/" itemprop="commentCount"></span>
+                <a href="/2020/07/16/互联网协议入门/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/16/互联网协议入门/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,36 +396,79 @@
       
 
       
-        <p>[TOC]</p>
-<h2 id="树-tree"><a href="#树-tree" class="headerlink" title="树(tree)"></a>树(tree)</h2><h4 id="一：树的相关基本概念："><a href="#一：树的相关基本概念：" class="headerlink" title="一：树的相关基本概念："></a>一：树的相关基本概念：</h4><ol>
-<li>树是n个节点的有限集(n&gt;=0)，当n=1时，该元素就称为树的<strong>根节点</strong>，当n&gt;1时，其他节点可分为m个非空且不相交的有限集称为<strong>子树</strong>(SubTree)。</li>
-<li>树的节点包含一个数据元素以及若干指向子树的分支，节点拥有的子树个数称为节点的<strong>度</strong>(Degree),度为0的节点称为<strong>叶子</strong>(Leaf)或<strong>终端节点</strong>，度不为零的节点称为非终端节点/分支节点。</li>
-<li>一棵树中各个节点的度的最大值称为该<strong>树的度</strong>。</li>
-<li>节点(<strong>双亲节点</strong>)的子树的根节点，称为该节点的<strong>孩子节点</strong>。同一个双亲节点的孩子节点之间互称兄弟(Sibling),双亲节点不相同但处于同一层的互称堂兄弟。</li>
-<li>在一棵树中，每个节点都有自己的<strong>层次</strong>(度表示的是另一个维度)，层次的顺序为：根节点位于1层，树中节点的层次的最大值称为树的<strong>深度</strong>(Depth)或高度。</li>
-<li>在一棵树中，同层的孩子节点左右互换会发生变化，则该树称为<strong>有序树</strong>，反之称为<strong>无序树</strong>。</li>
-<li>树的几个基本特征：一棵由n个节点组成的树，其边的数目为n-1。如果一个实际问题在建模时无法用一棵树表达，而必须采用多棵互不相交的树来表示，那么这些多棵互不相交的树称为<strong>森林</strong>。</li>
-<li>树的存储结构表示：双亲表示法，孩子表示法，孩子兄弟表示法。(树的存储，<strong>关键在于存储数据元素与数据元素之间的关系</strong>)。</li>
-<li>双亲表示法：假设以一组连续的空间来存储树的所有节点的值，同时在每个节点中设置一个域指示双亲节点在本连续空间中的下标位置。这种存储结构利用了树结构中每个节点(除根节点外)都只有唯一的双亲的性质，用一维数组来存放树的所有节点，并设置parent域，建立节点与双亲的一一映射。<strong>具体实施时，注意是数组的下标分别给节点编号，节点并不一定是从根节点开始编的，可能是随机的。parent域即存放双亲节点的数组下标，根节点的parent域存放-1.</strong>这种方法无法存放有序树，并且受数组长度的限制。</li>
-<li>孩子表示法：<strong>把每个节点的孩子节点排列起来，看成一个线性表，并且以单链表存储，则n个节点具有n个孩子链表(叶子节点的孩子链表为空表)，而n个头指针又组成一个线性表。</strong>通俗地来说，就是先用一维数组把所有节点进行一次编号，child域指向其中一个孩子节点的数组下标编号，该孩子节点的child域再指向下一个孩子节点的数组下标编号(同层次)。可以表示有序树，但难以确定一个节点的层次，树节点个数同样受数组长度的限制。</li>
-</ol>
-<h4 id="二：二叉树"><a href="#二：二叉树" class="headerlink" title="二：二叉树"></a>二：二叉树</h4><ol>
-<li>二叉树(Binary Tree)，其特点是每个节点<strong>最多有两棵子树，并且有左右之分</strong>(有序树)。</li>
-<li>在二叉树的第K层上，至多有<strong>2^(k-1)</strong>个节点。深度为K的二叉树至多有<strong>2^k-1</strong>个节点。</li>
-<li>对于任意一棵二叉树，如果其终端节点数为n0，度为2的节点数为n2，则有n0=n2+1.</li>
-<li><strong>先序遍历，中序遍历，后序遍历关键在于根节点的访问顺序不同，遍历的时候要假设两棵子树都存在，要遍历则从最低端的叶子开始。</strong></li>
-<li><strong>满二叉树</strong>：每一层的节点个数达到最大。</li>
-<li><strong>完全二叉树</strong>：除了最下面一层叶子节点之外，其他各层节点数达到最大值。并且最后一层叶子节点按照从左到右的顺序连续存在，只缺最后一层若干节点。</li>
-</ol>
-<h4 id="三：线索二叉树"><a href="#三：线索二叉树" class="headerlink" title="三：线索二叉树"></a>三：线索二叉树</h4><p>一般的二叉链表只能找到左右孩子，找不到前驱，后继节点。充分利用二叉链表的空指针，使得在遍历过程中能找到各个节点的先驱后继。线索化就是在遍历中完成对叶子节点的指针添加的过程。指向节点前驱和后继的指针叫做线索，线索二叉树某个节点中的域分别为Lchild,LTag,data,RTag,Rchild.Tag为0表示Lchild/Rchild指孩子，反之指前驱后继节点。</p>
-<p>线索树的画法：给出前序遍历序列和中序遍历序列，要求画后序线索树。首先把后序遍历序列写出，之后查看每个节点的左右两边是否有节点。如果左边没有节点，则用虚线指向，后序遍历序列中该节点的左边一个元素。如果右边没有节点，则用虚线指向，后序遍历序列中，该节点右边的一个元素。</p>
-<h4 id="四：哈夫曼树-Huffman"><a href="#四：哈夫曼树-Huffman" class="headerlink" title="四：哈夫曼树(Huffman)"></a>四：哈夫曼树(Huffman)</h4><ol>
-<li>路径长度：从树中一个节点到另一个节点之间的分支构成的路径，分支数目称为路径长度。</li>
-<li>树的路径长度：从树根到每一个节点的路径长度之和。</li>
-<li>树的带权路径长度：树中所有叶子节点的带权路径长度和。WPL=WkLk从k=1到k=n的求和。对于节点个数相同的树，完全二叉树是路径长度最短的树。</li>
-<li><strong>最优二叉树(哈夫曼树)：</strong>有n个权值{W1,W2,……，Wn}构造一棵有n个叶子节点的二叉树，每个叶子节点带一个权值，则其中带权路径长度WPL最小的二叉树称为最优二叉树。WPL的计算，通俗地来说就是权值乘以（路径上节点的个数-1）。构造步骤，给出了一组权值，选择两个最小的权值作为子树，根节点的权值为两子树权值之和。<strong><u>注意当根节点的权值小于两最小权值之和时，需要再建立一棵子树。这时选出的两个数字都不是已经构造好的二叉树里面的节点，所以要另外开一棵二叉树。如果两个数的和正好是下一步的两个最小数的其中的一个，那么这个树直接往上生长就可以了，如果这两个数的和比较大，不是下一步的两个最小数的其中一个，那么就并列生长。(构造哈夫曼树常见误区)</u></strong></li>
-<li><strong>哈夫曼编码</strong>：利用哈夫曼树求得的用于通信的二进制编码称为哈夫曼编码。树中从根到每个叶子节点都有一条路径，对路径上的各分支约定指向左子树的分支表示”0”码，指向右子树的分支表示”1”码，取每条路径上的”0”或”1”的序列作为各个叶子节点对应的字符编码，即是哈夫曼编码。</li>
-</ol>
+        <p> 硬学计网的时候有些头大,找到了这篇文章,首先对整体有一个认识,再换一本书,机械工业出版社的《Computer Networking A Top-Down Approach》.</p>
+<h4 id="序"><a href="#序" class="headerlink" title="序"></a>序</h4><p>互联网的核心是一系列协议,总称为互联网协议:Internet Protocol Suite.它们对电脑如何连接和组网,做出了详尽的规定.理解了这些协议的规定,就理解了互联网的原理.</p>
+<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><h5 id="五层模型"><a href="#五层模型" class="headerlink" title="五层模型"></a>五层模型</h5><p>自顶向下分别为应用层Application Layer,传输层Transport Layer,网络层Network Layer,链路层Link Layer和物理层Physical Layer.越下面的层越靠近硬件,越上面的层越靠近用户.</p>
+<h5 id="层与协议"><a href="#层与协议" class="headerlink" title="层与协议"></a>层与协议</h5><p>每一层都是为了完成某一种功能,为了实现这些功能就要传输时遵循共同的规则protocol.互联网的每一层都定义了很多协议,这些协议的总称为互联网协议.</p>
+<h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>电脑要组网,首先就要先把电脑连接起来,可以用光缆,线缆,双绞线和无线电波等方式(咋和谢希仁版有点不一样?还是我记错了).这就叫做物理层.<strong>它主要规定了网络的一些电气特性,作用是负责传输0和1的电信号.</strong></p>
+<h4 id="链路层"><a href="#链路层" class="headerlink" title="链路层"></a>链路层</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p>单纯的0和1并没有意义,必须规定其解读方式:多少个电信号算一组,每个信号有何意义?<strong>链路层的功能就是在实体层的上方确定0和1的分组方式.</strong></p>
+<h5 id="以太网协议"><a href="#以太网协议" class="headerlink" title="以太网协议"></a>以太网协议</h5><p>Ethernet规定,一组电信号构成一个数据包叫做帧(Frame).每一帧分为两个部分:标头Head与数据Data.Head包含数据包的一些说明项,如发送者,接收者,数据类型.数据则是数据包的具体内容.</p>
+<p>标头的长度固定为18字节,数据的长度最短为46字节,最长为1500字节.因此对于一帧来说,大小区间为64-1518字节.数据过长则分为多个帧发送.</p>
+<h5 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h5><p>传输数据的过程中要标识发送者与接收者,就要使用到MAC地址.Ethernet规定连入网络的所有设备都必须有网卡接口,<strong>数据包必须是从一块网卡传送到另一块网卡.网卡的地址就是数据包的发送地址与接收地址即MAC地址.</strong>每块网卡出场时都有一个唯一的MAC地址,长度为48个二进制位,常用12个16进制数表示.前6个位厂商编号,后六个为该厂商网卡流水号.</p>
+<h5 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h5><p>一块网卡要知道另一块网卡的MAC地址,要使用到ARP协议(在谢希仁版中自学过,现在又给忘了…);</p>
+<p>知道MAC地址之后,系统怎样才能把数据包准确送到接收方?<strong>Ethernet并不把数据包准确送到接收方,而是向本网络所有计算机发送,让计算机自己判断是否为接收方.</strong>而向本网络所有计算机发包的行为,就叫做广播broadcasting.</p>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><h5 id="网络层的由来"><a href="#网络层的由来" class="headerlink" title="网络层的由来"></a>网络层的由来</h5><p>根据Ethernet协议,依靠MAC地址发送数据,理论上和技术上世界上任何一个地方的网卡都能够找到任何一个地方的网卡.但是这样做有一个巨大的缺点”<strong>以太网采用广播的方式发送数据包,每个成员都会收到所有的包.不仅效率低,而且只能在发送者的子网络中传播.(如果互联网上每一台计算机都收到所有的包不可想象)</strong>.</p>
+<p>所以必须找到一种方法,能够区分MAC地址是否属于一个子网络.如果属于一个子网络,采用广播的形式发送,否则采用路由(路由即向不同的子网络分发数据包).而MAC地址只与厂商有关与网络无关,所以网络层诞生了.</p>
+<p><strong>它的作用是引进一套新的地址,使我们能够区分不同的计算机是否属于一个子网络.</strong></p>
+<p>于是网络层出现后,每台计算机就有了两种地址,一种是MAC地址,另一种是网络地址(二者之间无任何联系).网络地址帮助我们确定计算机所在的子网络,MAC地址则将数据包送到该子网络的目标网卡.所以从逻辑上看一定是先处理网络地址,再处理MAC地址.</p>
+<h5 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h5><p>根据网络地址的协议就叫做IP协议,其定义的地址就叫做IP地址.IP地址由网络号和主机号组成.<strong>处于一个子网络的电脑,其IP地址的网络部分必定是相同的.主机部分是对同处该子网的主机进行编号.</strong></p>
+<p>为了从IP地址判断出两台计算机是否处于同一个子网,就要用到另一个参数”<strong>子网掩码</strong>“即subnet mask.子网掩码使表示子网特征的一个参数,在形式上等同于IP地址,也是一个32位二进制数字.<strong>其网络部分全为1,主机部分全为0.</strong></p>
+<p>知道IP地址与子网掩码判断是否属于同一个子网的方法:将两个IP地址分别于子网掩码进行AND运算,结果相同则在一个子网.</p>
+<p><code>已知IP地址172.16.154.1和172.16.254.233子网掩码都是255.255.255.0,请问其是否在一个子网?</code></p>
+<p>总结IP协议的作用:一是为每台计算机分配IP地址,另一个是为确定哪些地址处于一个子网.</p>
+<h5 id="IP数据报"><a href="#IP数据报" class="headerlink" title="IP数据报"></a>IP数据报</h5><p>根据IP协议发送的数据,就叫做IP数据报.但是Ethernet数据报只包含MAC地址,并没有IP地址的栏位,是否要修改数据报定义,再添加一个栏位?回答是不需要,因为可以直接将IP数据报放进Ethernet数据报的数据部分.这就是互联网分层结构的好处:上层变动完全不涉及下层结构.</p>
+<p><img src="https://pic004.cnblogs.com/news/201205/20120531_153208_10.jpg" alt="IP数据报"></p>
+<p><img src="https://pic004.cnblogs.com/news/201205/20120531_153209_11.jpg" alt="包含IP数据报的Ethernet数据报"></p>
+<p>IP数据报的标头(特指不在Head中而在Data中的关于IP信息的Head)长度一般在20-60字节,整个数据报的长度最大为65535字节.Ethernet数据报的数据部分,最长只有1500字节,所以如果IP数据报超过了1500字节,就要分割成几个Ethernet数据报分开发送.</p>
+<h5 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h5><p>IP数据报是放在以太网数据报里发送的.所以必须同时知道两个地址,一个是对方的MAC地址,一个是对方的IP地址.通常情况下对方的IP地址是已知的,但是MAC地址未知.所以需要一种基址从IP地址得到MAC地址.</p>
+<p>第一种情况,两个主机不在一个子网,则事实上无法得到对方的MAC地址,只能将数据包传送到两个子网连接处的网关,让网关进行处理.</p>
+<p>第二种情况,两个主机在一个子网,则使用ARP协议.<strong>ARP协议发出一个数据报,其中包含所要查询的IP地址,在对方的MAC地址这一栏,填的是FF:FF:FF:FF:FF:FF,表示这是一个广播地址.他所在的子网络的每一台主机,都会收到这个数据报.从中取出IP地址,与自身IP地址进行比较,如果两者相同,则做出回复向对方报告MAC地址,否则就丢弃这个包.</strong></p>
+<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>有了MAC地址和IP地址,就可以在互联网上任意两台主机建立通信.但是同一台主机上有许多程序都要使用到网络,那么就需要一个参数来表示这个数据包到底供哪个进程使用,这个参数就叫做端口.<strong>它其实是每一个使用网卡的程序的编号,每个数据报都发送到主机的特定端口,这样不同的程序就能够取到自己所需要的数据.</strong></p>
+<p>端口是0到65535之间的一个整数,正好16个二进制位.<strong>0到1023的端口被系统占用,用户只能选择大于1023的端口.</strong></p>
+<p>传输层的功能是建立端口到端口之间的通信,相比之下网络层是建立主机到主机之间的通信.只要确定主机和端口,就能实现程序之间的交流.<strong>因此Unix就把主机+端口,叫做”套接字”socket.</strong></p>
+<h5 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h5><p>现在我们要在数据报中加入端口信息,这就需要新的协议.最简单的实现叫做UDP协议,它的格式就是在数据前面加上端口号.</p>
+<p><img src="https://pic004.cnblogs.com/news/201205/20120531_153209_12.jpg" alt></p>
+<p>Head部分主要定义了<strong>发出端口</strong>与<strong>接收接口</strong>,其数据报非常简单,Head部分8个字节,总长度不超过65535字节,正好放进一个IP数据报.数据部分就是具体的内容然后把整个UDP数据报放入IP数据报的数据部分.所以整个Ethernet数据报变成了下面这样:</p>
+<p><img src="https://pic004.cnblogs.com/news/201205/20120531_153209_13.jpg" alt></p>
+<h5 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h5><p>UDP协议的优点在于比较简单,容易实现.但是缺点在于一旦数据报发出,无法知道对方是否知道.为了提高网络可靠性,TCP协议就诞生了.这个协议非常复杂,但可以近似认为它是有确认机制的.因此TCP协议能够确保数据不会丢失,但是实现困难,资源消耗较多.</p>
+<p>TCP数据报和UDP数据报一样,都是内嵌在IP数据报的数据部分.TCP数据报没有长度限制,理论上可以无限长.但是为了保证网络的效率,通常TCP数据报的长度不会超过IP数据报的长度,确保单个TCP数据报不必再被分割.</p>
+<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>应用程序收到传输层的数据,接下来就要进行解读.由于互联网是开放架构,所以必须先规定好格式.<strong>应用层的作用,就是规定应用程序的数据格式.</strong>举例来说,TCP协议可以为各种各样的程序传递数据,Email/WWW/FTP等,必须有不同协议规定电子邮电,网页和FTP数据的格式,这些应用程序协议就构成了应用层.这是最高的一层,直接面对用户.其数据就在TCP数据报的数据部分,因此现在的Ethernet变成了下面这样:</p>
+<p><img src="https://pic004.cnblogs.com/news/201205/20120531_153209_14.jpg" alt></p>
+<p>网络通信的实质就是交换上面的数据报.</p>
+<p><img src="https://segmentfault.com/img/bVc8eX" alt></p>
+<p>对于不在一个子网的两台计算机之间的通信(假设1号电脑要向4号电脑发送数据报),则1号电脑需要知道网关A的MAC地址(和4号电脑的IP地址).1号电脑发出数据报到网关A,网关A通过<strong>路由协议</strong>发现4号电脑位于网络B,又把数据报发给网关B,B再转发到4号电脑.</p>
+<h4 id="判断是否处于同一子网的方法"><a href="#判断是否处于同一子网的方法" class="headerlink" title="判断是否处于同一子网的方法"></a>判断是否处于同一子网的方法</h4><h5 id="静态IP地址"><a href="#静态IP地址" class="headerlink" title="静态IP地址"></a>静态IP地址</h5><p><strong>本机IP地址</strong>,<strong>子网掩码</strong>,<strong>网关IP地址</strong>,<strong>DNS的IP地址</strong>是TCP/IP协议的重要参数,通俗来说知道它们就可以上网.由于它们是给定的,计算机每次开机都分配到相同的IP地址,<strong>所以这种方法被称作静态IP地址上网.</strong></p>
+<p>但是出于简便性,并且避免IP地址无法灵活变更,大多数用户使用”动态IP上网”.</p>
+<h5 id="动态IP地址"><a href="#动态IP地址" class="headerlink" title="动态IP地址"></a>动态IP地址</h5><p>计算机开机后会自动分配到一个IP地址,不用人为设定,它们使用的协议叫做DHCP协议.该协议规定每个子网中都有一台计算机负责管理本网络的所有IP地址,叫做DHCP服务器.<strong>新的计算机加入网络,必须向DHCP服务器发送一个DHCP请求数据报,申请IP地址和相关的网络参数</strong>.(指定管理IP地址的DHCP服务器未开机怎么办????)</p>
+<p>新加入的计算机不知道不同子网计算机的MAC地址和IP地址,如何发送数据报?DHCP协议作出了巧妙规定:</p>
+<p>由于DHCP是一种建立在UDP协议基础上的应用层协议,所以整个数据报长这个样子:</p>
+<p><img src="https://segmentfault.com/img/bVc8e1" alt></p>
+<blockquote>
+<p>最前面的Ethernet Head,设置发出方的MAC地址和接收方(DHCP服务器)的MAC地址,前者就是本机网卡的MAC地址,后者此时不知道,填入广播地址FF:FF:FF:FF</p>
+<p>后面的IP Head,设置发出方的IP地址和接收方的IP地址,这时对于这两者本机都不知道,于是发出方的IP地址设为0.0.0.0,接收方IP地址设为255.255.255.255</p>
+<p>最后的UDP Head,设置发出方的端口和接收方的端口.DHCP协议规定发出方是port 68,接收方是port 67.</p>
+</blockquote>
+<p>这个数据包构造完成后，就可以发出了。以太网是广播发送，同一个子网络的每台计算机都收到了这个包。因为接收方的MAC地址是FF-FF-FF-FF-FF-FF，看不出是发给谁的，所以每台收到这个包的计算机，还必须分析这个包的IP地址，才能确定是不是发给自己的。当看到发出方IP地址是0.0.0.0，接收方是255.255.255.255，于是DHCP服务器知道”这个包是发给我的”，而其他计算机就可以丢弃这个包。</p>
+<p>接下来，DHCP服务器读出这个包的数据内容，分配好IP地址，发送回去一个”DHCP响应”数据包。这个响应包的结构也是类似的，以太网标头的MAC地址是双方的网卡地址，IP标头的IP地址是DHCP服务器的IP地址（发出方）和255.255.255.255（接收方），UDP标头的端口是67（发出方）和68（接收方），分配给请求端的IP地址和本网络的具体参数则包含在Data部分。新加入的计算机收到这个响应包，于是就知道了自己的IP地址、子网掩码、网关地址、DNS服务器等等参数。</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>假设网络参数如下:</p>
+<p><code>本机IP:192.168.1.100,子网掩码255.255.255.0,网关IP:192.168.1.1,DNS的IP地址:8.8.8.8</code></p>
+<p>然后打开了Google Chrome,输入了<a href="http://www.google.com,接下来浏览器将要向Google发送一个网页请求数据报" target="_blank" rel="noopener">www.google.com,接下来浏览器将要向Google发送一个网页请求数据报</a>.</p>
+<h5 id="DNS协议"><a href="#DNS协议" class="headerlink" title="DNS协议"></a>DNS协议</h5><p>发送数据报就要知道对方的IP地址,我么可以通过DNS协议将网址转换为IP地址.已知DNS服务器为8.8.8.8,于是向其发送DNS数据报(port 53):</p>
+<p><img src="https://segmentfault.com/img/bVc8e4" alt></p>
+<p>之后DNS服务器做出响应,告诉我们Google服务器的IP地址172.194.72.105.</p>
+<h5 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h5><p>得到IP地址后要通过子网掩码来判断改IP是否在同一个子网,以确定要不要向网关发包.将子网掩码与自己的IP地址和Google的IP地址进行AND运算,发现结果不相等,所以不在一个子网.<strong>所以我们要向Google发送数据报,必须通过网关192.168.1.1转发,也就是说接收方的IP地址将是网关的MAC地址.</strong></p>
+<h5 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h5><p>浏览网页用到的是HTTP协议,它的数据报长下面这个样子:</p>
+<p><img src="https://segmentfault.com/img/bVc8e6" alt></p>
+<blockquote>
+<p>　GET / HTTP/1.1<br>Host: <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a><br>Connection: keep-alive<br>User-Agent: Mozilla/5.0 (Windows NT 6.1) ……<br>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,<em>/</em>;q=0.8<br>Accept-Encoding: gzip,deflate,sdch<br>Accept-Language: zh-CN,zh;q=0.8<br>Accept-Charset: GBK,utf-8;q=0.7,*;q=0.3<br>Cookie: … …</p>
+</blockquote>
+<p>被嵌在TCP数据报之中,假定为4960字节.</p>
+<h5 id="TCP协议-1"><a href="#TCP协议-1" class="headerlink" title="TCP协议"></a>TCP协议</h5><p>TCP数据报需要设置端口,接收方的HTTP默认端口是80,而发送方的端口是1024-65535之间随机确定的.    假定为51775.TCP数据报的Head长为20字节,加上嵌入HTTP的数据报,总长度变为4980字节.</p>
+<h5 id="IP协议-1"><a href="#IP协议-1" class="headerlink" title="IP协议"></a>IP协议</h5><p>然后TCP数据报再嵌入IP数据报,IP数据报需要设置双方的IP地址,这是已知的.发送方是192.168.1.100（本机），接收方是172.194.72.105（Google）。IP数据包的标头长度为20字节，加上嵌入的TCP数据包，总长度变为5000字节。</p>
+<h5 id="Ethernet协议"><a href="#Ethernet协议" class="headerlink" title="Ethernet协议"></a>Ethernet协议</h5><p>最后IP数据报嵌入以太网数据报,以太网数据报设置双方的MAC地址,发送方为本机的网卡MAC地址，接收方为网关192.168.1.1的MAC地址（通过ARP协议得到）。</p>
+<p>以太网数据包的数据部分，最大长度为1500字节，而现在的IP数据包长度为5000字节。因此，IP数据包必须分割成四个包。因为每个包都有自己的IP标头（20字节），所以四个包的IP数据包的长度分别为1500、1500、1500、560。</p>
+<p><img src="https://segmentfault.com/img/bVc8e7" alt></p>
+<h5 id="服务器端响应"><a href="#服务器端响应" class="headerlink" title="服务器端响应"></a>服务器端响应</h5><p>经过多个网关转发,Google服务器收到了这四个以太网数据报.根据IP Head的序号,Google将四个包拼接起来,取出完整的TCP数据,根据其中的HTTP请求作出HTTP响应,再用TCP协议发回.本机收到HTTP响应后,就可以将网页显示出来,完成一次网络通信.</p>
 
       
     </div>
@@ -441,6 +496,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+        </div>
+      
 
       
       
@@ -450,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/20/Python爬虫/" rel="next" title="Python爬虫">
-                <i class="fa fa-chevron-left"></i> Python爬虫
+              <a href="/2020/05/04/长亭公开课之堆溢出/" rel="next" title="长亭公开课之堆溢出">
+                <i class="fa fa-chevron-left"></i> 长亭公开课之堆溢出
               </a>
             
           </div>
@@ -460,8 +521,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/11/21/图/" rel="prev" title="图">
-                图 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/16/Computer-Networking-A-Top-Down-Approach/" rel="prev" title="Computer Networking A Top-Down Approach">
+                Computer Networking A Top-Down Approach <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,7 +689,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#树-tree"><span class="nav-number">1.</span> <span class="nav-text">树(tree)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一：树的相关基本概念："><span class="nav-number">1.0.1.</span> <span class="nav-text">一：树的相关基本概念：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二：二叉树"><span class="nav-number">1.0.2.</span> <span class="nav-text">二：二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三：线索二叉树"><span class="nav-number">1.0.3.</span> <span class="nav-text">三：线索二叉树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四：哈夫曼树-Huffman"><span class="nav-number">1.0.4.</span> <span class="nav-text">四：哈夫曼树(Huffman)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#概述"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五层模型"><span class="nav-number">2.1.</span> <span class="nav-text">五层模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#层与协议"><span class="nav-number">2.2.</span> <span class="nav-text">层与协议</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#物理层"><span class="nav-number">3.</span> <span class="nav-text">物理层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链路层"><span class="nav-number">4.</span> <span class="nav-text">链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#定义"><span class="nav-number">4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#以太网协议"><span class="nav-number">4.2.</span> <span class="nav-text">以太网协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MAC地址"><span class="nav-number">4.3.</span> <span class="nav-text">MAC地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#广播"><span class="nav-number">4.4.</span> <span class="nav-text">广播</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络层"><span class="nav-number">5.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#网络层的由来"><span class="nav-number">5.1.</span> <span class="nav-text">网络层的由来</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IP协议"><span class="nav-number">5.2.</span> <span class="nav-text">IP协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IP数据报"><span class="nav-number">5.3.</span> <span class="nav-text">IP数据报</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ARP协议"><span class="nav-number">5.4.</span> <span class="nav-text">ARP协议</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传输层"><span class="nav-number">6.</span> <span class="nav-text">传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UDP协议"><span class="nav-number">6.1.</span> <span class="nav-text">UDP协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP协议"><span class="nav-number">6.2.</span> <span class="nav-text">TCP协议</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用层"><span class="nav-number">7.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断是否处于同一子网的方法"><span class="nav-number">8.</span> <span class="nav-text">判断是否处于同一子网的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#静态IP地址"><span class="nav-number">8.1.</span> <span class="nav-text">静态IP地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态IP地址"><span class="nav-number">8.2.</span> <span class="nav-text">动态IP地址</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例"><span class="nav-number">9.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DNS协议"><span class="nav-number">9.1.</span> <span class="nav-text">DNS协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#子网掩码"><span class="nav-number">9.2.</span> <span class="nav-text">子网掩码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用层协议"><span class="nav-number">9.3.</span> <span class="nav-text">应用层协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP协议-1"><span class="nav-number">9.4.</span> <span class="nav-text">TCP协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IP协议-1"><span class="nav-number">9.5.</span> <span class="nav-text">IP协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Ethernet协议"><span class="nav-number">9.6.</span> <span class="nav-text">Ethernet协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器端响应"><span class="nav-number">9.7.</span> <span class="nav-text">服务器端响应</span></a></li></ol></li></ol></div>
             
 
           </div>
