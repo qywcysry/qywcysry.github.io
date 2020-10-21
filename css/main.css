@@ -1829,7 +1829,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4982ff;
+  background: #472506;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3004,4 +3004,17 @@ code {
   padding: 1px 4px;
   word-break: break-all;
   border-radius: 4px;
+}
+body::before {
+  background-image: url("http://a1.qpic.cn/psc?/V12dDIF10zmkcZ/ruAMsa53pVQWN7FLK88i5qWzs3ks3aEdsg6f3ng.a9uebnn6FQWBjHN3gbZ*mJjuA*URrktFigbytsw*tWtKOgb5WyWC97hyEmZgjX.c9Iw!/c&ek=1&kp=1&pt=0&bo=VQhABlUIQAYRECc!&tl=3&vuin=2488099929&tm=1603267200&sce=60-2-2&rf=00");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  content: " ";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
 }
