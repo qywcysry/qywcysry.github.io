@@ -698,7 +698,7 @@
 <script>
 function show_date_time(){
     window.setTimeout("show_date_time()", 1000);
-    BirthDay=new Date("17/06/2019 00:00:00");
+    BirthDay=new Date("06/17/2019 00:00:00");
     today=new Date();
     timeold=(today.getTime()-BirthDay.getTime());
     sectimeold=timeold/1000
@@ -711,7 +711,7 @@ function show_date_time(){
     e_minsold=(e_hrsold-hrsold)*60;
     minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
     seconds=setzero(Math.floor((e_minsold-minsold)*60));
-    document.getElementById('days').innerHTML="已运行 "+daysold+" days "+hrsold+" hours "+minsold+" minutes "+seconds+"seconds";
+    document.getElementById('days').innerHTML="Having been worked for "+daysold+" days "+hrsold+" hours "+minsold+" minutes "+seconds+"seconds";
 }
 function setzero(i) {
     if (i<10) {
@@ -732,7 +732,7 @@ show_date_time();
 <script>
 function show_date_time(){
     window.setTimeout("show_date_time()", 1000);
-    BirthDay=new Date("17/06/2019 00:00:00");
+    BirthDay=new Date("06/17/2019 00:00:00");
     today=new Date();
     timeold=(today.getTime()-BirthDay.getTime());
     sectimeold=timeold/1000
@@ -745,7 +745,7 @@ function show_date_time(){
     e_minsold=(e_hrsold-hrsold)*60;
     minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
     seconds=setzero(Math.floor((e_minsold-minsold)*60));
-    document.getElementById('days').innerHTML="已运行 "+daysold+" days "+hrsold+" hours "+minsold+" minutes "+seconds+"seconds";
+    document.getElementById('days').innerHTML="Having been worked for "+daysold+" days "+hrsold+" hours "+minsold+" minutes "+seconds+"seconds";
 }
 function setzero(i) {
     if (i<10) {
