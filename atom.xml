@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hy0uka</title>
+  <title>Hy0uka&#39;s Blog</title>
   
   <subtitle>Cyber Security</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://qywcysry.github.io/</id>
   
   <author>
-    <name>Hy0uka</name>
+    <name>LZX</name>
     
   </author>
   
