@@ -1829,7 +1829,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff4e2;
+  background: #33d5ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3006,7 +3006,7 @@ code {
   border-radius: 4px;
 }
 body::before {
-  background-image: url("https://w.wallhaven.cc/full/k9/wallhaven-k93o61.jpg");
+  background-image: url("https://w.wallhaven.cc/full/2e/wallhaven-2eqjrm.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
